@@ -1,6 +1,7 @@
 {% from "components/icons.njk" import icon, socialLink %}
 {#- Homepage closing block: "Where I have worked" map, contact panel and the footer, over one background.
-    Map pins come from the homepage front matter → mapPins. #}
+    Map pins and their client logos come from the homepage front matter → mapPins.
+    A pin with clients is a button; map-clients.js opens its logos on hover, keyboard focus or tap. #}
 <div class="finale">
   <div class="finale__bg" aria-hidden="true" style="background-image: url({{ '/assets/images/footer-bg.webp' | rel }})"></div>
   <div class="finale__fade" aria-hidden="true"></div>
@@ -10,10 +11,27 @@
         <h2 id="connect-h">Where I have worked</h2>
         <p>Teams in seven places, all remote.</p>
       </div>
-      <div class="map" aria-hidden="true" style="--ar: 1000 / 433">
+      <div class="map" style="--ar: 1000 / 433">
         {%- include "svg/world-map.svg" -%}
-        {%- for pin in mapPins -%}
-        <span class="map__pin" data-at="{{ pin.at }}" style="left: {{ pin.left }}; top: {{ pin.top }}"><i class="map__dot"></i><b class="map__pill">{{ pin.name }}</b></span>
+        {%- for pin in mapPins %}
+        <div class="map__pin" data-at="{{ pin.at }}" style="left: {{ pin.left }}; top: {{ pin.top }}">
+          {%- if pin.clients | length %}
+          <button class="map__hit" type="button" aria-expanded="false" aria-controls="map-fan-{{ loop.index }}"><i class="map__dot"></i><b class="map__pill">{{ pin.name }}</b></button>
+          <ul class="map__fan" id="map-fan-{{ loop.index }}" aria-label="Clients in {{ pin.name }}" style="--n: {{ pin.clients | length }}">
+            {%- for client in pin.clients %}
+            <li class="map__logo" style="--i: {{ loop.index0 }}">
+              {%- if client.logo -%}
+              <img src="{{ client.logo | rel }}" alt="{{ client.name }}" width="80" height="80" loading="lazy" decoding="async" />
+              {%- else -%}
+              <span aria-hidden="true">{% for word in client.name.split(" ") %}{% if loop.index <= 2 %}{{ word | first | upper }}{% endif %}{% endfor %}</span><span class="sr-only">{{ client.name }}</span>
+              {%- endif -%}
+            </li>
+            {%- endfor %}
+          </ul>
+          {%- else %}
+          <span class="map__hit" aria-hidden="true"><i class="map__dot"></i><b class="map__pill">{{ pin.name }}</b></span>
+          {%- endif %}
+        </div>
         {%- endfor %}
       </div>
       <p class="sr-only">
@@ -51,3 +69,4 @@
   </section>
   {% include "partials/footer.njk" %}
 </div>
+<script defer src="{{ '/assets/js/map-clients.js' | rel }}"></script>

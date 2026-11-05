@@ -1,0 +1,44 @@
+{% from "components/button.njk" import button %}
+{#- Homepage "How I get from question to shipped": stacked step cards over a sky with birds (process-birds.js).
+    Steps come from the homepage front matter → process. #}
+<section
+  class="section process"
+  id="process"
+  aria-labelledby="process-h"
+  data-birds="{{ birds.process | dump }}"
+  data-birdsrc="{{ '/assets/images/process-birds.webp' | rel }}"
+>
+  <div class="process__art" aria-hidden="true" style="--ar: 1000 / 632">
+    <img src="{{ '/assets/images/process-sky.webp' | rel }}" width="1000" height="632" alt="" loading="lazy" decoding="async" />
+    {#- #}<span class="process__wash"></span><canvas class="process__birds"></canvas>
+  </div>
+  <div class="container process__grid">
+    <div class="process__head section-head">
+      <h2 id="process-h">How I get from question to shipped</h2>
+      <p>Three habits that keep a design honest, from the first sketch to the last pull request.</p>
+    </div>
+    <ol class="process__stack">
+      {%- for step in process %}
+      <li class="pcard" style="--k: {{ loop.index0 }}">
+        <p class="pcard__word">{{ step.word }}</p>
+        <h3 class="pcard__title">{{ step.title }}</h3>
+        <p class="pcard__text">{{ step.text }}</p>
+        <ul class="card__badges" aria-label="Focus areas">
+          {%- for badge in step.badges %}
+          <li class="badge">{{ badge }}</li>
+          {%- endfor %}
+        </ul>
+      </li>
+      {%- endfor %}
+      <li class="pcard pcard--final" style="--k: {{ process | length }}">
+        <h3 class="pcard__title">Have a product that needs this?</h3>
+        <p class="pcard__text">If this sounds like how your team works, I would like to hear about it.</p>
+        <div>
+          {{ button("Let's talk", "/index.html#connect" | rel, variant="inverse", trail="arrow-right") }}
+        </div>
+      </li>
+      <li class="process__spacer" aria-hidden="true"></li>
+    </ol>
+  </div>
+</section>
+<script defer src="{{ '/assets/js/process-birds.js' | rel }}"></script>

@@ -1,0 +1,21 @@
+{% from "components/icons.njk" import icon as svgIcon %}
+
+{#
+  Pill button with the rolling-label hover effect.
+
+  button("View my work", "/work/index.html" | rel, trail="arrow-right")
+  button("Resume", site.resume | rel, icon="resume", compact=true, external=true)
+
+  variant   "primary" (default) | "secondary" | "inverse"
+  icon      icon before the label    trail     icon after the label
+  compact   smaller button           external  opens in a new tab
+#}
+{%- macro button(label, href, variant="primary", icon=null, trail=null, compact=false, external=false) -%}
+<a class="btn btn--{{ variant }}{{ ' btn--compact' if compact }}" href="{{ href }}"
+  {%- if external %} target="_blank" rel="noopener"{% endif %}>
+  {%- if icon %}<span class="btn__icon">{{ svgIcon(icon) }}</span>{% endif -%}
+  <span class="btn__label"><span class="btn__roll"><span>{{ label }}</span><span aria-hidden="true">{{ label }}</span></span></span>
+  {%- if trail %}<span class="btn__icon btn__icon--trail">{{ svgIcon(trail) }}</span>{% endif -%}
+  {%- if external %}<span class="sr-only"> (opens in a new tab)</span>{% endif -%}
+</a>
+{%- endmacro %}

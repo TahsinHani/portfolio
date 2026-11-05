@@ -1,0 +1,50 @@
+{% from "components/button.njk" import button %}
+{#- Homepage hero: layered illustration with animated birds (hero.js), headline and sticky notes (polaroids.js). #}
+<section
+  class="hero"
+  id="top"
+  aria-labelledby="hero-title"
+  data-birds="{{ birds.hero | dump }}"
+  data-birdsrc="{{ '/assets/images/hero-birds.webp' | rel }}"
+>
+  <div class="hero__art" aria-hidden="true">
+    <img class="hero__bg" src="{{ '/assets/images/hero.webp' | rel }}" srcset="{{ '/assets/images/hero-1000.webp' | rel }} 1000w, {{ '/assets/images/hero.webp' | rel }} 2000w" sizes="100vw" width="2000" height="1250" alt="" fetchpriority="high" decoding="async" />
+    {#- #}<img class="hero__sun" src="{{ '/assets/images/hero-sun.webp' | rel }}" width="768" height="768" alt="" decoding="async" />
+    {#- #}<img class="hero__ridge" src="{{ '/assets/images/hero-ridge.webp' | rel }}" width="380" height="370" alt="" decoding="async" />
+    {#- #}<canvas class="hero__birdcv"></canvas>
+  </div>
+  <div class="hero__fade" aria-hidden="true"></div>
+  <div class="hero__inner">
+    <div class="hero__copy">
+      <p class="hero__role">UIUX Designer</p>
+      <h1 class="hero__title" id="hero-title">
+        <span>Understand.</span> <span><em class="hero__hand">Design.</em> Deliver.</span>
+      </h1>
+      <p class="hero__sub">
+        I design product interfaces, and I know how they get built, so what you see in the design
+        is what ships.
+      </p>
+      <div class="hero__actions">
+        {{- button("View my work", "/work/index.html" | rel, trail="arrow-right") -}}
+        {{- button("Let's talk", "/index.html#connect" | rel, variant="secondary", trail="arrow-right") -}}
+      </div>
+    </div>
+    <div class="hero__side">
+      <div class="pola" data-pola>
+        <div class="pola__card note note--yellow" data-i="0" tabindex="0">
+          {%- include "svg/note-pin.svg" -%}
+          <span class="note__label">Focus</span>
+          {#- #}<strong class="note__title">Product Design</strong>
+          {#- #}<span class="note__hand"><span>System. Clarity. Design.</span><span>AI. Human Experience</span></span>
+        </div>
+        <div class="pola__card note note--blue" data-i="1" tabindex="0">
+          <span class="note__label">Gentle Reminder</span>
+          {#- #}<strong class="note__title">Be someone who still tries</strong>
+          {#- #}<span class="note__hand"><span>After failure, frustrations &amp; heartache</span></span>
+        </div>
+      </div>
+      <script defer src="{{ '/assets/js/polaroids.js' | rel }}"></script>
+    </div>
+  </div>
+</section>
+<script defer src="{{ '/assets/js/hero.js' | rel }}"></script>

@@ -1,0 +1,22 @@
+---
+layout: layouts/base.njk
+metaTitle: All work · Tahsin
+description: Selected product design projects by Tahsin.
+stylesheet: work.css
+---
+{% from "components/button.njk" import button %}
+{% from "components/project-card.njk" import projectGrid with context %}
+<main id="work">
+  <section class="section allwork" aria-labelledby="allwork-h">
+    <div class="container">
+      <div class="allwork__back">
+        {{ button("Back to home", "/index.html#work" | rel, variant="secondary", compact=true) }}
+      </div>
+      <div class="section-head">
+        <h1 id="allwork-h" style="font-size: var(--text-title); line-height: 1.05; letter-spacing: -0.03em">All work</h1>
+        <p>Product design across web, mobile and kiosk. Demo projects for now.</p>
+      </div>
+      {{ projectGrid(collections.caseStudies, class="allwork__grid", heading="h2") }}
+    </div>
+  </section>
+</main>

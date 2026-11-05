@@ -1,0 +1,32 @@
+{% from "components/icons.njk" import icon %}
+
+{#
+  Medium article card for the Writing section. Posts live in src/_data/writing.json.
+  The same markup is built in assets/js/writing-feed.js for posts loaded from Medium,
+  so keep the two in step if you change this.
+
+  writingCard(post, bg)
+    post  { id, title, url, date: "YYYY-MM-DD", readTime, summary, tags: [] }
+    bg    hover background image URL, relative to the current page
+#}
+{%- macro writingCard(post, bg) -%}
+<li class="wpost" data-post="{{ post.id }}">
+  <span class="wpost__bg" aria-hidden="true" style="--ar: 1200 / 797; background-image: url({{ bg }})"></span>
+  <p class="wpost__brand" aria-hidden="true">
+    <svg viewBox="0 0 24 24" width="24" height="24" fill="currentColor"><circle cx="7.4" cy="12" r="5.4"></circle><ellipse cx="17" cy="12" rx="2.8" ry="5.1"></ellipse><ellipse cx="22" cy="12" rx="1" ry="4.5"></ellipse></svg><span>Medium</span>
+  </p>
+  <p class="wpost__meta"><time datetime="{{ post.date }}">{{ post.date | readableDate }}</time> · {{ post.readTime }} min read</p>
+  <h3 class="wpost__title">
+    <a class="wpost__link" href="{{ post.url }}" target="_blank" rel="noopener">{{ post.title }}<span class="sr-only"> (opens in a new tab)</span></a>
+  </h3>
+  <p class="wpost__summary">{{ post.summary }}</p>
+  <ul class="wpost__tags" aria-label="Topics">
+    {%- for tag in post.tags %}
+    <li class="badge">{{ tag }}</li>
+    {%- endfor %}
+  </ul>
+  <div class="wpost__foot">
+    <p class="wpost__read"><span>Read on Medium</span>{{ icon("arrow-up-right") }}</p>
+  </div>
+</li>
+{%- endmacro %}

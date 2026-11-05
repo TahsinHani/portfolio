@@ -1,0 +1,53 @@
+{% from "components/icons.njk" import icon, socialLink %}
+{#- Homepage closing block: "Where I have worked" map, contact panel and the footer, over one background.
+    Map pins come from the homepage front matter → mapPins. #}
+<div class="finale">
+  <div class="finale__bg" aria-hidden="true" style="background-image: url({{ '/assets/images/footer-bg.webp' | rel }})"></div>
+  <div class="finale__fade" aria-hidden="true"></div>
+  <section class="section connect" id="connect" aria-labelledby="connect-h">
+    <div class="container">
+      <div class="section-head connect__head">
+        <h2 id="connect-h">Where I have worked</h2>
+        <p>Teams in seven places, all remote.</p>
+      </div>
+      <div class="map" aria-hidden="true" style="--ar: 1000 / 433">
+        {%- include "svg/world-map.svg" -%}
+        {%- for pin in mapPins -%}
+        <span class="map__pin" data-at="{{ pin.at }}" style="left: {{ pin.left }}; top: {{ pin.top }}"><i class="map__dot"></i><b class="map__pill">{{ pin.name }}</b></span>
+        {%- endfor %}
+      </div>
+      <p class="sr-only">
+        I have worked with teams in: United Kingdom, Netherlands, South Africa, India, Bangladesh,
+        United States, Hawaii.
+      </p>
+      <div class="cpanel">
+        <h3 class="cpanel__title">Let’s build something people can use.</h3>
+        <p class="cpanel__sub">
+          I am open to remote product design roles and good projects. The quickest way to reach me
+          is email.
+        </p>
+        <div class="cpanel__cols">
+          <div>
+            <p class="cpanel__label">Email:</p>
+            <a class="cpanel__mail" href="mailto:{{ site.email }}"><span class="btn__icon">{{ icon("mail") }}</span>{{ site.email }}</a>
+          </div>
+          <div>
+            <p class="cpanel__label">Resume:</p>
+            <a class="cpanel__mail cpanel__dl" href="{{ site.resume | rel }}" target="_blank" rel="noopener">
+              {#- #}<span>Download Resume</span><span class="btn__icon">{{ icon("arrow-up-right") }}</span><span class="sr-only"> (opens in a new tab)</span>
+            {#- #}</a>
+          </div>
+          <div>
+            <p class="cpanel__label">I know you want to follow, so:</p>
+            <ul class="cpanel__social">
+              {%- for link in site.social %}
+              <li>{{ socialLink(link.name, link.url) }}</li>
+              {%- endfor %}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  {% include "partials/footer.njk" %}
+</div>

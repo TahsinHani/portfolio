@@ -1,0 +1,65 @@
+{% from "components/button.njk" import button %}
+{#- Homepage "About": photo mood board (mood-board.js), intro, basic facts and prior roles.
+    Facts and roles come from the homepage front matter → facts, experience. #}
+<section class="section about" id="about" aria-labelledby="about-h">
+  <div class="container about__grid">
+    <div class="about__board">
+      <div class="mood" data-mood>
+        <figure class="mood__card mood__polaroid" data-i="0" tabindex="0">
+          <i class="mood__tape mood__tape--a" aria-hidden="true"></i>
+          {#- #}<img src="{{ '/assets/images/about-1.webp' | rel }}" width="800" height="800" alt="Illustrated portrait of a smiling child in a red cap, waving" loading="lazy" decoding="async" draggable="false" />
+        </figure>
+        <p class="mood__quote mood__quote--top">Make it clear,<br />then make it kind.</p>
+        <p class="mood__quote mood__quote--bottom">Quiet design,<br />loud results.</p>
+        <figure class="mood__card mood__polaroid" data-i="1" tabindex="0">
+          <i class="mood__tape mood__tape--b" aria-hidden="true"></i>
+          {#- #}<img src="{{ '/assets/images/about-2.webp' | rel }}" width="800" height="800" alt="Illustrated portrait of Tahsin looking over a shoulder, sea behind" loading="lazy" decoding="async" draggable="false" />
+        </figure>
+      </div>
+      <script defer src="{{ '/assets/js/mood-board.js' | rel }}"></script>
+    </div>
+    <div class="about__text about__intro">
+      <div class="section-head"><h2 id="about-h">About</h2></div>
+      <p class="about__lead">
+        I am a UIUX designer who started in infrastructure, so I care about how a design behaves
+        once real people, real data and real servers get involved.
+      </p>
+      <p class="about__p">
+        I design product interfaces from the first question to the shipped screen. I write the
+        problem down, sketch quickly, test with people, and stay close to the build so the details
+        survive.
+      </p>
+      <p class="about__p">
+        Most of my work is with remote teams across time zones. I keep decisions written down,
+        share work early, and make handoffs boring in the best way.
+      </p>
+      <div class="about__actions">
+        {{ button("View resume", site.resume | rel, icon="resume", external=true) }}
+      </div>
+    </div>
+  </div>
+  <div class="container about__grid about__lower">
+    <div class="about__prior-wrap">
+      <h3 class="about__sub">Basic Information</h3>
+      <dl class="about__facts">
+        {%- for fact in facts %}
+        <div>
+          <dt>{{ fact.label }}</dt>
+          <dd>{{ fact.value }}</dd>
+        </div>
+        {%- endfor %}
+      </dl>
+    </div>
+    <div class="about__prior-wrap">
+      <h3 class="about__sub">Prior work</h3>
+      <ul class="about__prior">
+        {%- for job in experience %}
+        <li>
+          <span class="about__who"><span class="about__role">{{ job.role }}</span><span class="about__org">{{ job.org }}</span></span>
+          {#- #}<span class="about__years">{{ job.years }}</span>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>

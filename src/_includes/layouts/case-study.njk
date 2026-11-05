@@ -1,0 +1,78 @@
+---
+layout: layouts/base.njk
+---
+{#-
+  Case study page. Everything above and below the story comes from the page's front matter;
+  the page body (the story sections) is inserted at {{ content }}.
+  See src/case-studies/ for the pages and the field list in case-studies.11tydata.js.
+-#}
+{% from "components/button.njk" import button %}
+{% from "components/project-card.njk" import projectGrid with context %}
+<main id="work">
+  <article class="cs">
+    <header class="cs__top container">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <ol>
+          <li><a href="{{ '/index.html' | rel }}">Home</a></li>
+          <li><a href="{{ '/work/index.html' | rel }}">Work</a></li>
+          <li aria-current="page">{{ title }}</li>
+        </ol>
+      </nav>
+      <h1 class="cs__title">{{ title }}</h1>
+      <p class="cs__summary">{{ summary }}</p>
+      <ul class="card__badges" aria-label="Project type">
+        {%- for badge in badges %}
+        <li class="badge">{{ badge }}</li>
+        {%- endfor %}
+      </ul>
+      <dl class="cs__meta">
+        {%- for fact in facts %}
+        <div>
+          <dt>{{ fact.label }}</dt>
+          <dd>{{ fact.value }}</dd>
+        </div>
+        {%- endfor %}
+      </dl>
+      {%- if demo %}
+      <p class="cs__demo">Demo case study. Text and images are placeholders.</p>
+      {%- endif %}
+    </header>
+
+    <figure class="cs__cover container">
+      <img src="{{ ('/assets/images/projects/' + (cover.image or page.fileSlug) + '.webp') | rel }}" width="1200" height="900" alt="{{ cover.alt }}" fetchpriority="high" />
+    </figure>
+
+    <section class="cs__trio container" aria-label="At a glance">
+      {%- for item in glance %}
+      <div class="pcard">
+        <h2 class="pcard__word">{{ item.word }}</h2>
+        <p class="pcard__text">{{ item.text }}</p>
+      </div>
+      {%- endfor %}
+    </section>
+
+    <div class="cs__body container">
+      {{ content | safe }}
+    </div>
+
+    <section class="cs__more container" aria-labelledby="more-h">
+      <div class="section-head"><h2 id="more-h">More work</h2></div>
+      {{ projectGrid(collections.caseStudies | bySlug(moreWork), class="allwork__grid cs__moregrid") }}
+      <div class="work__more">
+        {{ button("See my all work", "/work/index.html" | rel, variant="secondary", trail="arrow-right") }}
+      </div>
+    </section>
+
+    <section class="section connect" id="connect" aria-labelledby="cs-contact-h">
+      <div class="container">
+        <div class="cpanel">
+          <h2 class="cpanel__title" id="cs-contact-h">Let’s build something people can use.</h2>
+          <p class="cpanel__sub">I am open to remote product design roles and good projects. The quickest way to reach me is email.</p>
+          <div class="cs__cta">
+            {{ button("Say hello", "mailto:" + site.email, icon="mail") }}
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</main>

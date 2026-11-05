@@ -1,0 +1,10 @@
+{% from "components/icons.njk" import socialLink %}
+{#- Site footer: copyright and Medium link. #}
+<footer class="footer">
+  <div class="container footer__row">
+    <p>© 2026 {{ site.name }}. All rights reserved</p>
+    <ul class="footer__links">
+      <li>{{ socialLink("Medium", site.medium) }}</li>
+    </ul>
+  </div>
+</footer>

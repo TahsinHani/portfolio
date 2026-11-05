@@ -1,0 +1,64 @@
+---
+layout: layouts/base.njk
+permalink: index.html
+metaTitle: Tahsin Portfolio
+ogTitle: Tahsin · UIUX Designer
+description: Tahsin is a UIUX designer who designs product interfaces and knows how they get built.
+stylesheet: home.css
+floatCta: true
+
+# Projects shown in "Decisions behind my work" (file names in src/case-studies/).
+featuredWork: [bloodconnect, ledgerly, fieldnote, harbor]
+
+# "How I get from question to shipped"
+process:
+  - word: Understand
+    title: Start with the real problem
+    text: >-
+      I talk to the people who use the product and the people who build it before I draw anything.
+      The brief is rarely the problem, so I write the problem down first and get everyone to agree on it.
+    badges: [Interviews, Problem framing, Constraints]
+  - word: Design
+    title: Make it concrete early
+    text: >-
+      I move from sketches to clickable screens quickly, then put them in front of real users.
+      Small, honest prototypes find the bad ideas while they are still cheap to change.
+    badges: [Prototyping, Usability testing, Design systems]
+  - word: Deliver
+    title: Stay until it ships
+    text: >-
+      I work with engineers in code review, not only at handoff. Spacing, states and edge cases get
+      settled in the build, so what you see in the design is what ships.
+    badges: [Handoff, Front-end review, QA]
+
+# About → Basic Information
+facts:
+  - { label: Based in, value: "Dhaka, working remotely" }
+  - { label: Focus, value: "Web apps, dashboards, design systems" }
+  - { label: Works with, value: "Product, engineering, research" }
+  - { label: Tools, value: "Figma, TypeScript, React" }
+
+# About → Prior work
+experience:
+  - { role: Product Designer, org: Company name, years: 2024 – Present }
+  - { role: UI/UX Designer, org: Company name, years: 2022 – 2024 }
+  - { role: Infrastructure Engineer, org: Company name, years: 2020 – 2022 }
+
+# "Where I have worked" map pins. left/top place the pin on the map; at = label side.
+mapPins:
+  - { name: Netherlands, at: r, left: 51.27%, top: 19.31% }
+  - { name: South Africa, at: r, left: 56.4%, top: 79.51% }
+  - { name: India, at: bl, left: 71.22%, top: 42.3% }
+  - { name: Bangladesh, at: r, left: 74.45%, top: 40.29% }
+  - { name: Hawaii, at: b, left: 7.11%, top: 42.68% }
+  - { name: USA, at: c, left: 24.78%, top: 28.87% }
+  - { name: UK, at: tl, left: 49.53%, top: 17.96% }
+---
+<main class="home">
+  {% include "partials/home/hero.njk" %}
+  {% include "partials/home/work.njk" %}
+  {% include "partials/home/process.njk" %}
+  {% include "partials/home/about.njk" %}
+  {% include "partials/home/writing.njk" %}
+  {% include "partials/home/connect.njk" %}
+</main>

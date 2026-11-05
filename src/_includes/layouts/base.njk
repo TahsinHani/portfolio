@@ -1,0 +1,42 @@
+{#-
+  Page shell used by every page.
+
+  Front matter it reads:
+    metaTitle    <title> text
+    ogTitle      social-share title (defaults to metaTitle)
+    description  meta + social-share description
+    stylesheet   "home.css" or "work.css"
+    extraStyles  more stylesheets from assets/css/, e.g. ["bloodconnect.css"]
+    footer       true to add the site footer after <main> (the homepage places it itself)
+    floatCta     true to add the floating "Say hello" button
+-#}
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{ metaTitle }}</title>
+    <meta name="description" content="{{ description }}" />
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" type="image/webp" href="{{ '/assets/images/avatar-96.webp' | rel }}" />
+    <meta property="og:title" content="{{ ogTitle or metaTitle }}" />
+    <meta property="og:description" content="{{ description }}" />
+    <meta property="og:type" content="website" />
+    <script src="{{ '/assets/js/scroll-reset.js' | rel }}"></script>
+    <link rel="stylesheet" href="{{ ('/assets/css/' + stylesheet) | rel }}" />
+    {%- for sheet in extraStyles %}
+    <link rel="stylesheet" href="{{ ('/assets/css/' + sheet) | rel }}" />
+    {%- endfor %}
+  </head>
+  <body>
+    <a class="skip-link" href="#work">Skip to content</a>
+    {% include "partials/header.njk" %}
+    {{ content | safe }}
+    {%- if footer %}
+    {% include "partials/footer.njk" %}
+    {%- endif %}
+    {%- if floatCta %}
+    {% include "partials/float-cta.njk" %}
+    {%- endif %}
+  </body>
+</html>

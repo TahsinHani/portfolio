@@ -1,0 +1,38 @@
+{% from "components/button.njk" import button %}
+{% from "components/project-card.njk" import projectGrid with context %}
+{#- Homepage "Decisions behind my work": project cards that slide out of a folder on scroll (work-folder.js). #}
+<section class="section work" id="work" aria-labelledby="work-h">
+  <div class="work__bg" aria-hidden="true" style="background-image: url({{ '/assets/images/work-bg.webp' | rel }})"></div>
+  <div class="container">
+    <svg class="work__defs" width="0" height="0" aria-hidden="true" focusable="false">
+      <defs>
+        <clipPath id="folder-front" clipPathUnits="objectBoundingBox">
+          <path d="M0,.31 Q0,.22 .05,.22 L.40,.22 C.47,.22 .49,.454 .56,.454 L.95,.454 Q1,.454 1,.50 L1,.94 Q1,1 .94,1 L.06,1 Q0,1 0,.94 Z"></path>
+        </clipPath>
+      </defs>
+    </svg>
+    <div class="work__fback" aria-hidden="true"></div>
+    <div class="work__ffront">
+      <svg class="work__fedge" aria-hidden="true" viewBox="0 0 100 100" preserveAspectRatio="none">
+        <path d="M0,31 Q0,22 5,22 L40,22 C47,22 49,45.400 56,45.400 L95,45.400 Q100,45.400 100,50 L100,94 Q100,100 94,100 L6,100 Q0,100 0,94 Z" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="1.600" vector-effect="non-scaling-stroke"></path>
+      </svg>
+      <p class="work__flabel" aria-hidden="true"><span>Project</span><strong>Folder</strong></p>
+      <a class="work__farrow" href="{{ '/work/index.html' | rel }}" aria-label="See all work">
+        {#- #}<svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" width="34" height="34" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"></path></svg>
+      {#- #}</a>
+    </div>
+    <div class="work__intro">
+      <h2 id="work-h">Decisions<br /><span>behind my work.</span></h2>
+      <p>
+        Most design briefs start with the wrong question. I spend the first part of every
+        engagement reframing what the actual problem is before a single screen gets designed.
+        That’s where the real decisions live.
+      </p>
+    </div>
+    {{ projectGrid(collections.caseStudies | bySlug(featuredWork), class="work__grid") }}
+    <div class="work__more">
+      {{ button("See my all work", "/work/index.html" | rel, variant="secondary", trail="arrow-up-right") }}
+    </div>
+  </div>
+</section>
+<script defer src="{{ '/assets/js/work-folder.js' | rel }}"></script>

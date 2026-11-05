@@ -1,0 +1,88 @@
+---
+title: Harbor
+order: 4
+summary: A component library and tokens that let four product teams ship in the same visual language.
+badges:
+  - Design system
+  - Components
+  - Handoff
+facts:
+  - label: Role
+    value: Design system designer
+  - label: Timeline
+    value: 6 months
+  - label: Platform
+    value: Web
+  - label: Team
+    value: 2 designers, 3 engineers
+demo: true
+cover:
+  alt: Placeholder illustration of a grid of interface components
+glance:
+  - word: Problem
+    text: Four teams had four versions of every button, and each fix had to be made four times.
+  - word: Approach
+    text: A small, well-documented set of components with tokens that design and code share.
+  - word: Impact
+    text: New screens start from parts that already work, and fixes land everywhere at once.
+card:
+  desc: A component library and tokens that let four product teams ship the same way.
+  client: Harbor Labs
+  mark: HL
+  alt: Placeholder illustration of a grid of interface components
+moreWork:
+  - ledgerly
+  - fieldnote
+---
+
+<section class="cs__sec">
+  <h2 class="cs__h">What we learned</h2>
+  <p class="cs__p">
+    Teams did not want a bigger library. They wanted fewer decisions and parts they could trust.
+  </p>
+  <p class="cs__p">
+    I kept the research small and specific: a handful of conversations, a look at the real data, and
+    one afternoon watching people use the current product. Each finding went on a card with the
+    exact words people used.
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">How the design came together</h2>
+  <p class="cs__p">
+    We started from the ten components used on almost every screen, wrote down when to use each one,
+    and added more only when two teams asked.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/harbor.webp' | rel }}"
+      width="1200"
+      height="900"
+      alt="Placeholder illustration of a component grid"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>The core components and their states.</figcaption>
+  </figure>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Getting it built</h2>
+  <p class="cs__p">
+    Tokens live in one place and feed both design files and code, so a change is a single pull
+    request.
+  </p>
+  <p class="cs__p">
+    Engineers were in the review from the first prototype, so the states, empty screens and error
+    cases were agreed before the build started.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/ledgerly.webp' | rel }}"
+      width="1200"
+      height="900"
+      alt="Placeholder illustration of a dashboard built from the components"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>A real screen assembled from the library.</figcaption>
+  </figure>
+</section>

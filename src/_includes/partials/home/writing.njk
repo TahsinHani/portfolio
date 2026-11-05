@@ -1,0 +1,23 @@
+{% from "components/button.njk" import button %}
+{% from "components/writing-card.njk" import writingCard %}
+{#- Homepage "Writing": Medium articles from src/_data/writing.json.
+    writing-feed.js refreshes the list and the count from Medium when the page loads. #}
+<section class="section writing" id="writing" aria-labelledby="writing-h">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="writing-h">
+        Writing<span class="writing__count" data-writing-count aria-label="{{ writing | length }} articles">{{ writing | length }}</span>
+      </h2>
+      <p>Notes on design, usability and how things get built.</p>
+    </div>
+    <ul class="writing__list">
+      {%- for post in writing %}
+      {{ writingCard(post, '/assets/images/writing-sky.webp' | rel) }}
+      {%- endfor %}
+    </ul>
+    <div class="work__more">
+      {{ button("See Medium Profile", site.medium, variant="secondary", trail="arrow-up-right", external=true) }}
+    </div>
+  </div>
+</section>
+<script defer src="{{ '/assets/js/writing-feed.js' | rel }}"></script>

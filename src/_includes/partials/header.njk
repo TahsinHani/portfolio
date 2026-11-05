@@ -1,0 +1,31 @@
+{% from "components/button.njk" import button %}
+{% from "components/icons.njk" import icon %}
+{#- Site header: floating pill nav, with a slide-down panel on small screens. Links come from site.json → nav. #}
+<header class="nav" data-state="expanded" data-open="false">
+  <nav class="nav__pill" aria-label="Primary">
+    <a class="nav__brand" href="{{ '/index.html#top' | rel }}">
+      {#- #}<img src="{{ '/assets/images/avatar-96.webp' | rel }}" srcset="{{ '/assets/images/avatar-96.webp' | rel }} 1x, {{ '/assets/images/avatar-192.webp' | rel }} 2x" width="32" height="32" alt="" />
+      {#- #}<span>{{ site.name }}</span>
+    </a>
+    <div class="nav__body">
+      <div>
+        <ul class="nav__links">
+          {%- for item in site.nav %}
+          <li><a class="nav__link" href="{{ ('/index.html#' + item.section) | rel }}" data-section="{{ item.section }}">{{ item.label }}</a></li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    <span class="nav__resume">{{ button("Resume", site.resume | rel, icon="resume", compact=true, external=true) }}</span>
+    {#- #}<button class="nav__menu" type="button" aria-expanded="false" aria-controls="nav-panel" aria-label="Open menu">
+      <span data-icon="menu">{{ icon("menu") }}</span>
+      {#- #}<span data-icon="close" hidden>{{ icon("close") }}</span>
+    </button>
+  </nav>
+  <div class="nav__panel" id="nav-panel">
+    {%- for item in site.nav -%}
+    <a class="nav__link" href="{{ ('/index.html#' + item.section) | rel }}" data-section="{{ item.section }}">{{ item.label }}</a>
+    {%- endfor -%}
+  </div>
+</header>
+<script defer src="{{ '/assets/js/nav.js' | rel }}"></script>

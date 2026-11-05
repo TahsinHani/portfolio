@@ -1,0 +1,61 @@
+{#
+  Project card, used on the homepage, the All work page and "More work" on case studies.
+  Card content lives in each case study's front matter (src/case-studies/*.njk → card:).
+
+  projectCard(project, heading="h3", href=..., imageBase=...)
+    project   an item from collections.caseStudies ("Case study 01" uses its `order`)
+    heading   "h2" or "h3", depending on the page outline
+    href      link to the case study, relative to the current page
+    imageBase path to assets/images/projects/, relative to the current page
+#}
+{%- macro projectCard(project, heading="h3", href="", imageBase="") -%}
+{%- set p = project.data -%}
+{%- set img = imageBase + (p.card.image or project.page.fileSlug) -%}
+<article class="card" id="p-{{ project.page.fileSlug }}">
+  <div class="card__text">
+    <header class="card__top">
+      <p class="card__eyebrow">Case study {{ p.order | pad2 }}</p>
+      <span class="card__mark" aria-hidden="true">{{ p.card.mark }}</span>
+    </header>
+    <div class="card__body">
+      <{{ heading }} class="card__title">{{ p.title }}</{{ heading }}>
+      <p class="card__desc">{{ p.card.desc }}</p>
+    </div>
+    <footer class="card__foot">
+      <p class="card__client">Client: {{ p.card.client }}</p>
+      <div class="card__cta">
+        <a class="card__btn" href="{{ href }}">Read case study<span class="sr-only">: {{ p.title }}</span></a>
+      </div>
+    </footer>
+  </div>
+  <div class="card__media">
+    <img
+      src="{{ img }}-600.webp"
+      srcset="{{ img }}-600.webp 600w, {{ img }}.webp 1200w"
+      sizes="(min-width: 1024px) 260px, 90vw"
+      width="600"
+      height="450"
+      alt="{{ p.card.alt }}"
+      loading="lazy"
+      decoding="async"
+    />
+  </div>
+</article>
+{%- endmacro %}
+
+{#
+  A <ul> grid of project cards.
+  projectGrid(projects, class="work__grid", heading="h3")
+  Must be imported "with context" so links can be made relative to the current page.
+#}
+{%- macro projectGrid(projects, class="work__grid", heading="h3") -%}
+<ul class="{{ class }}">
+  {%- for project in projects %}
+  <li>
+    {{ projectCard(project, heading,
+         href=("/work/" + project.page.fileSlug + "/index.html") | rel,
+         imageBase="/assets/images/projects/" | rel) }}
+  </li>
+  {%- endfor %}
+</ul>
+{%- endmacro %}

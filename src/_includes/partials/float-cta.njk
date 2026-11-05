@@ -1,0 +1,6 @@
+{% from "components/button.njk" import button %}
+{#- Floating "Say hello" button, shown between the hero and the contact section (float-cta.js). #}
+<div class="float-cta" data-visible="false">
+  {{ button("Say hello", "mailto:" + site.email, icon="mail", compact=true) }}
+</div>
+<script defer src="{{ '/assets/js/float-cta.js' | rel }}"></script>

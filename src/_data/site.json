@@ -1,0 +1,17 @@
+{
+  "name": "Tahsin",
+  "email": "tahsin.hani@gmail.com",
+  "resume": "/resume/Tahsin-Resume.pdf",
+  "medium": "https://medium.com/@tahsin.hani",
+  "nav": [
+    { "label": "Work", "section": "work" },
+    { "label": "About", "section": "about" },
+    { "label": "Writing", "section": "writing" },
+    { "label": "Connect", "section": "connect" }
+  ],
+  "social": [
+    { "name": "Facebook", "url": "https://www.facebook.com/" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/" },
+    { "name": "Instagram", "url": "https://www.instagram.com/" }
+  ]
+}

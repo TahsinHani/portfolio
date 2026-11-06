@@ -2369,12 +2369,112 @@ a {
   .cpanel__arrow {
     width: 60px; /* long side; height follows the artwork (~55px) */
     height: auto;
+    aspect-ratio: 382.8 / 354;
     position: absolute;
     /* Diagonal from the window up to "Coming Soon": tail ~43px left of the text and ~64px below it,
        head tip ~10px right of the text's start, just under the line. */
     top: calc(100% - 43.4px);
     left: -42.7px;
   }
+}
+/* The window's layers (see connect.njk) all fill the same square and are opaque on the card's white.
+   Each shutter turns on its hinge: transform-origin is the hinge edge and the shutter's bottom, as a share
+   of the 240px square. Closed = turned 180deg over the glass and stretched to meet in the middle. */
+.cwin {
+  aspect-ratio: 1;
+  perspective: 600px;
+  perspective-origin: 44.7% 50%; /* the window's centre line */
+  position: relative;
+}
+.cwin > img {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+}
+.cwin__shutter-l {
+  transform-origin: 26.67% 74.95%;
+}
+.cwin__shutter-r {
+  transform-origin: 62.88% 75.56%;
+}
+/* contact-window.js adds .cpanel--animate (closed) and toggles .is-open as the card comes into view.
+   Opening: shutters swing out (right one a beat later), the painting fades in once they're back against
+   the wall, and the arrow draws out from the window to "Coming Soon", head last.
+   Closing: the arrow goes back in first, then the painting gives way to the layers and the shutters swing shut.
+   Without JS, or with reduced motion, none of this applies and the open painting shows as it is. */
+.cpanel--animate .cwin__shutter-l {
+  transform: rotateY(180deg) scaleX(1.112);
+}
+.cpanel--animate .cwin__shutter-r {
+  transform: rotateY(-180deg) scale(1.185, 1.066);
+}
+.cpanel--animate :is(.cwin__shutter-l, .cwin__shutter-r) {
+  transition: transform 0.8s cubic-bezier(0.55, 0, 0.35, 1) 0.4s;
+}
+.cpanel--animate .cwin__painting {
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+.cpanel--animate.is-open .cwin__shutter-l {
+  transform: rotateY(0deg) scaleX(1);
+  transition-delay: 0s;
+}
+.cpanel--animate.is-open .cwin__shutter-r {
+  transform: rotateY(0deg) scale(1, 1);
+  transition-delay: 0.08s;
+}
+.cpanel--animate.is-open .cwin__painting {
+  opacity: 1;
+  transition: opacity 0.3s linear 0.9s;
+}
+.cpanel--animate .cpanel__arrow-draw {
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 0.4s cubic-bezier(0.5, 0, 0.75, 0) 0.1s;
+}
+.cpanel--animate .cpanel__arrow-draw--head {
+  transition-duration: 0.12s;
+  transition-delay: 0s;
+}
+.cpanel--animate .cpanel__arrow-flicks {
+  opacity: 0;
+  transition: opacity 0.15s linear;
+}
+.cpanel--animate.is-open .cpanel__arrow-draw {
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.7s cubic-bezier(0.3, 0.1, 0.3, 1) 0.75s;
+}
+.cpanel--animate.is-open .cpanel__arrow-draw--head {
+  transition-duration: 0.2s;
+  transition-delay: 1.4s;
+}
+.cpanel--animate.is-open .cpanel__arrow-flicks {
+  opacity: 1;
+  transition: opacity 0.3s linear 1.4s;
+}
+/* The arrow waits inside the closed window: shrunk to the centre of the glass and hidden.
+   contact-window.js sets --arrow-x/--arrow-y to the distance from the arrow's resting place to that centre.
+   Opening: once the shutters are back, it flies out of the window to "Coming Soon", growing and drawing as it goes.
+   Closing: it flies back in before the shutters shut. */
+.cpanel--animate .cpanel__arrow {
+  transform-origin: 50% 50%;
+  transform: translate(var(--arrow-x, 0px), var(--arrow-y, 0px)) scale(0.25);
+  opacity: 0;
+  transition:
+    transform 0.45s cubic-bezier(0.5, 0, 0.75, 0),
+    opacity 0.15s linear 0.3s;
+}
+.cpanel--animate.is-open .cpanel__arrow {
+  transform: translate(0, 0) scale(1);
+  opacity: 1;
+  transition:
+    transform 0.8s cubic-bezier(0.2, 0.9, 0.3, 1.1) 0.75s,
+    opacity 0.15s linear 0.75s;
+}
+/* First paint after the script runs: jump straight to the closed state, no transition. */
+.cpanel--still :is(.cwin > img, .cpanel__arrow, .cpanel__arrow-draw, .cpanel__arrow-flicks) {
+  transition: none !important;
 }
 .cs__top {
   width: min(100% - 2 * var(--margin), var(--container-wide));

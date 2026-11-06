@@ -1018,6 +1018,117 @@ a {
   right: 6cqw;
   transform: rotate(8deg);
 }
+/* Stacked until scrolled to. mood-board.js adds .mood--animate and plays these forwards (deal the photos out)
+   or backwards (stack them again). Each animation starts at the stacked look and ends at the layout above;
+   once it has finished it no longer applies, so the rules above (and hover) take over again.
+   Offsets are from each item's place in the layout. Stacked: the baby photo on top of the other photo, with
+   "Curious from the beginning…" written under them. On the way out the lower photo slides out from underneath
+   (downwards, clear of the baby photo, which is when it moves above it) and then up onto the baby photo's corner. */
+.mood--animate .mood__card[data-i="0"] {
+  animation: mood-deal-top 1.3s linear backwards paused;
+}
+.mood--animate .mood__card[data-i="1"] {
+  animation: mood-deal-under 1.3s linear backwards paused;
+}
+.mood--animate .mood__quote--top {
+  animation: mood-caption 1.3s linear backwards paused;
+}
+.mood--animate .mood__quote--bottom {
+  animation: mood-quote-in 1.3s linear backwards paused;
+}
+@keyframes mood-deal-top {
+  0% {
+    translate: 21cqw 15cqw;
+    rotate: 1deg;
+    z-index: 11;
+    animation-timing-function: cubic-bezier(0.45, 0, 0.2, 1);
+  }
+  /* Order flips here, while the two photos don't touch (about 0.6s in). */
+  46% {
+    z-index: 11;
+  }
+  46.5% {
+    z-index: 2;
+  }
+  48% {
+    translate: 0 -1.5cqw;
+    rotate: -1.5deg;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+    z-index: 2;
+  }
+}
+@keyframes mood-deal-under {
+  0% {
+    translate: -17.5cqw -26.5cqw;
+    rotate: 4.5deg;
+    scale: 1;
+    box-shadow:
+      0 0 0 1px #2121210d,
+      0 6px 14px #0000001f,
+      0 1px 2px #00000014;
+    animation-timing-function: cubic-bezier(0.4, 0, 0.6, 1);
+  }
+  48% {
+    translate: -4cqw 17cqw;
+    rotate: -2deg;
+    scale: 1.03;
+    box-shadow:
+      0 0 0 1px #2121210d,
+      0 18px 34px #0000002e,
+      0 2px 4px #00000014;
+    animation-timing-function: cubic-bezier(0.2, 0, 0, 1);
+  }
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+    scale: 1;
+    box-shadow:
+      0 0 0 1px #2121210d,
+      0 6px 14px #0000001f,
+      0 1px 2px #00000014;
+  }
+}
+/* The caption fades out from under the stack and is written in again at its place beside the baby photo. */
+@keyframes mood-caption {
+  0% {
+    translate: -28cqw 80cqw;
+    rotate: 1deg;
+    opacity: 1;
+    animation-timing-function: ease-in;
+  }
+  15% {
+    translate: -28cqw 82cqw;
+    rotate: 1deg;
+    opacity: 0;
+  }
+  70% {
+    translate: 0 1.5cqw;
+    rotate: 0deg;
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    translate: 0 0;
+    rotate: 0deg;
+    opacity: 1;
+  }
+}
+@keyframes mood-quote-in {
+  0%,
+  75% {
+    translate: 0 1.5cqw;
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+  100% {
+    translate: 0 0;
+    opacity: 1;
+  }
+}
 @media (prefers-reduced-motion: reduce) {
   .mood__card {
     transition: none;

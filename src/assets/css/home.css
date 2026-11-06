@@ -667,7 +667,7 @@ a {
   letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #212121;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 600;
 }
 .hero__title {
@@ -982,6 +982,7 @@ a {
   font-size: 16px;
   font-weight: 400;
   line-height: 1.35;
+  text-wrap: balance;
   position: absolute;
 }
 .mood__quote--top {
@@ -1212,7 +1213,10 @@ a {
   display: grid;
 }
 .work__intro h2 span {
-  color: var(--color-ink-secondary);
+  color: #36416d;
+}
+.process__accent {
+  color: #36416d;
 }
 .work__intro h2 {
   letter-spacing: -0.03em;
@@ -1624,7 +1628,7 @@ a {
 }
 .pcard--final .pcard__title {
   color: var(--color-on-ink);
-  font-size: var(--text-section);
+  font-size: 28px;
 }
 .pcard--final .pcard__text {
   color: #fffc;
@@ -1748,6 +1752,10 @@ a {
   font-size: var(--text-body);
   margin: 0;
 }
+.about__item {
+  display: inline-block;
+  max-width: 100%;
+}
 .about__sub {
   font-size: var(--text-sub);
   letter-spacing: -0.01em;
@@ -1804,6 +1812,22 @@ a {
   .about__lower {
     margin-top: var(--space-9, 6rem);
     align-items: start;
+    row-gap: 0;
+  }
+  /* Line up the Basic Information and Prior work rows: each row is as tall as the taller side. */
+  .about__lower > .about__prior-wrap {
+    grid-row: span var(--rows-head);
+    grid-template-rows: subgrid;
+    align-self: stretch;
+    display: grid;
+  }
+  .about__lower .about__facts,
+  .about__lower .about__prior {
+    grid-row: span var(--rows);
+    grid-template-rows: subgrid;
+    align-self: stretch;
+    align-content: start;
+    display: grid;
   }
 }
 .about__facts dt,
@@ -2480,14 +2504,10 @@ a {
   flex: none;
 }
 
-/* Writing section: article count */
+/* Writing section: article count, styled as a .badge pill */
 .writing__count {
-  font-family: "Urbanist", var(--font-text);
-  font-size: 14px;
-  font-weight: 500;
+  font-size: 16px;
   line-height: 1;
-  letter-spacing: 0;
-  color: #36416d;
-  margin-left: 8px;
+  margin-left: 12px;
   vertical-align: middle;
 }

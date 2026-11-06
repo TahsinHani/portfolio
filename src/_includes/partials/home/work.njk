@@ -1,6 +1,6 @@
 {% from "components/button.njk" import button %}
 {% from "components/project-card.njk" import projectGrid with context %}
-{#- Homepage "Decisions behind my work": project cards that slide out of a folder on scroll (work-folder.js). #}
+{#- Homepage "Product challenges I’ve worked on": project cards that slide out of a folder on scroll (work-folder.js). #}
 <section class="section work" id="work" aria-labelledby="work-h">
   <div class="work__bg" aria-hidden="true" style="background-image: url({{ '/assets/images/work-bg.webp' | rel }})"></div>
   <div class="container">
@@ -22,11 +22,11 @@
       {#- #}</a>
     </div>
     <div class="work__intro">
-      <h2 id="work-h">Decisions<br /><span>behind my work.</span></h2>
+      <h2 id="work-h">Product challenges<br /><span>I’ve worked on</span></h2>
       <p>
-        Most design briefs start with the wrong question. I spend the first part of every
-        engagement reframing what the actual problem is before a single screen gets designed.
-        That’s where the real decisions live.
+        My work spans customer-facing experiences, operational tools, and emerging product ideas.
+        Each project has asked for a different balance of user needs, visual clarity, business goals,
+        and implementation constraints.
       </p>
     </div>
     {{ projectGrid(collections.caseStudies | bySlug(featuredWork), class="work__grid") }}

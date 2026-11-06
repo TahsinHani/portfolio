@@ -1,5 +1,5 @@
 {% from "components/button.njk" import button %}
-{#- Homepage "How I get from question to shipped": stacked step cards over a sky with birds (process-birds.js).
+{#- Homepage "From the right question to a considered solution": stacked step cards over a sky with birds (process-birds.js).
     Steps come from the homepage front matter → process. #}
 <section
   class="section process"
@@ -14,8 +14,8 @@
   </div>
   <div class="container process__grid">
     <div class="process__head section-head">
-      <h2 id="process-h">How I get from question to shipped</h2>
-      <p>Three habits that keep a design honest, from the first sketch to the last pull request.</p>
+      <h2 id="process-h">From the right question to a <span class="process__accent">considered solution</span></h2>
+      <p>My process adapts to the product and the people involved. I aim to understand the context, make ideas tangible, and keep design decisions connected to the experience being built.</p>
     </div>
     <ol class="process__stack">
       {%- for step in process %}
@@ -31,10 +31,10 @@
       </li>
       {%- endfor %}
       <li class="pcard pcard--final" style="--k: {{ process | length }}">
-        <h3 class="pcard__title">Have a product that needs this?</h3>
-        <p class="pcard__text">If this sounds like how your team works, I would like to hear about it.</p>
+        <h3 class="pcard__title">Working through a product challenge?</h3>
+        <p class="pcard__text">If your team is looking for a designer who cares about both the user experience and the reasoning behind it, I’d be glad to talk.</p>
         <div>
-          {{ button("Let's talk", "/index.html#connect" | rel, variant="inverse", trail="arrow-right") }}
+          {{ button("Let's talk", "mailto:" + site.email, variant="inverse", trail="arrow-right") }}
         </div>
       </li>
       <li class="process__spacer" aria-hidden="true"></li>

@@ -16,7 +16,7 @@ npm run build    # write the finished site to _site/
 
 One-time setup: in the repository go to **Settings → Pages → Build and deployment → Source** and choose **GitHub Actions**. Do not choose "Deploy from a branch". That would publish the raw templates instead of the built site.
 
-Progress and errors show in the repository's **Actions** tab. To redeploy without a code change, open the **Deploy to GitHub Pages** workflow and click **Run workflow**.
+Progress and errors show in the repository's **Actions** tab. If you see a failing **pages build and deployment** run (a Jekyll error such as `Unknown tag 'from'`), the Pages source has been set back to "Deploy from a branch", which can happen after renaming the repository. Switch it to **GitHub Actions** again. To redeploy without a code change, open the **Deploy to GitHub Pages** workflow and click **Run workflow**.
 
 All links are relative, so the site works both at `https://<user>.github.io/<repo>/` and at a custom domain.
 

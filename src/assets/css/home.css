@@ -979,7 +979,7 @@ a {
   text-align: center;
   pointer-events: none;
   margin: 0;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   line-height: 1.35;
   text-wrap: balance;
@@ -992,9 +992,9 @@ a {
   transform: rotate(-3deg);
 }
 .mood__quote--bottom {
-  width: 36cqw;
+  width: 38cqw; /* fits "Now designing. Still learning." on one line at 18px; centre unchanged */
   top: 76cqw;
-  left: 3cqw;
+  left: 2cqw;
   transform: rotate(-3deg);
 }
 .mood__tape {

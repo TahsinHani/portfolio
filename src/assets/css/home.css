@@ -1215,7 +1215,8 @@ a {
 .work__intro h2 span {
   color: #36416d;
 }
-.process__accent {
+.process__accent,
+.writing__accent {
   color: #36416d;
 }
 .work__intro h2 {
@@ -2312,6 +2313,68 @@ a {
 }
 .cpanel {
   position: relative;
+}
+/* Contact card: the watercolor window takes the third column, on the same grid and gap as
+   .cpanel__cols below, so it lines up with "I know you want to follow". Hidden once the columns stack.
+   From 1200px there is room for the "Artistic Creations: Coming Soon" note beside it, with the
+   hand-drawn arrow rising from the window's lower right up to "Coming Soon". */
+.cpanel__art,
+.cpanel__soon {
+  display: none;
+}
+@media (width>=768px) {
+  .cpanel__intro {
+    gap: var(--space-5);
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    display: grid;
+  }
+  .cpanel__text {
+    grid-column: span 2;
+  }
+  .cpanel__art {
+    width: min(240px, 100%);
+    height: auto;
+    display: block;
+  }
+}
+@media (width>=1200px) {
+  .cpanel__aside {
+    align-items: center;
+    gap: 16px;
+    display: flex;
+  }
+  .cpanel__art {
+    flex: 0 1 240px;
+    min-width: 0;
+  }
+  .cpanel__soon {
+    flex: none;
+    flex-direction: column;
+    gap: 2px;
+    margin: 0;
+    padding-bottom: 56px; /* keeps the two lines where they sit beside the window */
+    color: var(--color-ink);
+    font-size: 18px;
+    line-height: 1.4;
+    display: flex;
+    position: relative;
+  }
+  .cpanel__soon-kicker {
+    font-family: var(--font-hand);
+  }
+  .cpanel__soon-label {
+    font-family: var(--font-text);
+  }
+  .cpanel__arrow {
+    width: 60px; /* long side; height follows the artwork (~55px) */
+    height: auto;
+    position: absolute;
+    /* Diagonal from the window up to "Coming Soon": tail ~43px left of the text and ~64px below it,
+       head tip ~10px right of the text's start, just under the line. */
+    top: calc(100% - 43.4px);
+    left: -42.7px;
+  }
 }
 .cs__top {
   width: min(100% - 2 * var(--margin), var(--container-wide));

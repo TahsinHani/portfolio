@@ -7,11 +7,12 @@
     { "label": "Work", "section": "work" },
     { "label": "About", "section": "about" },
     { "label": "Writing", "section": "writing" },
-    { "label": "Connect", "section": "connect" }
+    { "label": "Connect", "section": "connect", "anchor": "contact" }
   ],
   "social": [
-    { "name": "Facebook", "url": "https://www.facebook.com/" },
-    { "name": "LinkedIn", "url": "https://www.linkedin.com/" },
-    { "name": "Instagram", "url": "https://www.instagram.com/" }
+    { "name": "Facebook", "url": "https://www.facebook.com/profile.php?id=61595741060248" },
+    { "name": "LinkedIn", "url": "https://www.linkedin.com/in/tahsin-hani/" },
+    { "name": "Instagram", "url": "https://www.instagram.com/sane_bydesign" },
+    { "name": "Behance", "url": "https://www.behance.net/tahsinhani" }
   ]
 }

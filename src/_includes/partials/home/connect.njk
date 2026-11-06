@@ -1,5 +1,5 @@
 {% from "components/icons.njk" import icon, socialLink %}
-{#- Homepage closing block: "Where I have worked" map, contact panel and the footer, over one background.
+{#- Homepage closing block: "Working across time zones" map, contact panel and the footer, over one background.
     Map pins and their client logos come from the homepage front matter → mapPins.
     A pin with clients is a button; map-clients.js opens its logos on hover, keyboard focus or tap. #}
 <div class="finale">
@@ -8,8 +8,8 @@
   <section class="section connect" id="connect" aria-labelledby="connect-h">
     <div class="container">
       <div class="section-head connect__head">
-        <h2 id="connect-h">Where I have worked</h2>
-        <p>Teams in seven places, all remote.</p>
+        <h2 id="connect-h">Working across time zones</h2>
+        <p>I’ve collaborated remotely with teams across several regions. Clear communication and thoughtful handoffs help keep the work moving.</p>
       </div>
       <div class="map" style="--ar: 1000 / 433">
         {%- include "svg/world-map.svg" -%}
@@ -38,12 +38,27 @@
         I have worked with teams in: United Kingdom, Netherlands, South Africa, India, Bangladesh,
         United States, Hawaii.
       </p>
-      <div class="cpanel">
-        <h3 class="cpanel__title">Let’s build something people can use.</h3>
-        <p class="cpanel__sub">
-          I am open to remote product design roles and good projects. The quickest way to reach me
-          is email.
-        </p>
+      <div class="cpanel" id="contact">
+        {#- Text on the left; the watercolor window sits in the third column, above the divider (wide screens only),
+            with an "Artistic Creations: Coming Soon" note beside it and a hand-drawn arrow rising from the window to it. #}
+        <div class="cpanel__intro">
+          <div class="cpanel__text">
+            <h3 class="cpanel__title">Let’s design a better product experience.</h3>
+            <p class="cpanel__sub">
+              I’m open to on-site/remote product design roles and thoughtful collaborations. If you’re working on a
+              product that needs clearer flows, stronger interfaces, or a more considered design approach,
+              I’d like to hear about it.
+            </p>
+          </div>
+          <div class="cpanel__aside">
+            <img class="cpanel__art" src="{{ '/assets/images/contact-window.webp' | rel }}" alt="" width="240" height="240" loading="lazy" decoding="async" />
+            <p class="cpanel__soon">
+              <span class="cpanel__soon-kicker">Artistic Creations:</span>
+              <span class="cpanel__soon-label">Coming Soon</span>
+              <img class="cpanel__arrow" src="{{ '/assets/images/arrow-loop.svg' | rel }}" alt="" width="383" height="354" loading="lazy" decoding="async" />
+            </p>
+          </div>
+        </div>
         <div class="cpanel__cols">
           <div>
             <p class="cpanel__label">Email:</p>

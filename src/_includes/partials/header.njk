@@ -1,6 +1,8 @@
 {% from "components/button.njk" import button %}
 {% from "components/icons.njk" import icon %}
-{#- Site header: floating pill nav, with a slide-down panel on small screens. Links come from site.json → nav. #}
+{#- Site header: floating pill nav, with a slide-down panel on small screens. Links come from site.json → nav.
+    A link jumps to its "anchor" if it has one (e.g. Connect → the contact card), otherwise to its "section";
+    "section" is also what nav.js uses to highlight the current link. #}
 <header class="nav" data-state="expanded" data-open="false">
   <nav class="nav__pill" aria-label="Primary">
     <a class="nav__brand" href="{{ '/index.html#top' | rel }}">
@@ -11,7 +13,7 @@
       <div>
         <ul class="nav__links">
           {%- for item in site.nav %}
-          <li><a class="nav__link" href="{{ ('/index.html#' + item.section) | rel }}" data-section="{{ item.section }}">{{ item.label }}</a></li>
+          <li><a class="nav__link" href="{{ ('/index.html#' + (item.anchor or item.section)) | rel }}" data-section="{{ item.section }}">{{ item.label }}</a></li>
           {%- endfor %}
         </ul>
       </div>
@@ -24,7 +26,7 @@
   </nav>
   <div class="nav__panel" id="nav-panel">
     {%- for item in site.nav -%}
-    <a class="nav__link" href="{{ ('/index.html#' + item.section) | rel }}" data-section="{{ item.section }}">{{ item.label }}</a>
+    <a class="nav__link" href="{{ ('/index.html#' + (item.anchor or item.section)) | rel }}" data-section="{{ item.section }}">{{ item.label }}</a>
     {%- endfor -%}
   </div>
 </header>

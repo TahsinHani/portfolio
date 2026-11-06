@@ -46,7 +46,7 @@ src/
 - **Add a project:** copy a file in `src/case-studies/`, rename it (the file name becomes the URL, `/work/<name>/`), then edit its front matter and story. Set `order` to choose its place in lists, and add the image files to `src/assets/images/projects/` (`<name>.webp` plus `<name>-600.webp`).
 - **Choose homepage projects:** edit `featuredWork` in `src/index.njk`.
 - **Add an article:** add an entry to `src/_data/writing.json`. `writing-feed.js` also loads the latest posts from Medium in the browser.
-- **Change the client logos on the map:** put the logo files in `src/assets/images/clients/` (SVG, or square PNG/WebP at 100×100), then edit the `clients` list under each pin in `mapPins` in `src/index.njk`. The `demo-*.svg` files there are [Logoipsum](https://logoipsum.com/) placeholders; delete them once you have real logos.
+- **Change the client logos on the map:** put the logo files in `src/assets/images/clients/` (SVG, or square PNG/WebP at 100×100), then edit the `clients` list under each pin in `mapPins` in `src/index.njk`. A client without a `logo` shows its initials instead.
 - **Change the email, nav or social links:** edit `src/_data/site.json`.
 - **Add a button:** `{{ button("Label", "/path/index.html" | rel, variant="secondary", trail="arrow-right") }}`. See `components/button.njk` for the options.
 

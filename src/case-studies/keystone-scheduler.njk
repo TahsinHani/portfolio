@@ -1,0 +1,272 @@
+---
+title: Keystone Scheduler
+order: 2
+summary: >-
+  A planning tool that helps a Beijing school's administrators build an 8-day rotating timetable,
+  compare what-if scenarios, and keep the final say.
+badges:
+  - Web app
+  - Education
+  - AI scheduling
+facts:
+  - label: Role
+    value: UI/UX designer
+  - label: Timeline
+    value: 15 weeks (planned)
+  - label: Platform
+    value: Desktop web app
+  - label: Team
+    value: 1 designer in a team of 11
+demo: false
+cover:
+  alt: >-
+    The Keystone Academy crest above the Scheduler dashboard, with the scenario detail and scenario
+    management screens behind it
+glance:
+  - word: Problem
+    text: >-
+      Timetables for an 8-day rotating cycle were built by hand in spreadsheets, which led to uneven
+      teacher workloads and poorly used rooms.
+  - word: Approach
+    text: >-
+      Keep the optimizer understandable: put the rules beside the result, show a schedule's health
+      at a glance, and make trying alternatives safe.
+  - word: Scope
+    text: >-
+      Sign-in, dashboard, teachers, constraints and staffing grid, scenarios with version history,
+      and role-based permissions.
+card:
+  desc: A planning tool that helps a school build an 8-day rotating timetable and compare scenarios.
+  client: Keystone Academy
+  mark: KA
+  alt: >-
+    The Keystone Academy crest above the Scheduler dashboard, with the scenario detail and scenario
+    management screens behind it
+extraStyles:
+  - keystone.css
+moreWork:
+  - bloodconnect
+  - ledgerly
+---
+
+<section class="cs__sec">
+  <h2 class="cs__h">Overview</h2>
+  <p class="cs__p">
+    Keystone Scheduler is a planning tool for Keystone Academy, a school in Beijing. It helps
+    administrators assign teachers, sections and rooms across an 8-day rotating timetable, compare
+    “what-if” scenarios, and keep the final say over the result.
+  </p>
+  <p class="cs__p">
+    Astha IT in Dhaka built it for the school. I was the UI/UX designer, the only designer on a team
+    that also covered project management, business analysis, AI, frontend and backend development,
+    QA and DevOps. I designed the screens from sign-in through to role permissions.
+  </p>
+  <p class="cs__p">
+    Names, emails and figures in the screens below are placeholder data.
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">The problem</h2>
+  <p class="cs__p">
+    Keystone runs an 8-day rotating schedule. Every cycle has to line up teachers, student groups,
+    classrooms and time slots, and the timetable was built by hand in spreadsheets. That caused four
+    problems:
+  </p>
+  <ul class="cs__p">
+    <li><strong>Workload mismatches.</strong> Teachers ended up over or under their maximum load.</li>
+    <li><strong>Idle or overfull rooms.</strong> Venues were not matched to what each course needed.</li>
+    <li>
+      <strong>Inconsistent assignments.</strong> Subjects were not always taught by qualified staff.
+    </li>
+    <li><strong>Little transparency.</strong> Staff could not see how decisions were made.</li>
+  </ul>
+  <p class="cs__p">
+    As the school grows, so does the work. Administrators, teachers and planners would all use the
+    new tool, so I framed the design around one question: how can an optimizer’s output stay
+    understandable and adjustable, so an administrator can see why a schedule looks the way it does,
+    change the rules, and try alternatives without losing earlier work?
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">How the work ran</h2>
+  <p class="cs__p">
+    The plan was 15 weeks of two-week sprints: scope and wireframes first, then the constraint panel
+    and schedule visualizer, then scenarios and role-based access, and finally testing, deployment
+    and staff training. Each design went to Keystone for approval, with up to two rounds of feedback
+    per wireframe.
+  </p>
+  <p class="cs__p">
+    In Figma, the design moved through a moodboard, ideation, an audit and a UI review, then colour
+    variations, several trial-and-error UI rounds and different versions of the authentication flow,
+    before a presentation for development and a final round of UI feedback.
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Four design decisions</h2>
+  <p class="cs__p">
+    Each decision answers a requirement from the project brief.
+  </p>
+  <h3 class="cs__h3">1. Put the rules next to the result</h3>
+  <p class="cs__p">
+    The brief asked for a rule engine where each constraint can be hard or soft, with preference
+    weights. I put a Settings panel beside the staffing grid. Each constraint has an on/off toggle,
+    a weight out of 10 and a Hard Constraint flag, and a set of rules can be saved and switched
+    between Current and Saved. Changing a rule and seeing its effect happen in one view.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/keystone-scheduler-constraints.webp' | rel }}"
+      width="1324"
+      height="828"
+      alt="Schedule and Constraint screen: five KPI tiles across the top, a Settings panel of constraints with toggles, weights and Hard Constraint checkboxes on the left, and the staffing grid on the right. Teacher rows are blurred."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      The constraint editor beside the staffing grid. Teacher rows are blurred for privacy.
+    </figcaption>
+  </figure>
+  <h3 class="cs__h3">2. Show a schedule’s health at a glance</h3>
+  <p class="cs__p">
+    The brief asked for real-time feedback through summary metrics. Five tiles sit above the grid:
+    Allocation Success, Teacher Balance Index, Soft Constraint Violations, Resource Utilization and
+    Unscheduled Items. Good and bad values use green and red, and the last tile links to the
+    unscheduled list. The dashboard carries the same idea further, with a ranked overview of every
+    scenario, so an administrator can judge a run before reading a single row.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/keystone-scheduler-dashboard.webp' | rel }}"
+      width="1400"
+      height="905"
+      alt="Dashboard with four colour-coded KPI tiles, a Scenario Overview table with progress bars, violation counts and rank badges, and four quick action cards."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      The dashboard: KPI tiles, a ranked scenario overview and quick actions such as Run
+      Optimization.
+    </figcaption>
+  </figure>
+  <h3 class="cs__h3">3. Make experimenting safe</h3>
+  <p class="cs__p">
+    The brief asked for scenarios saved with timestamps that can be reloaded, compared or continued.
+    Each saved scenario is a card with its saved time, status, version, rank and key metrics.
+    Compare stays disabled until two scenarios are selected, and a hint says so. A detail view lists
+    the unscheduled items and the version history. Trying an alternative never costs earlier work.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/keystone-scheduler-scenarios.webp' | rel }}"
+      width="1324"
+      height="828"
+      alt="Scenario Management page with six scenario cards showing saved time, status, version, overall rank and metrics, each with Add to Compare and View Details. The Compare button is disabled, with the hint: Select at least two scenarios to enable comparison."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Scenario cards. Compare stays disabled until two are selected.</figcaption>
+  </figure>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/keystone-scheduler-detail.webp' | rel }}"
+      width="1514"
+      height="946"
+      alt="Scenario detail with metrics at the top, a table of unscheduled courses with colour-graded success-rate badges, and a Version History panel on the right with its own Compare action."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      Scenario detail: unscheduled items with success-rate badges, and version history alongside.
+    </figcaption>
+  </figure>
+  <h3 class="cs__h3">4. Control who can do what</h3>
+  <p class="cs__p">
+    The brief asked for role-based access for administrators, teachers and planners. I designed a
+    permission matrix of six modules (Teacher, Course, Venue, Schedule, Scenario and User
+    Management) against Add, Edit, View and Delete, plus user-group screens for adding users and
+    roles. Every permission for a role is readable in a single table.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/keystone-scheduler-roles.webp' | rel }}"
+      width="1400"
+      height="875"
+      alt="Add Role page with a role title field and a permission matrix of modules against Add, Edit, View and Delete checkboxes."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Roles and permissions in one matrix.</figcaption>
+  </figure>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Keeping a dense grid workable</h2>
+  <p class="cs__p">
+    The staffing grid carries teacher, department, load, preps and per-section counts across dozens
+    of columns. To keep it usable, I added department filter chips, a zoom control, and separate
+    Staffing Grid and Schedule tabs, so planners can narrow the view instead of scrolling through
+    everything.
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Getting in and setting up</h2>
+  <p class="cs__p">
+    Sign-in is a single focused card with the school crest. A tilted, blurred timetable on the left
+    shows what is behind the login. The full flow also covers verification, a four-step
+    forgot-password path, error states, account creation and Microsoft sign-in.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/keystone-scheduler-signin.webp' | rel }}"
+      width="1400"
+      height="905"
+      alt="Sign-in screen with the Keystone Academy crest, email and password fields and a Sign In button, beside a royal blue panel with a tilted, blurred timetable."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Sign-in, with a glimpse of the timetable behind it.</figcaption>
+  </figure>
+  <p class="cs__p">
+    Teacher management is a searchable list showing each teacher’s teaching load, home room and
+    grade, with view, edit and delete on every row. Schools can add teachers in bulk through Upload
+    CSV.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/keystone-scheduler-teachers.webp' | rel }}"
+      width="1514"
+      height="946"
+      alt="Teacher Management list with search, Add Teacher, Upload CSV and Export actions, and a table of teachers with email, teaching load, home room and grade."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Teacher management, with bulk upload by CSV.</figcaption>
+  </figure>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Visual system</h2>
+  <p class="cs__p">
+    A calm blue shell keeps colour for meaning. The header uses a royal blue (#2547D0) and actions a
+    brighter blue (#335CFF), while the KPI tiles use blue, green, purple and teal. Scenarios are
+    graded from Excellent to Poor, and the same scale appears on rank badges and success-rate pills.
+  </p>
+  <p class="cs__p">
+    Every screen shares one top navigation, the same page-header pattern and the same pagination, so
+    each new page feels familiar.
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">What the project set out to achieve</h2>
+  <p class="cs__p">These were the targets in the project brief, not measured results:</p>
+  <ul class="cs__p">
+    <li>Cut scheduling time from weeks to minutes.</li>
+    <li>Complete an optimization run within 3 minutes on recommended hardware.</li>
+    <li>Give repeatable results for unchanged inputs.</li>
+    <li>Let administrators lock assignments and re-optimize the rest.</li>
+    <li>Keep data on the school’s own infrastructure.</li>
+  </ul>
+  <p class="cs__p">
+    Planned next steps included conflict heatmaps to show bottlenecks, AI suggestions for relaxing
+    constraints when a schedule cannot be solved, and a teacher feedback module before schedules are
+    finalised.
+  </p>
+</section>

@@ -10,8 +10,12 @@
     badges       project type tags
     facts        [{ label, value }] shown under the summary (Role, Timeline, ...)
     demo         true shows the "Demo case study" note
-    cover        { alt, image? }  cover image; image defaults to the file name
-    glance       [{ word, text }] the three "At a glance" cards
+    headline     optional statement used as the page title; the project name then sits above it
+    lead         optional intro shown instead of summary (summary stays the meta description)
+    cover        { alt, image?, caption? }  cover image; image defaults to the file name
+    glance       optional [{ word, text }] the three "At a glance" cards
+    format       "story" for the numbered-section format (also add story.css to extraStyles);
+                 see akij-insaf.njk for its building blocks
     card         { desc, client, mark, alt, image? } the project card in lists
     moreWork     slugs of the projects shown under "More work"
     extraStyles  optional page-only stylesheets from assets/css/

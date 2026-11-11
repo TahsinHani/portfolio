@@ -9,7 +9,8 @@ layout: layouts/base.njk
 {% from "components/button.njk" import button %}
 {% from "components/project-card.njk" import projectGrid with context %}
 <main id="work">
-  <article class="cs">
+  {%- set story = format == "story" %}
+  <article class="cs{{ ' cs--story' if story }}">
     <header class="cs__top container">
       <nav class="crumbs" aria-label="Breadcrumb">
         <ol>
@@ -18,8 +19,11 @@ layout: layouts/base.njk
           <li aria-current="page">{{ title }}</li>
         </ol>
       </nav>
-      <h1 class="cs__title">{{ title }}</h1>
-      <p class="cs__summary">{{ summary }}</p>
+      {%- if headline %}
+      <p class="cs__eyebrow">{{ title }}</p>
+      {%- endif %}
+      <h1 class="cs__title">{{ headline or title }}</h1>
+      <p class="cs__summary">{{ lead or summary }}</p>
       <ul class="card__badges" aria-label="Project type">
         {%- for badge in badges %}
         <li class="badge">{{ badge }}</li>
@@ -40,8 +44,12 @@ layout: layouts/base.njk
 
     <figure class="cs__cover container">
       <img src="{{ ('/assets/images/projects/' + (cover.image or page.fileSlug) + '.webp') | rel }}" width="1200" height="900" alt="{{ cover.alt }}" fetchpriority="high" />
+      {%- if cover.caption %}
+      <figcaption>{{ cover.caption }}</figcaption>
+      {%- endif %}
     </figure>
 
+    {%- if glance %}
     <section class="cs__trio container" aria-label="At a glance">
       {%- for item in glance %}
       <div class="pcard">
@@ -50,6 +58,7 @@ layout: layouts/base.njk
       </div>
       {%- endfor %}
     </section>
+    {%- endif %}
 
     <div class="cs__body container">
       {{ content | safe }}
@@ -75,4 +84,7 @@ layout: layouts/base.njk
       </div>
     </section>
   </article>
+  {%- if story %}
+  <script defer src="{{ '/assets/js/story.js' | rel }}"></script>
+  {%- endif %}
 </main>

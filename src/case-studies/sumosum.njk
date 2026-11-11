@@ -1,0 +1,354 @@
+---
+title: SumoSum
+order: 3
+summary: >-
+  An AI-powered forecasting tool that turns a business idea into a financial model, so people can
+  see how their assumptions shape the numbers.
+badges:
+  - SaaS
+  - Business strategy
+  - AI forecasting
+facts:
+  - label: Role
+    value: UI/UX designer
+  - label: Research
+    value: Qualitative
+  - label: Platform
+    value: Web app, responsive
+  - label: Status
+    value: Launched
+demo: false
+cover:
+  alt: >-
+    The SumoSum logo above the forecast dashboard, with the AI forecast builder and the project list
+    behind it
+glance:
+  - word: Problem
+    text: >-
+      First-time founders know what they want to build but not how pricing, costs and sales volume
+      will change the health of the business. Spreadsheet models are a barrier.
+  - word: Approach
+    text: >-
+      Start from the idea, not the spreadsheet. Let AI draft the model, show what it understood, and
+      keep every assumption beside the charts it drives.
+  - word: Scope
+    text: >-
+      AI starter, forecast builder, dashboard with assumptions, charts and reports, guided tours,
+      projects and scenarios, plans and billing, and the admin panel.
+card:
+  desc: An AI forecasting tool that turns a business idea into a financial model you can explore.
+  client: SumoSum
+  mark: SS
+  alt: >-
+    The SumoSum logo above the forecast dashboard, with the AI forecast builder and the project list
+    behind it
+extraStyles:
+  - keystone.css
+moreWork:
+  - keystone-scheduler
+  - bloodconnect
+---
+
+<section class="cs__sec">
+  <h2 class="cs__h">Overview</h2>
+  <p class="cs__p">
+    Starting a business means making many decisions before you know whether they will work. How
+    much should the product cost? How many customers do you need to break even? What happens if
+    rent goes up? How much funding will you need?
+  </p>
+  <p class="cs__p">
+    SumoSum brings AI-assisted planning and financial modelling together. You describe the business
+    in plain words, and SumoSum builds a forecast you can explore and adjust. I was the UI/UX
+    designer, working in Figma on the product, the admin panel and the plans and billing flows. The
+    product is live at
+    <a href="https://sumosum.com/" target="_blank" rel="noopener"
+      >sumosum.com<span class="sr-only"> (opens in a new tab)</span></a
+    >.
+  </p>
+  <p class="cs__p">
+    One idea guided the design: <strong>strategy made visible</strong>. Don’t just show people the
+    numbers. Help them understand the decisions behind them.
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">The problem</h2>
+  <p class="cs__p">
+    Strategy is usually discussed in words, and financial planning is expressed in numbers, yet the
+    two are tightly linked. A founder can have a clear idea of the business without knowing how
+    pricing, customer acquisition, operating costs or sales volume will affect it.
+  </p>
+  <p class="cs__p">
+    Spreadsheet models are powerful, but they assume financial modelling skills many people don’t
+    have. The challenge was not only to calculate the numbers but to help people understand what
+    the numbers mean for their decisions.
+  </p>
+  <p class="cs__p">
+    So I framed the work around one question: how might we make business strategy and financial
+    modelling easier to understand, explore and act on, without burying people in financial
+    complexity?
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Who it’s for</h2>
+  <p class="cs__p">SumoSum serves people with very different levels of financial expertise:</p>
+  <ul class="cs__p">
+    <li>
+      <strong>First-time entrepreneurs</strong> need a simple starting point, help turning an idea
+      into a model, and a readable view of what might happen.
+    </li>
+    <li>
+      <strong>Accountants</strong> need a structured model where every assumption and output can be
+      checked.
+    </li>
+    <li>
+      <strong>Business advisors</strong> need a way to explain financial consequences, test other
+      scenarios and talk through a plan with a client.
+    </li>
+  </ul>
+  <p class="cs__p">
+    The product had to be simple enough for a beginner without limiting an expert. That tension
+    shaped most of the decisions below.
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Five design decisions</h2>
+
+  <h3 class="cs__h3">1. Start from the idea, not the spreadsheet</h3>
+  <p class="cs__p">
+    The home page opens with one question instead of a form full of financial fields. A single text
+    box asks people to tell SumoSum what they’ll sell, at what price and in what quantity, and the
+    AI builds the forecast from that. There is a microphone for people who would rather talk it
+    through.
+  </p>
+  <p class="cs__p">
+    People who think in a more structured way can switch to <strong>BMC Mode</strong>. It opens a
+    Business Model Canvas with its nine blocks, from Key Partners to Revenue Streams, or lets them
+    upload an existing canvas. Either way, the first step uses language founders already know.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/sumosum-starter.webp' | rel }}"
+      width="1400"
+      height="1368"
+      alt="SumoSum home page with the headline AI-Powered Forecasting Built on Your Ideas, a prompt box with a microphone, and a tour tooltip marked Step 1 of 7. Below it, a Try Business Model Canvas section shows the nine canvas blocks and a Submit to Get Your Forecast button."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      The AI starter: describe the business in one box, or fill in a Business Model Canvas.
+    </figcaption>
+  </figure>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/sumosum-canvas.webp' | rel }}"
+      width="1400"
+      height="874"
+      alt="Create Project modal titled Let SumoSum AI Build Your Financials, with a two-step progress indicator (Project Details, Prompt), the Business Model Canvas grid and a Single Input toggle."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      Inside the app, a new project uses the same two ways in: single input or canvas.
+    </figcaption>
+  </figure>
+
+  <h3 class="cs__h3">2. Make the AI understandable</h3>
+  <p class="cs__p">
+    A forecast that appears from nowhere is hard to trust. While SumoSum works, the builder shows
+    each stage (reading the prompt, collecting real-time data, processing with AI, generating the
+    forecast) with a progress bar and a step count.
+  </p>
+  <p class="cs__p">
+    Beside it, a <strong>Live Analysis</strong> panel restates the business in plain language: the
+    products and prices, growth rate, team, cost of goods and major expenses the AI has picked up.
+    People can see what the model will be built from and spot a misunderstanding before they reach
+    the charts. I explored this screen in more than one colour treatment.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/sumosum-builder.webp' | rel }}"
+      width="1400"
+      height="927"
+      alt="SumoSum AI forecast builder at Step 9 of 10 and 89 percent progress. On the left, a robot mascot announces Added 1 service: Bookkeeping Service. On the right, a Live Analysis panel summarises the business in a paragraph above a checklist of four stages."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      The forecast builder shows what the AI understood while it works.
+    </figcaption>
+  </figure>
+
+  <h3 class="cs__h3">3. Keep assumptions next to their consequences</h3>
+  <p class="cs__p">
+    The dashboard is the centre of the product. It stacks two connected panels: purple
+    <strong>Assumptions</strong> on top and red <strong>Charts &amp; Reports</strong> below. Change
+    an input and the charts underneath recalculate, so the link between a decision and its
+    financial effect stays on one screen.
+  </p>
+  <p class="cs__p">
+    Assumptions are split into eight categories so a model can be built in manageable pieces:
+    Setup, Products, Assets, Staff, Marketing, Admin, Services and Funding. Each field has an info
+    tooltip, and the panel has Footnotes and Comments for anyone reviewing the model, such as an
+    accountant or advisor.
+  </p>
+  <p class="cs__p">
+    The Charts tab covers Cash Balance, Income Breakdown, Income vs Expenses, Cash Flow, Use of
+    Funds and Burn Rate, with a time range and a relative-scale option. The Reports tab holds the
+    profit and loss, cash flow statement and balance sheet, and Export turns the whole forecast into
+    a report for sharing or pitching.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/sumosum-charts.webp' | rel }}"
+      width="1400"
+      height="874"
+      alt="Project dashboard for Buns Hawaii - Sandwich Truck, Base Case. A collapsed purple Assumptions bar sits above a red Charts and Reports panel with six charts: Cash Balance, Income Breakdown, Income vs Expenses, Cash Flow, Use of Funds and Burn Rate. A banner reads Save your Project - FREE! No credit card required."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      The dashboard: assumptions above, the charts they drive below.
+    </figcaption>
+  </figure>
+
+  <h3 class="cs__h3">4. Explain the charts, not just draw them</h3>
+  <p class="cs__p">
+    A chart shows an outcome but doesn’t say why it looks that way. I designed a 20-step guided tour
+    that explains each chart, assumption category and tab in plain terms. Burn Rate, for example,
+    “shows how quickly you’re using up your available funds” and helps a startup work out its
+    runway. The tour can be skipped at any step, and every chart keeps an info icon for later.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/sumosum-assumptions.webp' | rel }}"
+      width="1400"
+      height="878"
+      alt="Dashboard with the Assumptions panel open on its category tabs and fields such as Bank Account Interest, Credit Terms, Opening Cash Balance and Income Tax. A tour tooltip marked Step 8 of 20 reads Welcome to your forecasting workspace! with Skip and Next buttons."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      The guided tour introduces the assumptions workspace, one step at a time.
+    </figcaption>
+  </figure>
+
+  <h3 class="cs__h3">5. Let people try before they commit</h3>
+  <p class="cs__p">
+    Anyone can build a forecast as a guest. The project header invites them to save it, “FREE! No
+    credit card required”, and the tour ends with a prompt to sign up so they don’t lose their
+    progress. Value comes first and the account comes second.
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Projects, scenarios and sharing</h2>
+  <p class="cs__p">
+    A business model is a working document, not a one-off file. Each project holds one or more
+    scenarios, such as a base case and alternatives, so people can try a different price or cost
+    structure without overwriting their first plan. A project with no scenarios points straight to
+    Create Scenario.
+  </p>
+  <p class="cs__p">
+    The project list shows each person’s role and the number of members, and the sidebar adds My
+    Groups, My Templates and a community Directory, which supports the shared way accountants and
+    advisors work with business owners.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/sumosum-projects.webp' | rel }}"
+      width="1400"
+      height="874"
+      alt="Project list with a Project Overview card showing the current plan, billing frequency and total projects available. Below it, projects expand to show their scenarios, with role, member count and Actions on each row."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      Projects expand into scenarios, with the current plan and project allowance on top.
+    </figcaption>
+  </figure>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Pricing, subscription and product access</h2>
+  <p class="cs__p">
+    Plans in SumoSum are based on the number of projects, so I put the allowance where people use
+    it: the project list shows the current plan and how many project slots are left, with a link to
+    manage it.
+  </p>
+  <p class="cs__p">
+    Billing Information shows the current plan, renewal date and extra project slots beside a
+    billing summary that adds them up. Changing plans opens a confirmation that compares the project
+    count now and after the change, and warns clearly before anything would be lost. I also
+    designed flows for buying and removing extra project slots, and for upgrading or downgrading.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/sumosum-billing.webp' | rel }}"
+      width="1400"
+      height="874"
+      alt="Billing Information page with Payment and Billing tabs selected. A Current Plan card lists plan, frequency, project limit, purchase and renewal dates and extra projects. A Billing Summary card itemises the plan and additional project slots and shows the next billing total. A Change Plan button sits below."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Billing: what you have, what it costs, and how to change it.</figcaption>
+  </figure>
+  <p class="cs__p">
+    On the admin side, the team manages plans in one table with price, project allowance,
+    subscriber count, status and an on/off toggle. Admins can create and edit plans and add-ons,
+    such as extra projects, from the same panel.
+  </p>
+  <figure class="cs__fig">
+    <img
+      src="{{ '/assets/images/projects/sumosum-admin.webp' | rel }}"
+      width="1400"
+      height="874"
+      alt="Admin panel Plan List with columns for plan name, price per month, projects, subscribers, status badges, an edit action and a mode toggle. An Add-On card for Extra Project sits below, with an Edit button."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>
+      The admin panel: plans and add-ons in one place. Figures are placeholder data.
+    </figcaption>
+  </figure>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Beyond the core flow</h2>
+  <p class="cs__p">
+    The Figma work also covers loading screens and a loading carousel that previews charts, reports
+    and features while the AI works, alert screens, mobile and tablet layouts, the marketing site,
+    and a WordPress plugin version of the single-input starter.
+  </p>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Design principles</h2>
+  <ul class="cs__p">
+    <li>
+      <strong>Make complexity approachable.</strong> Break financial concepts into steps people
+      already understand.
+    </li>
+    <li>
+      <strong>Connect inputs to outcomes.</strong> Keep every assumption near the result it changes.
+    </li>
+    <li>
+      <strong>Make AI understandable.</strong> Show what the AI is doing and what it understood.
+    </li>
+    <li>
+      <strong>Support exploration.</strong> Scenarios make it safe to ask “what if?”
+    </li>
+    <li>
+      <strong>Design for every level of expertise.</strong> Start simple without capping the depth
+      an expert needs.
+    </li>
+  </ul>
+</section>
+<section class="cs__sec">
+  <h2 class="cs__h">Reflection</h2>
+  <p class="cs__p">
+    Designing for business strategy and financial modelling takes more than arranging charts, forms
+    and dashboard components. It means understanding how people think about decisions and how to
+    show complex relationships without oversimplifying them.
+  </p>
+  <p class="cs__p">
+    The biggest lesson: a good strategy tool shouldn’t just produce an answer. It should help people
+    understand the assumptions behind that answer and explore what happens when they change.
+    Strategy is most useful when people can see it, question it and work with it.
+  </p>
+</section>

@@ -8,7 +8,8 @@
   Body structure: numbered sections, each <section class="cs__sec" aria-labelledby="sN"> with a
   kicker <p class="st-k rv">01 · Challenge</p>, a heading <h2 class="cs__h rv" id="sN">, an intro
   <p class="cs__p rv"> and then building blocks: cards (.st-grid + .pcard), a callout (.st-callout),
-  a numbered list (.st-list), stats (.st-stats), decision rows (.st-split), tabs (.st-tabs),
+  a numbered list (.st-list; an item may open with <strong>Title</strong>, which puts its
+  description on the next line), stats (.st-stats), decision rows (.st-split), tabs (.st-tabs),
   a colour palette (.st-pal) and notes (.st-note). The usual order is Challenge, Research, Defining
   the experience, Key UX decisions, Visual design, Core screens, Launch or handoff, Reflection; leave
   out a section the project has nothing true to say about.

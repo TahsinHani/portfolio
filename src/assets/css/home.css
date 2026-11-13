@@ -1298,7 +1298,8 @@ a {
 }
 .process__accent,
 .writing__accent,
-.connect__accent {
+.connect__accent,
+.glance__accent {
   color: #36416d;
 }
 .work__intro h2 {
@@ -2629,4 +2630,227 @@ a {
   line-height: 1;
   margin-left: 12px;
   vertical-align: middle;
+}
+
+/* ---------- At a glance: sliding row of photo cards (partials/home/glance.njk, glance.js) ----------
+   One row inside the content container. Cards repeat four shapes in order (a: small square, b: wide,
+   c: tall, d: landscape), top-aligned. Each card is a white box (8px corners, 8px padding) holding the
+   image and its caption.
+   --glance-u is the base card size; each shape sets its width and image height from it.
+   Default (no JS): the row scrolls sideways by itself. .glance--live (glance.js): the track is moved with
+   a transform, copies loop it and the ‹ › buttons show. */
+/* Background: the misty mountains photo (glance-bg.webp) fills the gap between Writing and "At a glance",
+   full width: it sits just above the section, in Writing's bottom padding (200px on wide screens, 120px
+   below 1024px), at about the strength of the Work section's painting, with its top and bottom edges
+   dissolving into the white page. The ridges are kept in view (background-position y 30%). */
+.glance {
+  --glance-band: 120px;
+  isolation: isolate;
+  position: relative;
+}
+@media (width>=1024px) {
+  .glance {
+    --glance-band: 200px;
+  }
+}
+.glance__bg {
+  z-index: -1;
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 100%;
+  height: var(--glance-band);
+  background-position: 50% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+  /* two masks, both must allow a pixel: (1) top and bottom dissolve into white, the bottom over a longer
+     stretch so the band melts away before the heading; (2) the left side, where the dark ridge sits above
+     the heading, is held to about 40% so it never competes with the title */
+  -webkit-mask-image:
+    linear-gradient(transparent, #000 30%, #000 45%, transparent),
+    linear-gradient(90deg, #0006 0, #0006 30%, #000 65%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(transparent, #000 30%, #000 45%, transparent),
+    linear-gradient(90deg, #0006 0, #0006 30%, #000 65%);
+  mask-composite: intersect;
+}
+.glance {
+  --glance-gap: 20px;
+  --glance-u: clamp(180px, 19vw, 290px);
+}
+@media (width < 640px) {
+  .glance {
+    --glance-gap: 14px;
+    --glance-u: 62vw;
+  }
+}
+.glance__head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--space-5);
+}
+.glance__head .section-head {
+  text-align: left;
+  margin-bottom: 0;
+}
+.glance__arrows {
+  display: none;
+  flex: none;
+  gap: 8px;
+}
+.glance--live .glance__arrows {
+  display: flex;
+}
+.glance__arrow {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: none;
+  color: #282828cc;
+  cursor: pointer;
+  transition:
+    color 0.25s var(--ease),
+    scale 0.25s var(--ease);
+}
+.glance__arrow:hover {
+  color: #282828;
+  scale: 1.1;
+}
+.glance__arrow:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+.glance__viewport {
+  margin-top: var(--space-6);
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+.glance__viewport::-webkit-scrollbar {
+  display: none;
+}
+.glance--live .glance__viewport {
+  overflow: hidden;
+}
+.glance__track {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--glance-gap);
+  width: max-content;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.glance--live .glance__track {
+  will-change: transform;
+}
+.glance__item {
+  flex: none;
+  width: calc(var(--glance-u) * var(--w));
+}
+/* the four shapes: width and image height, in base units */
+.glance__item--a {
+  --w: 0.8;
+  --h: 0.9;
+}
+.glance__item--b {
+  --w: 1.18;
+  --h: 1.02;
+}
+.glance__item--c {
+  --w: 1;
+  --h: 1.28;
+}
+.glance__item--d {
+  --w: 1.06;
+  --h: 0.88;
+}
+/* the card: a white box with 8px corners and 8px padding around the image and its caption */
+.glance__card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  column-gap: 8px;
+  row-gap: 4px;
+  padding: 8px 8px 12px;
+  border: 1px solid #ece8e3;
+  border-radius: 8px;
+  background: var(--color-surface);
+  color: var(--color-ink);
+  text-decoration: none;
+}
+.glance__frame {
+  grid-column: 1 / -1;
+  display: block;
+  height: calc(var(--glance-u) * var(--h));
+  margin-bottom: 8px;
+  /* inner corners follow the card: 8px card radius minus 8px padding, softened to 4px */
+  border-radius: 4px;
+  overflow: hidden;
+  background: var(--color-surface-tint);
+}
+.glance__img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  user-select: none;
+  transition: scale 0.6s var(--ease);
+}
+/* the round ↗ at the right of the caption, level with the title and the grey line: a 16px icon with
+   8px of space around it (a 32px white circle with a barely-there shadow); it fills with blue when the
+   card is hovered or focused */
+.glance__go {
+  grid-column: 2;
+  grid-row: 2 / span 2;
+  align-self: center;
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  padding: 8px;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #ffffff;
+  box-shadow: 0 1px 4px #0f2f420f;
+  color: var(--color-ink);
+  transition:
+    background 0.3s var(--ease),
+    color 0.3s var(--ease);
+}
+.glance__card:hover .glance__go,
+.glance__card:focus-visible .glance__go {
+  background: #36416d;
+  color: #fff;
+}
+.glance__card:hover .glance__img {
+  scale: 1.04;
+}
+.glance__title,
+.glance__meta {
+  padding-inline: 4px;
+}
+.glance__title {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.005em;
+  line-height: 1.3;
+}
+.glance__meta {
+  font-size: 13px;
+  color: var(--color-ink-secondary);
+}
+.glance__card:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  .glance__img {
+    transition: none;
+  }
 }

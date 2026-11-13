@@ -169,24 +169,39 @@
     grid-template-columns: repeat(3, 1fr);
   }
 }
+/* The number hangs in the left gutter (negative text-indent) so it shares the first line's baseline
+   and wrapped lines align under the text. An item can open with a <strong> title: the title stays on
+   the number's line, and an 8px block after it starts the description on a new line below. */
 .st-list li {
+  --st-num: 1.25rem;
   counter-increment: st;
-  gap: var(--space-3);
-  align-items: baseline;
   padding-block: var(--space-4);
+  padding-left: calc(var(--st-num) + var(--space-3));
+  text-indent: calc(-1 * (var(--st-num) + var(--space-3)));
   border-bottom: var(--border-hairline);
   font-family: var(--font-display);
   font-size: var(--text-body);
   font-weight: 400;
   color: var(--color-ink-secondary);
   line-height: 1.35;
-  display: flex;
 }
 .st-list li:before {
   content: counter(st, decimal-leading-zero);
+  display: inline-block;
+  width: var(--st-num);
+  margin-right: var(--space-3);
+  text-indent: 0;
   color: var(--st-accent);
   font-size: var(--text-meta);
   letter-spacing: 0.08em;
+}
+.st-list li > strong:first-child {
+  font-weight: 500;
+}
+.st-list li > strong:first-child:after {
+  content: "";
+  display: block;
+  height: 8px;
 }
 
 /* Decision beside its screen: text stays in view while the image scrolls (desktop) */

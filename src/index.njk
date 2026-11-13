@@ -8,7 +8,55 @@ stylesheet: home.css
 floatCta: true
 
 # Projects shown in "Product challenges I’ve worked on" (file names in src/case-studies/).
-featuredWork: [bloodconnect, keystone-scheduler, sumosum, akij-insaf]
+featuredWork: [bloodconnect, keystone-scheduler, sumosum, akij-insaf, akij-bakers, skillcoach]
+
+# "At a glance": the sliding row of photo cards between Writing and the map (glance.js). Cards come in four
+# shapes that repeat in order (small square, wide, tall, landscape), each with a caption underneath.
+#   image     path from the site root    alt   what the image shows
+#   title     caption title    meta  small grey line under it
+#   url       where the card goes: a site path (e.g. /work/sumosum/index.html) or a full https:// link
+#   external  true when url is another website (opens in a new tab)
+glance:
+  - image: /assets/images/projects/bloodconnect.webp
+    alt: Three BloodConnect app screens, getting started, home and blood requests
+    title: BloodConnect
+    meta: Mobile app · Craftsmen
+    url: /work/bloodconnect/index.html
+  - image: /assets/images/projects/keystone-scheduler-scenarios.webp
+    alt: Keystone Scheduler scenario cards, each with its status, rank and metrics, and Add to Compare
+    title: Timetable Scenarios
+    meta: Keystone Scheduler
+    url: /work/keystone-scheduler/index.html
+  - image: /assets/images/projects/sumosum.webp
+    alt: The SumoSum logo above the forecast dashboard, with the AI forecast builder and the project list behind it
+    title: SumoSum
+    meta: AI forecasting · SumoSum
+    url: /work/sumosum/index.html
+  - image: /assets/images/projects/akij-insaf.webp
+    alt: Akij Insaf homepage hero, "Precision Diagnosis, Faster Recovery", with Book Appointment and Find a Doctor buttons
+    title: Akij Insaf Diagnostic Center
+    meta: Website · Healthcare
+    url: /work/akij-insaf/index.html
+  - image: /assets/images/projects/bloodconnect-flow.webp
+    alt: Three BloodConnect registration screens, with the code sent by WhatsApp or email
+    title: Quick Sign-up
+    meta: BloodConnect
+    url: /work/bloodconnect/index.html
+  - image: /assets/images/projects/keystone-scheduler.webp
+    alt: The Keystone Academy crest above the Scheduler dashboard, with the scenario screens behind it
+    title: Keystone Scheduler
+    meta: Web app · Keystone Academy
+    url: /work/keystone-scheduler/index.html
+  - image: /assets/images/projects/sumosum-charts.webp
+    alt: SumoSum project dashboard, assumptions above six charts such as cash balance, cash flow and burn rate
+    title: Forecast Dashboard
+    meta: SumoSum
+    url: /work/sumosum/index.html
+  - image: /assets/images/projects/akij-insaf-doctors.webp
+    alt: Akij Insaf specialists page with search, filters, an A to Z index and doctor cards
+    title: Finding a Specialist
+    meta: Akij Insaf Diagnostic Center
+    url: /work/akij-insaf/index.html
 
 # "From the right question to a considered solution"
 process:
@@ -111,5 +159,6 @@ mapPins:
   {% include "partials/home/process.njk" %}
   {% include "partials/home/about.njk" %}
   {% include "partials/home/writing.njk" %}
+  {% include "partials/home/glance.njk" %}
   {% include "partials/home/connect.njk" %}
 </main>

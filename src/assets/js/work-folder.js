@@ -66,7 +66,8 @@
         o.forEach((t, n) => {
           let r = u[n];
           if (!r) return;
-          let i = m(Math.min(1, Math.max(0, (e - n * 0.05) / 0.85))),
+          // Each card starts 0.05 after the one before; the span is sized so the last card lands at 1 (0.85 with 4 cards).
+          let i = m(Math.min(1, Math.max(0, (e - n * 0.05) / (1 - (o.length - 1) * 0.05)))),
             a = 1 - i;
           ((t.style.transform = `translate3d(${(r.dx * a).toFixed(1)}px, ${(r.dy * a).toFixed(1)}px, 0) rotate(${(r.rot * a).toFixed(2)}deg) scale(${(l + 0.43999999999999995 * i).toFixed(4)})`),
             (t.style.zIndex = String(i < 1 ? 10 - n : 0)));

@@ -1,0 +1,53 @@
+{#- Homepage "At a glance": one row of photo cards inside the content container that drifts slowly from right
+    to left, between Writing and the map. Cards come in four shapes that repeat in order (small square, wide,
+    tall, landscape), top-aligned, each with a caption (title, then a small grey line); the whole card is a link.
+    Cards come from the homepage front matter → glance. The title and subtitle sit on the left with the ‹ ›
+    buttons on the right; the buttons move the row one card at a time. glance.js loops the row (it adds copies
+    of the cards, hidden from screen readers and the keyboard) and pauses it on hover and focus.
+    Without JS the row scrolls sideways and the buttons stay hidden. Styles: .glance in home.css. #}
+<section class="section glance" id="glance" aria-labelledby="glance-h" data-glance>
+  {#- misty mountains behind the section, faded like the Work section's background (.glance__bg in home.css) #}
+  <div class="glance__bg" aria-hidden="true" style="background-image: url({{ '/assets/images/glance-bg.webp' | rel }})"></div>
+  <div class="container">
+    <div class="glance__head">
+      <div class="section-head">
+        <h2 id="glance-h">At a <span class="glance__accent">glance</span></h2>
+        <p>Screens, flows and small details from the products I’ve designed, in one easy scroll.</p>
+      </div>
+      {#- The arrow icons are cropped to their circle (viewBox 1.25–22.75) so the 24px icon is the circle itself
+          and the 8px gap between the buttons is exactly the space between the two circles. #}
+      <div class="glance__arrows">
+        <button class="glance__arrow glance__arrow--prev" type="button" aria-label="Previous cards">
+          <svg viewBox="1.25 1.25 21.5 21.5" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-miterlimit="10" />
+            <path d="M13.26 15.53L9.73999 12L13.26 8.46997" />
+          </svg>
+        </button>
+        <button class="glance__arrow glance__arrow--next" type="button" aria-label="Next cards">
+          <svg viewBox="1.25 1.25 21.5 21.5" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+            <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" stroke-miterlimit="10" />
+            <path d="M10.74 15.53L14.26 12L10.74 8.46997" />
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="glance__viewport">
+      <ul class="glance__track">
+        {%- for item in glance %}
+        {%- set href = item.url if item.external else (item.url | rel) %}
+        <li class="glance__item glance__item--{{ ['a', 'b', 'c', 'd'][loop.index0 % 4] }}">
+          <a class="glance__card" href="{{ href }}"{% if item.external %} target="_blank" rel="noopener"{% endif %}>
+            <span class="glance__frame"><img class="glance__img" src="{{ item.image | rel }}" alt="{{ item.alt }}" loading="lazy" decoding="async" draggable="false" /></span>
+            <span class="glance__title">{{ item.title }}</span>
+            <span class="glance__meta">{{ item.meta }}</span>
+            {#- the round ↗ beside the caption: the whole card is the link; this marks where it goes #}
+            <span class="glance__go" aria-hidden="true"><svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M20.5 22H3.5" /><path d="M19 3.5L5 17.5" /><path d="M19 13.77V3.5H8.73" /></svg></span>
+            {%- if item.external %}<span class="sr-only"> (opens in a new tab)</span>{% endif %}
+          </a>
+        </li>
+        {%- endfor %}
+      </ul>
+    </div>
+  </div>
+</section>
+<script defer src="{{ '/assets/js/glance.js' | rel }}"></script>

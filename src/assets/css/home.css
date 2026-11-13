@@ -47,19 +47,15 @@
   --color-bg: #fff;
   --color-surface: #fff;
   --color-surface-sunken: #f0f0f0;
-  --color-surface-tint: #f4f5fa; /* cool tinted surface for content cards */
   --color-line: #e0e0e0;
   --color-on-ink: #fff;
   --color-ink-hover: color-mix(in srgb, var(--color-ink) 91%, #fff);
   --font-title: "Outfit", var(--font-display);
   --font-hand: "Satisfy", cursive;
-  --color-sun: #ee7f2d;
   --color-accent: #1b4965;
   --font-display: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --font-text: "Urbanist", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --text-display: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);
-  --text-title: clamp(2.25rem, 1.5rem + 3vw, 4rem);
-  --text-section: clamp(1.875rem, 1.3rem + 2.2vw, 3rem);
   --text-card: clamp(1.375rem, 1.1rem + 1vw, 1.75rem);
   --text-sub: clamp(1.125rem, 1.05rem + 0.3vw, 1.25rem);
   --text-body-lg: 1.125rem;
@@ -74,22 +70,15 @@
   --space-7: 3rem;
   --space-8: 4rem;
   --space-9: 6rem;
-  --space-10: 8rem;
-  --space-11: 10rem;
-  --gutter: 1rem;
   --margin: 1rem;
-  --radius-sm: 8px;
-  --radius-md: 16px;
   --radius-lg: 24px;
   --radius-pill: 999px;
   --border-hairline: 1px solid var(--color-line);
-  --border-strong: 1px solid var(--color-ink);
   --shadow: 0 4px 12px #0000000a; /* Y 4, blur 12, #000000 at 4% */
   --frame: 1920px;
   --page-pad: 1rem;
   --container-max: 1440px;
   --container-wide: 100%;
-  --container-text: 42.5rem;
   --btn-height: 3rem;
   --btn-height-compact: 2.5rem;
   --btn-line: 1.25rem;
@@ -99,7 +88,6 @@
 }
 @media (width>=640px) {
   :root {
-    --gutter: 1.5rem;
     --margin: 2rem;
     --page-pad: 2rem;
   }
@@ -139,7 +127,6 @@ body {
 a,
 button,
 summary,
-[role="button"],
 .pola__card {
   cursor:
     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAFL0lEQVR4nK1W309URxT+7p2bZXddlA2xBhOIKT42sS8lUB5An+iLSdP4oI1Jo2mT+g/0iZiYQpo+m1ZJRekDoS0/drnKUoKuYqi4qwmUUBIibijK0rosK8veuXfunZk+7N11XUGh+iWTm8ydM9/5zjlzZpT29vabtm03T01N3ZucnOywbXscL6ABEO54J1Adx2ngnJNAINBSWVmpV1RURAkhZwAEATgumQqAAFDemvHYsWN3jx8/Lqanp51wOOycPXtW1tfXy0AgsEQI+R7AB2Umb0fs9Xrb9u/fb0UiEWdlZUUsLy+LBw8eOJ2dnbypqUnu27fP8Hg8uqIonwKoKCMm/4dT83q9986dOyeWl5f52tqaSKfTIplMisXFRd7b22ufPHlSHjx4UPh8vj8JId8AqC2xV3ajWgEAQsjXhw8f/mFgYIDX1NSomqZBiHydWJYF0zRlIpEQIyMjyujoKFlaWvrXNM0bjLGrAO6WqZZ4TZEVvHovEAjMdnZ2Vp84cUL1er1QVRVSyiIx5xyMMWQyGXn79m2h67oWi8WcXC435ThOD+e8H0DG3U919xauA6+Eg2uadrm1tfXLrq4uGQwGFU3TXvKsQC6lBGMMhmHIubk5EQ6Hya1bt5TV1dWEaZq/cc5/BjBXYqoB4AXiIiGAxurq6rs9PT1KY2Oj6vF4oCjKK3mRUkrOeVG1aZpIJpNibGxM0XVdnZ+fp5TSm7Ztd0spRwBYJeEWhQ0VAEpFRcXE6dOnPz5//jz8fj/KVW4Hzjksy4JhGPL+/ftS13Vy584drK+vzzLGejnnvQD+Ls2hBsBRVfXMoUOHfhocHBS1tbXqTgld5QAA0zSLRRaJRJTR0VGSSCRShmH8wjlvL1UoAQT37Nkzc+HChZpTp04Rv9+/Y8JStYWvaZoylUrJUCjELl265KOUnlcLDiIf43XTNIfC4bBmWVY+yYqy4wEAhOR7geM4SKfTcnx8HLqu+9bW1jY2NjamSouiUDwfBoPBqe7ubq2lpUUlhIAQ8tpDzTmXAMAYg2ma8tGjRyIUCqljY2PqkydPVgzD6OecXwbwV2mSOPLnZzqXy/0xNDTU2tDQgEAgsC2RzAOMMeRyORmLxUQoFNKi0aiayWRmGWNX3YL5xzV5xXHNDePndXV18uHDh876+rrIZrNic3NTlo5sNisymYxYWFjgFy9edI4ePSqrqqpMj8czqijKZwA8ZdFTy8lKPaj0+/2Jjo4OJ5lMikwmI8rJnj9/LmZmZnhzczPbu3fvmqZpXQA+2kLAS6rKWaW7KGtZ1q/Xr18nlFJZtgZCCFBK0d/fL2ZmZlY3NjaaHMf5CkAcL9+dDspa21YyBQBwznvm5+eteDwuHceBG+piNW5ubspwOKxRSq8AWED+6lJd+2IrK8d2hCqAvwzDiIZCIZVSWmzijuOAMYZoNCqXlpY2OedX3fU2dvAU2TKRhXnbtq9MTEwoT58+FZxz6Za/NAxDDgwMEErpMPItq3AzvBHbEXIAipTyRjqdXohEIqCUgnMOzjlmZ2dFLBZjjLEfscvnxnaEhc5DGWN9uq4Xi4dSisHBQTWXy8UBTJY4+NYoOPN+VVVV9tq1a/bKyoqIx+NOXV2dVBTlC/f/zjs8tlcIvCiex4Zh/D48PEyePXsmRkZGRCqVeiylHHDXvRN1BRReZZ8cOHDA7uvrM44cOSIIIR3u/K7U7QSKOzwejyfW1tZm+3y+FIB6d/51EdoSbzKQ7sYMwLeU0mXO+XcAFrGLo1CK/wD3GgVFjMsUbwAAAABJRU5ErkJggg==)
@@ -306,11 +293,6 @@ a {
   --_bd: var(--color-on-ink);
   --_bg-hover: #e6e6e6;
 }
-.btn--surface {
-  --_bg: var(--color-surface);
-  --_bd: var(--color-line);
-  --_bg-hover: var(--color-surface-sunken);
-}
 .btn:hover,
 .btn:focus-visible {
   background: var(--_bg-hover);
@@ -323,10 +305,6 @@ a {
   outline-offset: 3px;
   border-radius: var(--radius-pill);
   box-shadow: inset 0 0 0 1px #fff;
-}
-.btn[aria-disabled="true"] {
-  opacity: 0.4;
-  pointer-events: none;
 }
 .btn__icon {
   flex: none;
@@ -758,9 +736,6 @@ a {
 .note--blue .note__title,
 .note--blue .note__hand {
   color: #fff;
-}
-.note--pink {
-  background: #f7bcd3;
 }
 .note__label {
   font-family: var(--font-display);
@@ -1357,25 +1332,6 @@ a {
     will-change: transform;
     backface-visibility: hidden;
   }
-}
-.allwork {
-  padding-top: 8rem;
-}
-.allwork__grid {
-  gap: var(--space-6);
-  margin-top: var(--space-7);
-  grid-template-columns: 1fr;
-  padding: 0;
-  list-style: none;
-  display: grid;
-}
-@media (width>=1024px) {
-  .allwork__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-.allwork__back {
-  margin-bottom: var(--space-5);
 }
 .work {
   padding-top: 0;
@@ -2247,13 +2203,23 @@ a {
   font-size: 16px;
   font-weight: 500;
 }
-.footer__links {
-  align-items: center;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
+.footer__hint kbd {
+  font-family: var(--font-text);
+  color: var(--color-ink);
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-bottom-width: 2px;
+  border-radius: 6px;
+  margin-inline: 2px;
+  padding: 1px 7px;
+  font-size: 14px;
+  font-weight: 600;
+}
+/* Touch-only screens have no G key to press. */
+@media (hover: none) {
+  .footer__hint {
+    display: none;
+  }
 }
 .social-link {
   color: #0f2f42;
@@ -2269,30 +2235,6 @@ a {
   width: 24px;
   height: 24px;
   display: block;
-}
-.icon-btn {
-  border: var(--border-strong);
-  width: 44px;
-  height: 44px;
-  color: var(--color-ink);
-  transition: background-color var(--dur-fast) var(--ease);
-  border-radius: 50%;
-  justify-content: center;
-  align-items: center;
-  text-decoration: none;
-  display: inline-flex;
-}
-.icon-btn:hover {
-  background: #2121210f;
-}
-.icon-btn svg {
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5px;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  width: 18px;
-  height: 18px;
 }
 .float-cta {
   z-index: 40;
@@ -2566,156 +2508,26 @@ a {
 .cpanel--still :is(.cwin > img, .cpanel__arrow, .cpanel__arrow-draw, .cpanel__arrow-flicks) {
   transition: none !important;
 }
-.cs__top {
-  width: min(100% - 2 * var(--margin), var(--container-wide));
-  gap: var(--space-4);
-  flex-direction: column;
-  padding-top: 8rem;
-  display: flex;
+/* Once the arrow has finished pointing at "Coming Soon" (head drawn at 1.6s), one smooth sine wave runs
+   through the social icons, left to right, to carry the motion on: each icon rises, dips a little below
+   its line and settles, a beat after the one before (--i is its position, set in contact-card.njk).
+   It plays once each time the window opens; without JS or with reduced motion it never runs. */
+.cpanel--animate.is-open .cpanel__social li {
+  animation: cpanel-wave 0.9s cubic-bezier(0.37, 0, 0.63, 1) calc(1.65s + var(--i, 0) * 0.09s) both;
 }
-.crumbs ol {
-  gap: var(--space-2);
-  color: var(--color-ink-secondary);
-  font-size: var(--text-meta);
-  flex-wrap: wrap;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  display: flex;
-}
-.crumbs li + li:before {
-  content: "/";
-  margin-right: var(--space-2);
-}
-.crumbs a {
-  text-underline-offset: 3px;
-}
-.cs__title {
-  font-size: var(--text-title);
-  letter-spacing: -0.03em;
-  line-height: 1.04;
-}
-.cs__summary {
-  max-width: 42rem;
-  font-size: var(--text-body-lg);
-  color: var(--color-ink-secondary);
-  text-wrap: pretty;
-  line-height: 1.45;
-}
-.cs__top .card__badges {
-  margin: 0;
-  padding: 0;
-}
-.cs__meta {
-  gap: var(--space-4);
-  margin: var(--space-3) 0 0;
-  padding-block: var(--space-4);
-  border-block: var(--border-hairline);
-  grid-template-columns: repeat(2, 1fr);
-  display: grid;
-}
-.cs__meta dt {
-  color: var(--color-ink-secondary);
-  font-size: var(--text-meta);
-}
-.cs__meta dd {
-  font-family: var(--font-display);
-  margin: 2px 0 0;
-  font-weight: 500;
-}
-@media (width>=768px) {
-  .cs__meta {
-    grid-template-columns: repeat(4, 1fr);
+@keyframes cpanel-wave {
+  0% {
+    translate: 0 0;
   }
-}
-.cs__demo {
-  font-size: var(--text-meta);
-  color: var(--color-ink-secondary);
-}
-.cs__cover {
-  margin-top: var(--space-6);
-  width: min(100% - 2 * var(--margin), var(--container-wide));
-  margin-inline: auto;
-  padding: 0;
-}
-.cs__cover img {
-  border: var(--border-hairline);
-  background: var(--color-surface-sunken);
-  border-radius: 8px;
-  width: 100%;
-  height: auto;
-}
-.cs__trio {
-  gap: var(--space-4);
-  margin-top: var(--space-6);
-  width: min(100% - 2 * var(--margin), var(--container-wide));
-  display: grid;
-}
-.cs__trio .pcard {
-  min-height: 0;
-  padding: var(--space-5);
-  position: static;
-}
-@media (width>=768px) {
-  .cs__trio {
-    grid-template-columns: repeat(3, 1fr);
+  35% {
+    translate: 0 -7px;
   }
-}
-.cs__body {
-  margin-top: var(--space-8);
-  width: min(100% - 2 * var(--margin), var(--container-wide));
-  gap: var(--space-8);
-  flex-direction: column;
-  display: flex;
-}
-.cs__sec {
-  gap: var(--space-4);
-  flex-direction: column;
-  display: flex;
-}
-.cs__sec > :not(.cs__fig) {
-  max-width: var(--container-text);
-}
-.cs__h {
-  font-size: var(--text-section);
-  letter-spacing: -0.025em;
-  line-height: 1.08;
-}
-.cs__p {
-  font-size: var(--text-body-lg);
-  color: var(--color-ink-secondary);
-  text-wrap: pretty;
-  line-height: 1.55;
-}
-.cs__fig {
-  margin: var(--space-3) 0 0;
-}
-.cs__fig img {
-  border: var(--border-hairline);
-  background: var(--color-surface-sunken);
-  border-radius: 8px;
-  width: 100%;
-  height: auto;
-}
-.cs__fig figcaption {
-  margin-top: var(--space-2);
-  color: var(--color-ink-secondary);
-  font-size: var(--text-meta);
-}
-.cs__more {
-  margin-top: var(--space-9);
-  width: min(100% - 2 * var(--margin), var(--container-wide));
-}
-.cs__moregrid {
-  grid-template-columns: 1fr;
-}
-@media (width>=1024px) {
-  .cs__moregrid {
-    grid-template-columns: repeat(2, 1fr);
+  70% {
+    translate: 0 2.5px;
   }
-}
-.cs__cta {
-  margin-top: var(--space-5);
+  100% {
+    translate: 0 0;
+  }
 }
 
 .wpost__foot {

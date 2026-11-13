@@ -3,6 +3,7 @@ layout: layouts/base.njk
 metaTitle: All work · Tahsin
 description: Selected product design projects by Tahsin.
 stylesheet: work.css
+footer: true
 ---
 {% from "components/button.njk" import button %}
 {% from "components/project-card.njk" import projectGrid with context %}
@@ -17,6 +18,12 @@ stylesheet: work.css
         <p>Product design across web, mobile and kiosk. Demo projects for now.</p>
       </div>
       {{ projectGrid(collections.caseStudies, class="allwork__grid", heading="h2") }}
+    </div>
+  </section>
+  <section class="section connect" id="connect" aria-labelledby="contact-h">
+    <div class="container">
+      {% set contactHeading = "h2" %}
+      {% include "partials/contact-card.njk" %}
     </div>
   </section>
 </main>

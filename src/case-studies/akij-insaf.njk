@@ -1,7 +1,6 @@
 ---
 title: Akij Insaf Diagnostic Center
 order: 4
-format: story
 headline: Making healthcare information easier to find and act on
 summary: >-
   A website that helps patients find the right services, doctors and departments, and know how to
@@ -14,18 +13,14 @@ badges:
   - Healthcare
   - Launched
 facts:
-  - label: Product
-    value: Diagnostic center website
   - label: My role
-    value: End-to-end UI/UX designer
-  - label: Tools
-    value: Figma
-  - label: Scope
-    value: Research, structure, UX, UI
+    value: End-to-end UI/UX
   - label: Research
-    value: Competitor and benchmark analysis
+    value: Competitor & benchmark analysis
+  - label: Scope
+    value: 6 core pages
   - label: Status
-    value: Developed and launched
+    value: Developed & launched
 demo: false
 cover:
   image: akij-insaf-cover
@@ -52,8 +47,17 @@ card:
   alt: >-
     Akij Insaf homepage hero, "Precision Diagnosis, Faster Recovery", with Book Appointment and Find
     a Doctor buttons over an MRI scanner
-extraStyles:
-  - story.css
+credits:
+  - label: Role
+    value: End-to-end UI/UX design
+  - label: Research
+    value: Competitor & benchmark analysis
+  - label: Pages designed
+    value: Homepage, About, Doctors, Departments, Services, Contact
+  - label: Status
+    value: Developed & launched
+  - label: Tools
+    value: Figma
 moreWork:
   - sumosum
   - bloodconnect
@@ -88,8 +92,7 @@ moreWork:
       <p class="pcard__text">Where can visitors find contact and appointment information?</p>
     </div>
   </div>
-  <div class="st-callout st-wide rv">
-    <p class="st-k">The design question</p>
+  <div class="st-callout rv">
     <p class="st-bh">
       How might we make healthcare information easier to discover, and help visitors move from
       browsing to taking action?
@@ -201,7 +204,7 @@ moreWork:
   </p>
 
   <h3 class="st-sub rv">Visitor journey: from first visit to getting in touch</h3>
-  <div class="st-wide rv">
+  <div class="st-wide st-tabset--steady rv">
     <div class="st-tabs" role="tablist" aria-label="Visitor journey steps">
       <button class="st-tab" type="button" role="tab" id="t-j1" aria-controls="p-j1">1. Land on the homepage</button>
       <button class="st-tab" type="button" role="tab" id="t-j2" aria-controls="p-j2">2. Find a department</button>
@@ -264,15 +267,6 @@ moreWork:
           and specialty, and a summary card shows their present institute, education and degree.
         </p>
       </div>
-      <div class="st-decision">
-        <p class="st-k">Decision C</p>
-        <h3 class="st-bh">Offer a call-center option beside Book Appointment</h3>
-        <p class="cs__p">
-          Not everyone wants to book online. The 10622 hotline sits right beside
-          <strong>Book Appointment</strong>, and again in the top bar and the closing call to action
-          on every page.
-        </p>
-      </div>
     </div>
     <figure class="cs__fig rv">
       <img
@@ -283,7 +277,35 @@ moreWork:
         loading="lazy"
         decoding="async"
       />
-      <figcaption>Doctor profile, professional details first, with Book Appointment and the hotline side by side</figcaption>
+      <figcaption>Doctor profile, professional details first</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision C</p>
+        <h3 class="st-bh">Offer a call-center option beside Book Appointment</h3>
+        <p class="cs__p">
+          Not everyone wants to book online. The 10622 hotline sits right beside
+          <strong>Book Appointment</strong>, and again in the top bar and the closing call to action
+          on every page.
+        </p>
+      </div>
+    </div>
+    {#- A close-up of the doctor profile above: the summary card and the two actions under it (.st-crop--actions in story.css) #}
+    <figure class="cs__fig rv">
+      <div class="st-crop st-crop--actions">
+        <img
+          src="{{ '/assets/images/projects/akij-insaf-doctor-profile.webp' | rel }}"
+          width="1400"
+          height="1124"
+          alt="Close-up of a doctor profile: Present Institute, Education and Degree, then a Book Appointment button with a Hotline: 10622 button directly below it."
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+      <figcaption>Book Appointment and the 10622 hotline, side by side on every doctor profile</figcaption>
     </figure>
   </div>
 
@@ -320,26 +342,24 @@ moreWork:
     go next: brand navy carries the header and primary actions, and red is kept for emergency and
     hotline cues.
   </p>
+  {#- Palette tiles: the brand colour large, the others beside it. --sw is the tile colour;
+      st-sw--dark gives light text on a dark tile. #}
   <div class="st-pal st-wide rv">
-    <div class="st-sw">
-      <i style="background: #1b2b6d"></i>
+    <div class="st-sw st-sw--main st-sw--dark" style="--sw: #1b2b6d">
       <b>Brand navy</b>
-      <span>#1B2B6D · header and primary actions</span>
+      <span>HEX #1B2B6D<br />R:27 G:43 B:109</span>
     </div>
-    <div class="st-sw">
-      <i style="background: #bb0000"></i>
+    <div class="st-sw st-sw--dark" style="--sw: #bb0000">
       <b>Heroic red</b>
-      <span>#BB0000 · emergency and hotline cues</span>
+      <span>HEX #BB0000<br />R:187 G:0 B:0</span>
     </div>
-    <div class="st-sw">
-      <i style="background: #f1f1fb"></i>
+    <div class="st-sw" style="--sw: #f1f1fb">
       <b>Soft tint</b>
-      <span>#F1F1FB · section backgrounds</span>
+      <span>HEX #F1F1FB<br />R:241 G:241 B:251</span>
     </div>
-    <div class="st-sw">
-      <i style="background: #ffffff"></i>
+    <div class="st-sw st-sw--wide" style="--sw: #ffffff">
       <b>White</b>
-      <span>#FFFFFF · content surfaces</span>
+      <span>HEX #FFFFFF<br />R:255 G:255 B:255</span>
     </div>
   </div>
   <div class="st-grid st-g3 st-wide">
@@ -507,3 +527,4 @@ moreWork:
     </div>
   </div>
 </section>
+

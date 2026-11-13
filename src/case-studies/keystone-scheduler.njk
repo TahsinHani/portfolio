@@ -1,15 +1,20 @@
 ---
 title: Keystone Scheduler
 order: 2
+headline: Keeping a timetable optimizer understandable and adjustable
 summary: >-
   A planning tool that helps a Beijing school's administrators build an 8-day rotating timetable,
   compare what-if scenarios, and keep the final say.
+lead: >-
+  Keystone Scheduler helps Keystone Academy's administrators assign teachers, sections and rooms
+  across an 8-day rotating timetable. I was the only designer on Astha IT's team, and designed the
+  screens from sign-in through to role permissions.
 badges:
   - Web app
   - Education
   - AI scheduling
 facts:
-  - label: Role
+  - label: My role
     value: UI/UX designer
   - label: Timeline
     value: 15 weeks (planned)
@@ -22,6 +27,7 @@ cover:
   alt: >-
     The Keystone Academy crest above the Scheduler dashboard, with the scenario detail and scenario
     management screens behind it
+  caption: The dashboard, with scenario detail and scenario management behind it
 glance:
   - word: Problem
     text: >-
@@ -42,231 +48,386 @@ card:
   alt: >-
     The Keystone Academy crest above the Scheduler dashboard, with the scenario detail and scenario
     management screens behind it
-extraStyles:
-  - keystone.css
+credits:
+  - label: Role
+    value: UI/UX designer, the only designer on the team
+  - label: Client
+    value: Keystone Academy, Beijing
+  - label: Built by
+    value: Astha IT, Dhaka
+  - label: Team
+    value: PM, business analysis, AI, frontend, backend, QA & DevOps
+  - label: Timeline
+    value: 15 weeks of two-week sprints (planned)
+  - label: Tools
+    value: Figma
 moreWork:
   - bloodconnect
   - sumosum
 ---
 
-<section class="cs__sec">
-  <h2 class="cs__h">Overview</h2>
-  <p class="cs__p">
-    Keystone Scheduler is a planning tool for Keystone Academy, a school in Beijing. It helps
-    administrators assign teachers, sections and rooms across an 8-day rotating timetable, compare
-    “what-if” scenarios, and keep the final say over the result.
-  </p>
-  <p class="cs__p">
-    Astha IT in Dhaka built it for the school. I was the UI/UX designer, the only designer on a team
-    that also covered project management, business analysis, AI, frontend and backend development,
-    QA and DevOps. I designed the screens from sign-in through to role permissions.
-  </p>
-  <p class="cs__p">
-    Names, emails and figures in the screens below are placeholder data.
-  </p>
-</section>
-<section class="cs__sec">
-  <h2 class="cs__h">The problem</h2>
-  <p class="cs__p">
+<section class="cs__sec" aria-labelledby="s1">
+  <p class="st-k rv">01 · Challenge</p>
+  <h2 class="cs__h rv" id="s1">A rotating timetable, built by hand</h2>
+  <p class="cs__p rv">
     Keystone runs an 8-day rotating schedule. Every cycle has to line up teachers, student groups,
     classrooms and time slots, and the timetable was built by hand in spreadsheets. That caused four
-    problems:
+    problems.
   </p>
-  <ul class="cs__p">
-    <li><strong>Workload mismatches.</strong> Teachers ended up over or under their maximum load.</li>
-    <li><strong>Idle or overfull rooms.</strong> Venues were not matched to what each course needed.</li>
-    <li>
-      <strong>Inconsistent assignments.</strong> Subjects were not always taught by qualified staff.
-    </li>
-    <li><strong>Little transparency.</strong> Staff could not see how decisions were made.</li>
-  </ul>
-  <p class="cs__p">
-    As the school grows, so does the work. Administrators, teachers and planners would all use the
-    new tool, so I framed the design around one question: how can an optimizer’s output stay
-    understandable and adjustable, so an administrator can see why a schedule looks the way it does,
-    change the rules, and try alternatives without losing earlier work?
+  <div class="st-grid st-g4 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Problem 01</p>
+      <h3 class="pcard__title">Workload mismatches</h3>
+      <p class="pcard__text">Teachers ended up over or under their maximum load.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Problem 02</p>
+      <h3 class="pcard__title">Idle or overfull rooms</h3>
+      <p class="pcard__text">Venues were not matched to what each course needed.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Problem 03</p>
+      <h3 class="pcard__title">Inconsistent assignments</h3>
+      <p class="pcard__text">Subjects were not always taught by qualified staff.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Problem 04</p>
+      <h3 class="pcard__title">Little transparency</h3>
+      <p class="pcard__text">Staff could not see how decisions were made.</p>
+    </div>
+  </div>
+  <p class="cs__p rv">
+    As the school grows, so does the work, and administrators, teachers and planners would all use
+    the new tool.
   </p>
+  <div class="st-callout rv">
+    <p class="st-bh">
+      How can an optimizer’s output stay understandable and adjustable, so an administrator can see
+      why a schedule looks the way it does, change the rules, and try alternatives without losing
+      earlier work?
+    </p>
+  </div>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">How the work ran</h2>
-  <p class="cs__p">
-    The plan was 15 weeks of two-week sprints: scope and wireframes first, then the constraint panel
-    and schedule visualizer, then scenarios and role-based access, and finally testing, deployment
-    and staff training. Each design went to Keystone for approval, with up to two rounds of feedback
-    per wireframe.
+
+<section class="cs__sec" aria-labelledby="s2">
+  <p class="st-k rv">02 · Process</p>
+  <h2 class="cs__h rv" id="s2">Sprints, approvals and many UI rounds</h2>
+  <p class="cs__p rv">
+    The plan was 15 weeks of two-week sprints. Each design went to Keystone for approval, with up to
+    two rounds of feedback per wireframe.
   </p>
-  <p class="cs__p">
-    In Figma, the design moved through a moodboard, ideation, an audit and a UI review, then colour
-    variations, several trial-and-error UI rounds and different versions of the authentication flow,
-    before a presentation for development and a final round of UI feedback.
-  </p>
+  <h3 class="st-sub rv">The planned sprints</h3>
+  <ol class="st-list st-wide rv">
+    <li>Scope and wireframes</li>
+    <li>Constraint panel and schedule visualizer</li>
+    <li>Scenarios and role-based access</li>
+    <li>Testing, deployment and staff training</li>
+  </ol>
+  <h3 class="st-sub rv">How the design moved in Figma</h3>
+  <ol class="st-list st-wide rv">
+    <li>Moodboard and ideation</li>
+    <li>Audit and UI review</li>
+    <li>Colour variations</li>
+    <li>Trial-and-error UI rounds</li>
+    <li>Versions of the authentication flow</li>
+    <li>Presentation for development and final UI feedback</li>
+  </ol>
+  <p class="st-note rv">Names, emails and figures in the screens below are placeholder data.</p>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">Four design decisions</h2>
-  <p class="cs__p">
-    Each decision answers a requirement from the project brief.
+
+<section class="cs__sec" aria-labelledby="s3">
+  <p class="st-k rv">03 · Defining the experience</p>
+  <h2 class="cs__h rv" id="s3">Requirements from the project brief</h2>
+  <p class="cs__p rv">
+    The project brief set the requirements, and each key design decision answers one of them.
   </p>
-  <h3 class="cs__h3">1. Put the rules next to the result</h3>
-  <p class="cs__p">
-    The brief asked for a rule engine where each constraint can be hard or soft, with preference
-    weights. I put a Settings panel beside the staffing grid. Each constraint has an on/off toggle,
-    a weight out of 10 and a Hard Constraint flag, and a set of rules can be saved and switched
-    between Current and Saved. Changing a rule and seeing its effect happen in one view.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/keystone-scheduler-constraints.webp' | rel }}"
-      width="1324"
-      height="828"
-      alt="Schedule and Constraint screen: five KPI tiles across the top, a Settings panel of constraints with toggles, weights and Hard Constraint checkboxes on the left, and the staffing grid on the right. Teacher rows are blurred."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      The constraint editor beside the staffing grid. Teacher rows are blurred for privacy.
-    </figcaption>
-  </figure>
-  <h3 class="cs__h3">2. Show a schedule’s health at a glance</h3>
-  <p class="cs__p">
-    The brief asked for real-time feedback through summary metrics. Five tiles sit above the grid:
-    Allocation Success, Teacher Balance Index, Soft Constraint Violations, Resource Utilization and
-    Unscheduled Items. Good and bad values use green and red, and the last tile links to the
-    unscheduled list. The dashboard carries the same idea further, with a ranked overview of every
-    scenario, so an administrator can judge a run before reading a single row.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/keystone-scheduler-dashboard.webp' | rel }}"
-      width="1400"
-      height="905"
-      alt="Dashboard with four colour-coded KPI tiles, a Scenario Overview table with progress bars, violation counts and rank badges, and four quick action cards."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      The dashboard: KPI tiles, a ranked scenario overview and quick actions such as Run
-      Optimization.
-    </figcaption>
-  </figure>
-  <h3 class="cs__h3">3. Make experimenting safe</h3>
-  <p class="cs__p">
-    The brief asked for scenarios saved with timestamps that can be reloaded, compared or continued.
-    Each saved scenario is a card with its saved time, status, version, rank and key metrics.
-    Compare stays disabled until two scenarios are selected, and a hint says so. A detail view lists
-    the unscheduled items and the version history. Trying an alternative never costs earlier work.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/keystone-scheduler-scenarios.webp' | rel }}"
-      width="1324"
-      height="828"
-      alt="Scenario Management page with six scenario cards showing saved time, status, version, overall rank and metrics, each with Add to Compare and View Details. The Compare button is disabled, with the hint: Select at least two scenarios to enable comparison."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Scenario cards. Compare stays disabled until two are selected.</figcaption>
-  </figure>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/keystone-scheduler-detail.webp' | rel }}"
-      width="1514"
-      height="946"
-      alt="Scenario detail with metrics at the top, a table of unscheduled courses with colour-graded success-rate badges, and a Version History panel on the right with its own Compare action."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      Scenario detail: unscheduled items with success-rate badges, and version history alongside.
-    </figcaption>
-  </figure>
-  <h3 class="cs__h3">4. Control who can do what</h3>
-  <p class="cs__p">
-    The brief asked for role-based access for administrators, teachers and planners. I designed a
-    permission matrix of six modules (Teacher, Course, Venue, Schedule, Scenario and User
-    Management) against Add, Edit, View and Delete, plus user-group screens for adding users and
-    roles. Every permission for a role is readable in a single table.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/keystone-scheduler-roles.webp' | rel }}"
-      width="1400"
-      height="875"
-      alt="Add Role page with a role title field and a permission matrix of modules against Add, Edit, View and Delete checkboxes."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Roles and permissions in one matrix.</figcaption>
-  </figure>
+  <div class="st-stats st-wide rv">
+    <div>
+      <p class="st-stat">8</p>
+      <p>days in the rotating timetable cycle</p>
+    </div>
+    <div>
+      <p class="st-stat">4</p>
+      <p>key design decisions, one per requirement</p>
+    </div>
+    <div>
+      <p class="st-stat">3</p>
+      <p>kinds of user: administrators, teachers and planners</p>
+    </div>
+  </div>
+  <div class="st-grid st-g4 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Requirement 01</p>
+      <h3 class="pcard__title">A rule engine</h3>
+      <p class="pcard__text">Hard or soft constraints, with preference weights.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Requirement 02</p>
+      <h3 class="pcard__title">Real-time feedback</h3>
+      <p class="pcard__text">Through summary metrics.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Requirement 03</p>
+      <h3 class="pcard__title">Saved scenarios</h3>
+      <p class="pcard__text">Timestamped, and ready to reload, compare or continue.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Requirement 04</p>
+      <h3 class="pcard__title">Role-based access</h3>
+      <p class="pcard__text">For administrators, teachers and planners.</p>
+    </div>
+  </div>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">Keeping a dense grid workable</h2>
-  <p class="cs__p">
-    The staffing grid carries teacher, department, load, preps and per-section counts across dozens
-    of columns. To keep it usable, I added department filter chips, a zoom control, and separate
-    Staffing Grid and Schedule tabs, so planners can narrow the view instead of scrolling through
-    everything.
-  </p>
+
+<section class="cs__sec" aria-labelledby="s4">
+  <p class="st-k rv">04 · Key UX decisions</p>
+  <h2 class="cs__h rv" id="s4">Four decisions that shape the tool</h2>
+  <p class="cs__p rv">Each decision answers a requirement from the project brief.</p>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision A</p>
+        <h3 class="st-bh">Put the rules next to the result</h3>
+        <p class="cs__p">
+          A Settings panel sits beside the staffing grid. Each constraint has an on/off toggle, a
+          weight out of 10 and a Hard Constraint flag, and a set of rules can be saved and switched
+          between Current and Saved. Changing a rule and seeing its effect happen in one view.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/keystone-scheduler-constraints.webp' | rel }}"
+        width="1324"
+        height="828"
+        alt="Schedule and Constraint screen: five KPI tiles across the top, a Settings panel of constraints with toggles, weights and Hard Constraint checkboxes on the left, and the staffing grid on the right. Teacher rows are blurred."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>The constraint editor beside the staffing grid. Teacher rows are blurred for privacy.</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision B</p>
+        <h3 class="st-bh">Show a schedule’s health at a glance</h3>
+        <p class="cs__p">
+          Five tiles sit above the grid: Allocation Success, Teacher Balance Index, Soft Constraint
+          Violations, Resource Utilization and Unscheduled Items, with good and bad values in green
+          and red. The dashboard adds a ranked overview of every scenario, so an administrator can
+          judge a run before reading a single row.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/keystone-scheduler-dashboard.webp' | rel }}"
+        width="1400"
+        height="905"
+        alt="Dashboard with four colour-coded KPI tiles, a Scenario Overview table with progress bars, violation counts and rank badges, and four quick action cards."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>The dashboard: KPI tiles, a ranked scenario overview and quick actions</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision C</p>
+        <h3 class="st-bh">Make experimenting safe</h3>
+        <p class="cs__p">
+          Each saved scenario is a card with its saved time, status, version, rank and key metrics.
+          Compare stays disabled until two scenarios are selected, and a hint says so. A detail view
+          lists the unscheduled items and the version history. Trying an alternative never costs
+          earlier work.
+        </p>
+      </div>
+    </div>
+    <div class="st-figs rv">
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/keystone-scheduler-scenarios.webp' | rel }}"
+          width="1324"
+          height="828"
+          alt="Scenario Management page with six scenario cards showing saved time, status, version, overall rank and metrics, each with Add to Compare and View Details. The Compare button is disabled, with the hint: Select at least two scenarios to enable comparison."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Scenario cards. Compare stays disabled until two are selected.</figcaption>
+      </figure>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/keystone-scheduler-detail.webp' | rel }}"
+          width="1514"
+          height="946"
+          alt="Scenario detail with metrics at the top, a table of unscheduled courses with colour-graded success-rate badges, and a Version History panel on the right with its own Compare action."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Scenario detail: unscheduled items and version history alongside</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision D</p>
+        <h3 class="st-bh">Control who can do what</h3>
+        <p class="cs__p">
+          A permission matrix sets six modules (Teacher, Course, Venue, Schedule, Scenario and User
+          Management) against Add, Edit, View and Delete, with user-group screens for adding users
+          and roles. Every permission for a role is readable in a single table.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/keystone-scheduler-roles.webp' | rel }}"
+        width="1400"
+        height="875"
+        alt="Add Role page with a role title field and a permission matrix of modules against Add, Edit, View and Delete checkboxes."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>Roles and permissions in one matrix</figcaption>
+    </figure>
+  </div>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">Getting in and setting up</h2>
-  <p class="cs__p">
-    Sign-in is a single focused card with the school crest. A tilted, blurred timetable on the left
-    shows what is behind the login. The full flow also covers verification, a four-step
-    forgot-password path, error states, account creation and Microsoft sign-in.
+
+<section class="cs__sec" aria-labelledby="s5">
+  <p class="st-k rv">05 · Visual design direction</p>
+  <h2 class="cs__h rv" id="s5">A calm blue shell that saves colour for meaning</h2>
+  <p class="cs__p rv">
+    The header uses a royal blue and actions a brighter blue, while the KPI tiles use blue, green,
+    purple and teal.
   </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/keystone-scheduler-signin.webp' | rel }}"
-      width="1400"
-      height="905"
-      alt="Sign-in screen with the Keystone Academy crest, email and password fields and a Sign In button, beside a royal blue panel with a tilted, blurred timetable."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Sign-in, with a glimpse of the timetable behind it.</figcaption>
-  </figure>
-  <p class="cs__p">
-    Teacher management is a searchable list showing each teacher’s teaching load, home room and
-    grade, with view, edit and delete on every row. Schools can add teachers in bulk through Upload
-    CSV.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/keystone-scheduler-teachers.webp' | rel }}"
-      width="1514"
-      height="946"
-      alt="Teacher Management list with search, Add Teacher, Upload CSV and Export actions, and a table of teachers with email, teaching load, home room and grade."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Teacher management, with bulk upload by CSV.</figcaption>
-  </figure>
+  <div class="st-pal st-wide rv">
+    <div class="st-sw st-sw--main st-sw--dark" style="--sw: #2547d0">
+      <b>Royal blue</b>
+      <span>HEX #2547D0<br />R:37 G:71 B:208</span>
+    </div>
+    <div class="st-sw st-sw--main st-sw--dark" style="--sw: #335cff">
+      <b>Action blue</b>
+      <span>HEX #335CFF<br />R:51 G:92 B:255</span>
+    </div>
+  </div>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Colour</p>
+      <h3 class="pcard__title">Colour carries meaning</h3>
+      <p class="pcard__text">Good and bad values use green and red; the shell stays a calm blue.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Scale</p>
+      <h3 class="pcard__title">One grading scale</h3>
+      <p class="pcard__text">
+        Scenarios are graded from Excellent to Poor, on rank badges and success-rate pills alike.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Consistency</p>
+      <h3 class="pcard__title">Shared patterns</h3>
+      <p class="pcard__text">
+        One top navigation, page header and pagination, so each new page feels familiar.
+      </p>
+    </div>
+  </div>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">Visual system</h2>
-  <p class="cs__p">
-    A calm blue shell keeps colour for meaning. The header uses a royal blue (#2547D0) and actions a
-    brighter blue (#335CFF), while the KPI tiles use blue, green, purple and teal. Scenarios are
-    graded from Excellent to Poor, and the same scale appears on rank badges and success-rate pills.
+
+<section class="cs__sec" aria-labelledby="s6">
+  <p class="st-k rv">06 · Core screens</p>
+  <h2 class="cs__h rv" id="s6">Getting in, setting up and working the grid</h2>
+  <p class="cs__p rv">
+    Beyond the four decisions, these screens cover signing in, setting up and working the grid.
+    Choose a screen to see it.
   </p>
-  <p class="cs__p">
-    Every screen shares one top navigation, the same page-header pattern and the same pagination, so
-    each new page feels familiar.
-  </p>
+  <div class="st-wide rv">
+    <div class="st-tabs" role="tablist" aria-label="Core screens">
+      <button class="st-tab" type="button" role="tab" id="t-sign" aria-controls="p-sign">Sign-in</button>
+      <button class="st-tab" type="button" role="tab" id="t-tea" aria-controls="p-tea">Teachers</button>
+      <button class="st-tab" type="button" role="tab" id="t-grid" aria-controls="p-grid">Staffing grid</button>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-sign" aria-labelledby="t-sign">
+      <p class="st-quote">A single, focused way in</p>
+      <p class="cs__p">
+        Sign-in is one card with the school crest, and a tilted, blurred timetable shows what is
+        behind the login. The full flow also covers verification, a four-step forgot-password path,
+        error states, account creation and Microsoft sign-in.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/keystone-scheduler-signin.webp' | rel }}"
+          width="1400"
+          height="905"
+          alt="Sign-in screen with the Keystone Academy crest, email and password fields and a Sign In button, beside a royal blue panel with a tilted, blurred timetable."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Sign-in, with a glimpse of the timetable behind it</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-tea" aria-labelledby="t-tea">
+      <p class="st-quote">Setting up the people</p>
+      <p class="cs__p">
+        A searchable list shows each teacher’s teaching load, home room and grade, with view, edit and
+        delete on every row. Schools can add teachers in bulk through Upload CSV.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/keystone-scheduler-teachers.webp' | rel }}"
+          width="1514"
+          height="946"
+          alt="Teacher Management list with search, Add Teacher, Upload CSV and Export actions, and a table of teachers with email, teaching load, home room and grade."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Teacher management, with bulk upload by CSV</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-grid" aria-labelledby="t-grid">
+      <p class="st-quote">Keeping a dense grid workable</p>
+      <p class="cs__p">
+        The staffing grid carries teacher, department, load, preps and per-section counts across
+        dozens of columns. Department filter chips, a zoom control, and separate Staffing Grid and
+        Schedule tabs let planners narrow the view instead of scrolling through everything.
+      </p>
+    </div>
+  </div>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">What the project set out to achieve</h2>
-  <p class="cs__p">These were the targets in the project brief, not measured results:</p>
-  <ul class="cs__p">
-    <li>Cut scheduling time from weeks to minutes.</li>
-    <li>Complete an optimization run within 3 minutes on recommended hardware.</li>
-    <li>Give repeatable results for unchanged inputs.</li>
-    <li>Let administrators lock assignments and re-optimize the rest.</li>
-    <li>Keep data on the school’s own infrastructure.</li>
-  </ul>
-  <p class="cs__p">
-    Planned next steps included conflict heatmaps to show bottlenecks, AI suggestions for relaxing
-    constraints when a schedule cannot be solved, and a teacher feedback module before schedules are
-    finalised.
-  </p>
+
+<section class="cs__sec" aria-labelledby="s7">
+  <p class="st-k rv">07 · Goals and next steps</p>
+  <h2 class="cs__h rv" id="s7">What the project set out to achieve</h2>
+  <p class="cs__p rv">These were the targets in the project brief, not measured results.</p>
+  <ol class="st-list st-wide rv">
+    <li>Cut scheduling time from weeks to minutes</li>
+    <li>Complete an optimization run within 3 minutes on recommended hardware</li>
+    <li>Give repeatable results for unchanged inputs</li>
+    <li>Let administrators lock assignments and re-optimize the rest</li>
+    <li>Keep data on the school’s own infrastructure</li>
+  </ol>
+  <h3 class="st-sub rv">Planned next steps</h3>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Next 01</p>
+      <h3 class="pcard__title">Conflict heatmaps</h3>
+      <p class="pcard__text">Show where the bottlenecks are.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Next 02</p>
+      <h3 class="pcard__title">AI suggestions</h3>
+      <p class="pcard__text">Suggest which constraints to relax when a schedule cannot be solved.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Next 03</p>
+      <h3 class="pcard__title">Teacher feedback</h3>
+      <p class="pcard__text">A feedback module for teachers before schedules are finalised.</p>
+    </div>
+  </div>
 </section>

@@ -1,4 +1,3 @@
-{% from "components/icons.njk" import icon, socialLink %}
 {#- Homepage closing block: "Working across time zones" map, contact panel and the footer, over one background.
     Map pins and their client logos come from the homepage front matter → mapPins.
     A pin with clients is a button; map-clients.js opens its logos on hover, keyboard focus or tap. #}
@@ -38,60 +37,9 @@
         I have worked with teams in: United Kingdom, Netherlands, South Africa, India, Bangladesh,
         United States, Hawaii.
       </p>
-      <div class="cpanel" id="contact">
-        {#- Text on the left; the watercolor window sits in the third column, above the divider (wide screens only),
-            with an "Artistic Creations: Coming Soon" note beside it and a hand-drawn arrow rising from the window to it.
-            The window is layered so contact-window.js can animate it: shutters closed until the card is scrolled to,
-            then they swing open and the arrow flies out of the window to point at the note; scrolling back up reverses it.
-            Layers, bottom to top: the window with its shutters painted out, the two shutters, the plants and vine
-            that stay in front of them, and the untouched painting (shown whenever the window is open). #}
-        <div class="cpanel__intro">
-          <div class="cpanel__text">
-            <h3 class="cpanel__title">Let’s design a better product experience.</h3>
-            <p class="cpanel__sub">
-              I’m open to on-site/remote product design roles and thoughtful collaborations. If you’re working on a
-              product that needs clearer flows, stronger interfaces, or a more considered design approach,
-              I’d like to hear about it.
-            </p>
-          </div>
-          <div class="cpanel__aside">
-            <div class="cpanel__art cwin" aria-hidden="true">
-              {%- for layer in ["base", "shutter-l", "shutter-r", "front"] %}
-              <img class="cwin__{{ layer }}" src="{{ ('/assets/images/contact-window-' + layer + '.webp') | rel }}" alt="" width="240" height="240" loading="lazy" decoding="async" />
-              {%- endfor %}
-              <img class="cwin__painting" src="{{ '/assets/images/contact-window.webp' | rel }}" alt="" width="240" height="240" loading="lazy" decoding="async" />
-            </div>
-            <p class="cpanel__soon">
-              <span class="cpanel__soon-kicker">Artistic Creations:</span>
-              <span class="cpanel__soon-label">Coming Soon</span>
-              {% include "svg/contact-arrow.svg" %}
-            </p>
-          </div>
-        </div>
-        <div class="cpanel__cols">
-          <div>
-            <p class="cpanel__label">Email:</p>
-            <a class="cpanel__mail" href="mailto:{{ site.email }}"><span class="btn__icon">{{ icon("mail") }}</span>{{ site.email }}</a>
-          </div>
-          <div>
-            <p class="cpanel__label">Resume:</p>
-            <a class="cpanel__mail cpanel__dl" href="{{ site.resume | rel }}" target="_blank" rel="noopener">
-              {#- #}<span>Download Resume</span><span class="btn__icon">{{ icon("arrow-up-right") }}</span><span class="sr-only"> (opens in a new tab)</span>
-            {#- #}</a>
-          </div>
-          <div>
-            <p class="cpanel__label">I know you want to follow, so:</p>
-            <ul class="cpanel__social">
-              {%- for link in site.social %}
-              <li>{{ socialLink(link.name, link.url) }}</li>
-              {%- endfor %}
-            </ul>
-          </div>
-        </div>
-      </div>
+      {% include "partials/contact-card.njk" %}
     </div>
   </section>
   {% include "partials/footer.njk" %}
 </div>
 <script defer src="{{ '/assets/js/map-clients.js' | rel }}"></script>
-<script defer src="{{ '/assets/js/contact-window.js' | rel }}"></script>

@@ -1,7 +1,0 @@
-/* Subheadings used only on the Keystone Scheduler page */
-.cs__h3 {
-  font-size: var(--text-card);
-  letter-spacing: -0.02em;
-  line-height: 1.15;
-  margin-top: var(--space-4);
-}

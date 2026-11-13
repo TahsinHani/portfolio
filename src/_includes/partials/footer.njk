@@ -1,10 +1,8 @@
-{% from "components/icons.njk" import socialLink %}
-{#- Site footer: copyright and Medium link. #}
+{#- Site footer: copyright and the "Press G for Design Mode" hint (see HIDDEN-FEATURES.md → Designer mode).
+    The hint is hidden on touch-only screens, which have no G key to press (.footer__hint in home.css and work.css). #}
 <footer class="footer">
   <div class="container footer__row">
     <p>© 2026 {{ site.name }}. All rights reserved</p>
-    <ul class="footer__links">
-      <li>{{ socialLink("Medium", site.medium) }}</li>
-    </ul>
+    <p class="footer__hint">Press <kbd>G</kbd> for Design Mode</p>
   </div>
 </footer>

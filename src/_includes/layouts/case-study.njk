@@ -2,15 +2,16 @@
 layout: layouts/base.njk
 ---
 {#-
-  Case study page. Everything above and below the story comes from the page's front matter;
-  the page body (the story sections) is inserted at {{ content }}.
-  See src/case-studies/ for the pages and the field list in case-studies.11tydata.js.
+  Case study page. Every case study uses the same "story" template (styles in story.css, behaviour in
+  story.js). Everything above and below the story comes from the page's front matter; the page body
+  (the numbered story sections) is inserted at {{ content }}.
+  See src/case-studies/ for the pages, akij-insaf.njk for every building block, and the field list
+  in case-studies.11tydata.js.
 -#}
 {% from "components/button.njk" import button %}
 {% from "components/project-card.njk" import projectGrid with context %}
 <main id="work">
-  {%- set story = format == "story" %}
-  <article class="cs{{ ' cs--story' if story }}">
+  <article class="cs cs--story">
     <header class="cs__top container">
       <nav class="crumbs" aria-label="Breadcrumb">
         <ol>
@@ -62,6 +63,19 @@ layout: layouts/base.njk
 
     <div class="cs__body container">
       {{ content | safe }}
+      {%- if credits %}
+      <section class="cs__sec st-credits" aria-labelledby="credits-h">
+        <h2 class="st-k rv" id="credits-h">Project credits</h2>
+        <dl class="st-details st-wide rv">
+          {%- for item in credits %}
+          <div>
+            <dt>{{ item.label }}</dt>
+            <dd>{{ item.value }}</dd>
+          </div>
+          {%- endfor %}
+        </dl>
+      </section>
+      {%- endif %}
     </div>
 
     <section class="cs__more container" aria-labelledby="more-h">
@@ -72,19 +86,12 @@ layout: layouts/base.njk
       </div>
     </section>
 
-    <section class="section connect" id="connect" aria-labelledby="cs-contact-h">
+    <section class="section connect" id="connect" aria-labelledby="contact-h">
       <div class="container">
-        <div class="cpanel">
-          <h2 class="cpanel__title" id="cs-contact-h">Let’s design a better product experience.</h2>
-          <p class="cpanel__sub">I’m open to on-site/remote product design roles and thoughtful collaborations. If you’re working on a product that needs clearer flows, stronger interfaces, or a more considered design approach, I’d like to hear about it.</p>
-          <div class="cs__cta">
-            {{ button("Say hello", "mailto:" + site.email, icon="mail") }}
-          </div>
-        </div>
+        {% set contactHeading = "h2" %}
+        {% include "partials/contact-card.njk" %}
       </div>
     </section>
   </article>
-  {%- if story %}
   <script defer src="{{ '/assets/js/story.js' | rel }}"></script>
-  {%- endif %}
 </main>

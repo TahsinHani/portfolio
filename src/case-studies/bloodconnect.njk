@@ -1,25 +1,31 @@
 ---
 title: BloodConnect
 order: 1
+headline: Helping people find blood donors without asking around
 summary: >-
   A free, open-source app that lets blood seekers post a request and donors respond, instead of
   asking around for donors.
+lead: >-
+  BloodConnect is a free, open-source Android app, powered by Craftsmen, that connects people who
+  need blood with donors. With Shawon Setu, I designed Phase 1 over six months: research, user
+  stories, UI and error states.
 badges:
   - Mobile app
   - Open source
   - Android
 facts:
-  - label: Role
+  - label: My role
     value: UI/UX designer
   - label: Timeline
     value: 6 months
   - label: Platform
     value: Android mobile app
-  - label: Team
-    value: 2 UI/UX designers
+  - label: Status
+    value: Beta on Google Play
 demo: false
 cover:
   alt: Three BloodConnect app screens, getting started, home and blood requests
+  caption: Getting started, home and blood requests
 glance:
   - word: Problem
     text: When someone needs blood, they have to ask around to find a donor.
@@ -34,38 +40,86 @@ card:
   client: Craftsmen
   mark: CR
   alt: Three BloodConnect app screens, getting started, home and blood requests
+credits:
+  - label: Role
+    value: UI/UX designer, with Shawon Setu
+  - label: Collaboration
+    value: Craftsmen & UXBD
+  - label: Phase designed
+    value: Phase 1, login and registration
+  - label: Timeline
+    value: 6 months
+  - label: Platform
+    value: Android mobile app
+  - label: Status
+    value: Handed off, beta on Google Play
 moreWork:
   - keystone-scheduler
   - sumosum
-extraStyles:
-  - bloodconnect.css
 ---
 
-<section class="cs__sec">
-  <h2 class="cs__h">Overview</h2>
-  <p class="cs__p">
-    BloodConnect is a free, open-source mobile app, powered by Craftsmen, that connects people who
-    need blood with donors. I worked with Shawon Setu on BloodConnect, in a collaboration between
-    Craftsmen and UXBD.
+<section class="cs__sec" aria-labelledby="s1">
+  <p class="st-k rv">01 · Challenge</p>
+  <h2 class="cs__h rv" id="s1">Finding blood meant asking around</h2>
+  <p class="cs__p rv">
+    When someone needs blood, they have to ask around to find a donor. BloodConnect lets a seeker
+    post a request and lets donors respond to it, in a collaboration between Craftsmen and UXBD.
   </p>
-  <p class="cs__p">
-    Over six months, the two of us designed Phase 1 together: research, user stories, UI and error
-    states. We worked to the client’s requirements, and the feature requests came from the
-    stakeholder. A beta was released first.
-  </p>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Brief 01</p>
+      <h3 class="pcard__title">Client requirements</h3>
+      <p class="pcard__text">We worked to the client’s requirements throughout the project.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Brief 02</p>
+      <h3 class="pcard__title">Stakeholder features</h3>
+      <p class="pcard__text">The feature requests came from the stakeholder.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Brief 03</p>
+      <h3 class="pcard__title">Beta first</h3>
+      <p class="pcard__text">A beta was released first.</p>
+    </div>
+  </div>
+  <div class="st-callout rv">
+    <p class="st-bh">
+      Phase 1 had one job: get people into the app safely and correctly, from the splash screen to
+      their settings.
+    </p>
+  </div>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">What we learned</h2>
-  <p class="cs__p">
-    We started from the stakeholder’s feature requests and added our own desk research, including a
-    review of two existing blood-donation apps, Blood Donor App (Save Life Co) and BloodLine (Blood
-    Bank App BD).
+
+<section class="cs__sec" aria-labelledby="s2">
+  <p class="st-k rv">02 · Research and discovery</p>
+  <h2 class="cs__h rv" id="s2">Three sources, three kinds of user</h2>
+  <p class="cs__p rv">
+    We started from the stakeholder’s feature requests and added our own desk research and
+    interviews. Together they fed the user stories.
   </p>
-  <p class="cs__p">
-    We also interviewed real donors and seekers, and wrote user stories for three types of user:
-    Donor, Searcher and Organization.
-  </p>
-  <figure class="cs__fig">
+  <h3 class="st-sub rv">What we drew on</h3>
+  <ol class="st-list st-wide rv">
+    <li>The stakeholder’s feature requests</li>
+    <li>A review of Blood Donor App (Save Life Co)</li>
+    <li>A review of BloodLine (Blood Bank App BD)</li>
+    <li>Interviews with real donors and seekers</li>
+  </ol>
+  <h3 class="st-sub rv">User stories for three types of user</h3>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">User 01</p>
+      <h3 class="pcard__title">Donor</h3>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">User 02</p>
+      <h3 class="pcard__title">Searcher</h3>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">User 03</p>
+      <h3 class="pcard__title">Organization</h3>
+    </div>
+  </div>
+  <figure class="cs__fig st-wide rv">
     <img
       src="{{ '/assets/images/projects/bloodconnect-research.webp' | rel }}"
       width="1200"
@@ -74,71 +128,130 @@ extraStyles:
       loading="lazy"
       decoding="async"
     />
-    <figcaption>Three sources fed the user stories for each type of user.</figcaption>
+    <figcaption>Three sources fed the user stories for each type of user</figcaption>
   </figure>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">How the design came together</h2>
-  <p class="cs__p">
+
+<section class="cs__sec" aria-labelledby="s3">
+  <p class="st-k rv">03 · Defining the experience</p>
+  <h2 class="cs__h rv" id="s3">Two journeys into the app</h2>
+  <p class="cs__p rv">
     We mapped the flows with sitemaps and phased wireframes (Phase 1, Phase 2 and first release),
     then refined the UI across several versions up to handoff.
   </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/bloodconnect-flow.webp' | rel }}"
-      width="1200"
-      height="900"
-      alt="Three registration screens: Create New Account, then entering a 4-digit authentication code sent by WhatsApp, and the same code sent by email"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      The Phase 1 registration journey, from splash screen to settings (recreated with demo
-      content).
-    </figcaption>
-  </figure>
-  <p class="cs__p">Three decisions shaped the first-run experience:</p>
-  <ol class="cs__p">
-    <li>
-      <strong>OTP via WhatsApp, with an email option.</strong> WhatsApp was the more feasible
-      solution for the stakeholders.
-    </li>
-    <li>
-      <strong>NID upload at registration.</strong> It is there to help stop people from using the
-      platform for scams.
-    </li>
-    <li>
-      <strong>Privacy and notification settings.</strong> They give people the freedom to set up the
-      platform the way they want.
-    </li>
-  </ol>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/bloodconnect-decisions.webp' | rel }}"
-      width="1200"
-      height="900"
-      alt="Three screens: Add Personal Info with empty NID upload fields, the same form with blood group, donation date and both sides of the NID uploaded (blurred), and Settings with privacy and notification toggles"
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      The three decisions on screen: OTP, NID upload and settings (recreated with demo content).
-    </figcaption>
-  </figure>
+  <div class="st-stats st-wide rv">
+    <div>
+      <p class="st-stat">6</p>
+      <p>months from research to handoff</p>
+    </div>
+    <div>
+      <p class="st-stat">2</p>
+      <p>UI/UX designers, working together</p>
+    </div>
+    <div>
+      <p class="st-stat">3</p>
+      <p>types of user: Donor, Searcher and Organization</p>
+    </div>
+  </div>
+  <div class="st-grid st-g2 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Journey 01</p>
+      <h3 class="pcard__title">Login</h3>
+      <p class="pcard__text">
+        Splash screen, then getting started with account creation, login and guest access, through
+        login, forgot password, OTP and set new password.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Journey 02</p>
+      <h3 class="pcard__title">Registration</h3>
+      <p class="pcard__text">Create account, OTP, set password, personal info and settings.</p>
+    </div>
+  </div>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">What we handed off</h2>
-  <p class="cs__p">
-    Phase 1 covers getting people into the app safely and correctly. The login journey runs from the
-    splash screen and a getting-started screen with account creation, login and guest access,
-    through login, forgot password, OTP and set new password. The registration journey covers create
-    account, OTP, set password, personal info and settings.
+
+<section class="cs__sec" aria-labelledby="s4">
+  <p class="st-k rv">04 · Key UX decisions</p>
+  <h2 class="cs__h rv" id="s4">Three decisions that shaped the first run</h2>
+  <p class="cs__p rv">
+    Three decisions shaped the first-run experience, each one shown on the screens it changed.
   </p>
-  <p class="cs__p">
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision A</p>
+        <h3 class="st-bh">OTP via WhatsApp, with an email option</h3>
+        <p class="cs__p">WhatsApp was the more feasible solution for the stakeholders.</p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/bloodconnect-flow.webp' | rel }}"
+        width="1200"
+        height="900"
+        alt="Three registration screens: Create New Account, then entering a 4-digit authentication code sent by WhatsApp, and the same code sent by email"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>Registration, with the code sent by WhatsApp or email (recreated with demo content)</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision B</p>
+        <h3 class="st-bh">NID upload at registration</h3>
+        <p class="cs__p">It is there to help stop people from using the platform for scams.</p>
+      </div>
+      <div class="st-decision">
+        <p class="st-k">Decision C</p>
+        <h3 class="st-bh">Privacy and notification settings</h3>
+        <p class="cs__p">
+          They give people the freedom to set up the platform the way they want.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/bloodconnect-decisions.webp' | rel }}"
+        width="1200"
+        height="900"
+        alt="Three screens: Add Personal Info with empty NID upload fields, the same form with blood group, donation date and both sides of the NID uploaded (blurred), and Settings with privacy and notification toggles"
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>NID upload and settings on screen (recreated with demo content)</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s5">
+  <p class="st-k rv">05 · Error states</p>
+  <h2 class="cs__h rv" id="s5">Designing for mistakes, not only the happy path</h2>
+  <p class="cs__p rv">
     We designed the error states alongside the happy path, including mandatory fields, a wrong OTP
     code and a password mismatch.
   </p>
-  <figure class="cs__fig">
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Error 01</p>
+      <h3 class="pcard__title">Mandatory fields</h3>
+      <p class="pcard__text">Log in flags both required fields when they are left empty.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Error 02</p>
+      <h3 class="pcard__title">Wrong OTP code</h3>
+      <p class="pcard__text">A wrong authentication code is caught on the code screen.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Error 03</p>
+      <h3 class="pcard__title">Password mismatch</h3>
+      <p class="pcard__text">Set new password shows when the two passwords do not match.</p>
+    </div>
+  </div>
+  <figure class="cs__fig st-wide rv">
     <img
       src="{{ '/assets/images/projects/bloodconnect-errors.webp' | rel }}"
       width="1200"
@@ -147,33 +260,59 @@ extraStyles:
       loading="lazy"
       decoding="async"
     />
-    <figcaption>
-      Error states designed alongside the happy path (recreated with demo content).
-    </figcaption>
+    <figcaption>Error states designed alongside the happy path (recreated with demo content)</figcaption>
   </figure>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">Outcome</h2>
-  <p class="cs__p">
+
+<section class="cs__sec" aria-labelledby="s6">
+  <p class="st-k rv">06 · From design to launch</p>
+  <h2 class="cs__h rv" id="s6">Handed off, then live in beta</h2>
+  <p class="cs__p rv">
     The design was handed off on 5 October 2024, and a beta is available on Google Play.
   </p>
-  <p class="cs__p">
-    As of 2 November 2026, the public
+  <div class="st-stats st-wide rv">
+    <div>
+      <p class="st-stat">500+</p>
+      <p>downloads on Google Play</p>
+    </div>
+    <div>
+      <p class="st-stat">4.8</p>
+      <p>rating on Google Play</p>
+    </div>
+    <div>
+      <p class="st-stat">5</p>
+      <p>reviews behind that rating</p>
+    </div>
+  </div>
+  <p class="st-note rv">
+    Figures from the public
     <a
       href="https://play.google.com/store/apps/details?id=net.bloodconnect.app"
       target="_blank"
       rel="noopener"
       >Google Play listing<span class="sr-only"> (opens in a new tab)</span></a
     >
-    shows 500+ downloads and a 4.8 rating from 5 reviews. These are figures for the app as a whole,
-    not measurements of my design.
+    as of 2 November 2026. They are for the app as a whole, not measurements of my design.
   </p>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">What I learned</h2>
-  <p class="cs__p">
+
+<section class="cs__sec" aria-labelledby="s7">
+  <p class="st-k rv">07 · Reflection</p>
+  <h2 class="cs__h rv" id="s7">Thinking like a user</h2>
+  <p class="cs__p rv">
     This project taught me how to build a user journey and how to think like a user while designing
-    a product. It also taught me how to create a happy path, and how to apply UI aesthetics,
-    hierarchy and usability.
+    a product.
   </p>
+  <div class="st-grid st-g2 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Learning</p>
+      <h3 class="pcard__title">Build the happy path</h3>
+      <p class="pcard__text">How to create a happy path, and design its errors alongside it.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Growth</p>
+      <h3 class="pcard__title">Aesthetics, hierarchy and usability</h3>
+      <p class="pcard__text">How to apply UI aesthetics, hierarchy and usability together.</p>
+    </div>
+  </div>
 </section>

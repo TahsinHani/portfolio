@@ -26,7 +26,7 @@ Every internal link and asset path is written from the site root and piped throu
 
 `layouts/base.njk` is the shell for every page. Front matter controls it: `stylesheet` (`home.css` or `work.css`), `extraStyles` (more sheets from `assets/css/`), `footer`, `floatCta`, `metaTitle`, `ogTitle`, `description`.
 
-`home.css` (homepage) and `work.css` (All work page and case studies) are two **independent, self-contained** stylesheets. Each repeats the same `@font-face` rules, `:root` design tokens and shared components (buttons, header, footer, cursors). A change to tokens or to shared UI usually has to be made in **both** files. Page-specific sheets (`story.css`, `bloodconnect.css`, `keystone.css`) build only on the tokens in `work.css`.
+`home.css` (homepage) and `work.css` (All work page and case studies) are two **independent, self-contained** stylesheets. Each repeats the same `@font-face` rules, `:root` design tokens and shared components (buttons, header, footer, cursors). A change to tokens or to shared UI usually has to be made in **both** files. Each sheet keeps only the rules, tokens and keyframes its own pages use (for example, `work.css` has no homepage sections and `home.css` no case-study layout), so copy a rule across when a component starts appearing on the other kind of page. `story.css`, the case study template sheet, builds only on the tokens in `work.css`.
 
 ### Case studies
 
@@ -36,9 +36,7 @@ Every internal link and asset path is written from the site root and piped throu
 - `collections.caseStudies` (in `eleventy.config.js`) sorts by `order`. The card eyebrow "Case study 01" is taken from `order`, so `order` values should stay unique.
 - Projects are selected by slug with the `bySlug` filter: `featuredWork` in `src/index.njk` (homepage) and `moreWork` in each case study.
 - Images go in `src/assets/images/projects/`: `<slug>.webp` (1200w cover/card) and `<slug>-600.webp`. `cover.image` / `card.image` override the base name. Extra screenshots for the story follow `<slug>-<name>.webp`.
-- There are two body formats:
-  - **Default:** `cs__sec` / `cs__h` / `cs__p` sections, styled by `work.css`.
-  - **Story** (`format: story` plus `extraStyles: [story.css]`): numbered sections built from `st-*` classes (tabs, stats, callouts, galleries, palette). The layout adds the `cs--story` class and loads `assets/js/story.js`. `akij-insaf.njk` is the reference example of its building blocks.
+- Every case study uses the same template and structure, with `akij-insaf.njk` as the reference. `case-studies.11tydata.js` adds `story.css` to every page, and the layout adds the `cs--story` class and loads `assets/js/story.js`. The body is numbered sections (`cs__sec` with an `st-k` kicker such as "01 · Challenge", a `cs__h` heading and a `cs__p` intro), built from `st-*` blocks: cards, callout, numbered list, stats, decision rows (`st-split`), tabs, palette and notes. The usual order is Challenge, Research, Defining the experience, Key UX decisions, Visual design, Core screens, Launch or handoff, Reflection. Leave out a section the project has no real content for rather than inventing some. `credits:` in the front matter renders the closing "Project credits" list.
 
 ### Homepage
 

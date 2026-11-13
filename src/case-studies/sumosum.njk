@@ -1,15 +1,20 @@
 ---
 title: SumoSum
 order: 3
+headline: Making business strategy and financial modelling easier to understand
 summary: >-
   An AI-powered forecasting tool that turns a business idea into a financial model, so people can
   see how their assumptions shape the numbers.
+lead: >-
+  SumoSum brings AI-assisted planning and financial modelling together: you describe the business in
+  plain words, and it builds a forecast you can explore and adjust. I designed the product, the
+  admin panel and the plans and billing flows.
 badges:
   - SaaS
   - Business strategy
   - AI forecasting
 facts:
-  - label: Role
+  - label: My role
     value: UI/UX designer
   - label: Research
     value: Qualitative
@@ -22,6 +27,7 @@ cover:
   alt: >-
     The SumoSum logo above the forecast dashboard, with the AI forecast builder and the project list
     behind it
+  caption: The forecast dashboard, with the AI forecast builder and the project list behind it
 glance:
   - word: Problem
     text: >-
@@ -42,313 +48,379 @@ card:
   alt: >-
     The SumoSum logo above the forecast dashboard, with the AI forecast builder and the project list
     behind it
-extraStyles:
-  - keystone.css
+credits:
+  - label: Role
+    value: UI/UX designer
+  - label: Scope
+    value: Product, admin panel, plans & billing
+  - label: Research
+    value: Qualitative
+  - label: Platform
+    value: Web app, responsive
+  - label: Status
+    value: Launched at sumosum.com
+  - label: Tools
+    value: Figma
 moreWork:
   - keystone-scheduler
   - bloodconnect
 ---
 
-<section class="cs__sec">
-  <h2 class="cs__h">Overview</h2>
-  <p class="cs__p">
-    Starting a business means making many decisions before you know whether they will work. How
-    much should the product cost? How many customers do you need to break even? What happens if
-    rent goes up? How much funding will you need?
+<section class="cs__sec" aria-labelledby="s1">
+  <p class="st-k rv">01 · Challenge</p>
+  <h2 class="cs__h rv" id="s1">Strategy in words, planning in numbers</h2>
+  <p class="cs__p rv">
+    Starting a business means making many decisions before you know whether they will work.
+    Strategy is usually discussed in words and financial planning in numbers, yet the two are
+    tightly linked.
   </p>
-  <p class="cs__p">
-    SumoSum brings AI-assisted planning and financial modelling together. You describe the business
-    in plain words, and SumoSum builds a forecast you can explore and adjust. I was the UI/UX
-    designer, working in Figma on the product, the admin panel and the plans and billing flows. The
-    product is live at
-    <a href="https://sumosum.com/" target="_blank" rel="noopener"
-      >sumosum.com<span class="sr-only"> (opens in a new tab)</span></a
-    >.
-  </p>
-  <p class="cs__p">
-    One idea guided the design: <strong>strategy made visible</strong>. Don’t just show people the
-    numbers. Help them understand the decisions behind them.
-  </p>
-</section>
-<section class="cs__sec">
-  <h2 class="cs__h">The problem</h2>
-  <p class="cs__p">
-    Strategy is usually discussed in words, and financial planning is expressed in numbers, yet the
-    two are tightly linked. A founder can have a clear idea of the business without knowing how
-    pricing, customer acquisition, operating costs or sales volume will affect it.
-  </p>
-  <p class="cs__p">
+  <div class="st-grid st-g4 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Question 01</p>
+      <h3 class="pcard__title">Pricing</h3>
+      <p class="pcard__text">How much should the product cost?</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Question 02</p>
+      <h3 class="pcard__title">Break-even</h3>
+      <p class="pcard__text">How many customers do you need to break even?</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Question 03</p>
+      <h3 class="pcard__title">Costs</h3>
+      <p class="pcard__text">What happens if rent goes up?</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Question 04</p>
+      <h3 class="pcard__title">Funding</h3>
+      <p class="pcard__text">How much funding will you need?</p>
+    </div>
+  </div>
+  <p class="cs__p rv">
     Spreadsheet models are powerful, but they assume financial modelling skills many people don’t
-    have. The challenge was not only to calculate the numbers but to help people understand what
-    the numbers mean for their decisions.
+    have. The challenge was not only to calculate the numbers but to help people understand what the
+    numbers mean for their decisions.
   </p>
-  <p class="cs__p">
-    So I framed the work around one question: how might we make business strategy and financial
-    modelling easier to understand, explore and act on, without burying people in financial
-    complexity?
-  </p>
+  <div class="st-callout rv">
+    <p class="st-bh">
+      How might we make business strategy and financial modelling easier to understand, explore and
+      act on, without burying people in financial complexity?
+    </p>
+  </div>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">Who it’s for</h2>
-  <p class="cs__p">SumoSum serves people with very different levels of financial expertise:</p>
-  <ul class="cs__p">
-    <li>
-      <strong>First-time entrepreneurs</strong> need a simple starting point, help turning an idea
-      into a model, and a readable view of what might happen.
-    </li>
-    <li>
-      <strong>Accountants</strong> need a structured model where every assumption and output can be
-      checked.
-    </li>
-    <li>
-      <strong>Business advisors</strong> need a way to explain financial consequences, test other
-      scenarios and talk through a plan with a client.
-    </li>
-  </ul>
-  <p class="cs__p">
+
+<section class="cs__sec" aria-labelledby="s2">
+  <p class="st-k rv">02 · Who it’s for</p>
+  <h2 class="cs__h rv" id="s2">Three people, very different expertise</h2>
+  <p class="cs__p rv">
     The product had to be simple enough for a beginner without limiting an expert. That tension
     shaped most of the decisions below.
   </p>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">User 01</p>
+      <h3 class="pcard__title">First-time entrepreneurs</h3>
+      <p class="pcard__text">
+        Need a simple starting point, help turning an idea into a model, and a readable view of what
+        might happen.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">User 02</p>
+      <h3 class="pcard__title">Accountants</h3>
+      <p class="pcard__text">
+        Need a structured model where every assumption and output can be checked.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">User 03</p>
+      <h3 class="pcard__title">Business advisors</h3>
+      <p class="pcard__text">
+        Need to explain financial consequences, test other scenarios and talk a plan through with a
+        client.
+      </p>
+    </div>
+  </div>
+  <h3 class="st-sub rv">Five principles behind the design</h3>
+  <ol class="st-list st-wide rv">
+    <li>Make complexity approachable</li>
+    <li>Connect inputs to outcomes</li>
+    <li>Make AI understandable</li>
+    <li>Support exploration</li>
+    <li>Design for every level of expertise</li>
+  </ol>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">Five design decisions</h2>
 
-  <h3 class="cs__h3">1. Start from the idea, not the spreadsheet</h3>
-  <p class="cs__p">
-    The home page opens with one question instead of a form full of financial fields. A single text
-    box asks people to tell SumoSum what they’ll sell, at what price and in what quantity, and the
-    AI builds the forecast from that. There is a microphone for people who would rather talk it
-    through.
+<section class="cs__sec" aria-labelledby="s3">
+  <p class="st-k rv">03 · Defining the experience</p>
+  <h2 class="cs__h rv" id="s3">Strategy made visible</h2>
+  <p class="cs__p rv">
+    One idea guided the design: don’t just show people the numbers, help them understand the
+    decisions behind them.
   </p>
-  <p class="cs__p">
-    People who think in a more structured way can switch to <strong>BMC Mode</strong>. It opens a
-    Business Model Canvas with its nine blocks, from Key Partners to Revenue Streams, or lets them
-    upload an existing canvas. Either way, the first step uses language founders already know.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/sumosum-starter.webp' | rel }}"
-      width="1400"
-      height="1368"
-      alt="SumoSum home page with the headline AI-Powered Forecasting Built on Your Ideas, a prompt box with a microphone, and a tour tooltip marked Step 1 of 7. Below it, a Try Business Model Canvas section shows the nine canvas blocks and a Submit to Get Your Forecast button."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      The AI starter: describe the business in one box, or fill in a Business Model Canvas.
-    </figcaption>
-  </figure>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/sumosum-canvas.webp' | rel }}"
-      width="1400"
-      height="874"
-      alt="Create Project modal titled Let SumoSum AI Build Your Financials, with a two-step progress indicator (Project Details, Prompt), the Business Model Canvas grid and a Single Input toggle."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      Inside the app, a new project uses the same two ways in: single input or canvas.
-    </figcaption>
-  </figure>
+  <div class="st-stats st-wide rv">
+    <div>
+      <p class="st-stat">8</p>
+      <p>assumption categories, from Setup to Funding</p>
+    </div>
+    <div>
+      <p class="st-stat">6</p>
+      <p>charts, from Cash Balance to Burn Rate</p>
+    </div>
+    <div>
+      <p class="st-stat">20</p>
+      <p>steps in the guided tour of the dashboard</p>
+    </div>
+  </div>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Step 01</p>
+      <h3 class="pcard__title">Describe the business</h3>
+      <p class="pcard__text">In one text box, or in a Business Model Canvas.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Step 02</p>
+      <h3 class="pcard__title">Watch the AI build it</h3>
+      <p class="pcard__text">The builder shows each stage and what the AI understood.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Step 03</p>
+      <h3 class="pcard__title">Explore and adjust</h3>
+      <p class="pcard__text">Change an assumption and the charts below recalculate.</p>
+    </div>
+  </div>
+</section>
 
-  <h3 class="cs__h3">2. Make the AI understandable</h3>
-  <p class="cs__p">
-    A forecast that appears from nowhere is hard to trust. While SumoSum works, the builder shows
-    each stage (reading the prompt, collecting real-time data, processing with AI, generating the
-    forecast) with a progress bar and a step count.
+<section class="cs__sec" aria-labelledby="s4">
+  <p class="st-k rv">04 · Key UX decisions</p>
+  <h2 class="cs__h rv" id="s4">Five decisions that shape the product</h2>
+  <p class="cs__p rv">
+    The tension between what a beginner and an expert need shaped most of these decisions.
   </p>
-  <p class="cs__p">
-    Beside it, a <strong>Live Analysis</strong> panel restates the business in plain language: the
-    products and prices, growth rate, team, cost of goods and major expenses the AI has picked up.
-    People can see what the model will be built from and spot a misunderstanding before they reach
-    the charts. I explored this screen in more than one colour treatment.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/sumosum-builder.webp' | rel }}"
-      width="1400"
-      height="927"
-      alt="SumoSum AI forecast builder at Step 9 of 10 and 89 percent progress. On the left, a robot mascot announces Added 1 service: Bookkeeping Service. On the right, a Live Analysis panel summarises the business in a paragraph above a checklist of four stages."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      The forecast builder shows what the AI understood while it works.
-    </figcaption>
-  </figure>
 
-  <h3 class="cs__h3">3. Keep assumptions next to their consequences</h3>
-  <p class="cs__p">
-    The dashboard is the centre of the product. It stacks two connected panels: purple
-    <strong>Assumptions</strong> on top and red <strong>Charts &amp; Reports</strong> below. Change
-    an input and the charts underneath recalculate, so the link between a decision and its
-    financial effect stays on one screen.
-  </p>
-  <p class="cs__p">
-    Assumptions are split into eight categories so a model can be built in manageable pieces:
-    Setup, Products, Assets, Staff, Marketing, Admin, Services and Funding. Each field has an info
-    tooltip, and the panel has Footnotes and Comments for anyone reviewing the model, such as an
-    accountant or advisor.
-  </p>
-  <p class="cs__p">
-    The Charts tab covers Cash Balance, Income Breakdown, Income vs Expenses, Cash Flow, Use of
-    Funds and Burn Rate, with a time range and a relative-scale option. The Reports tab holds the
-    profit and loss, cash flow statement and balance sheet, and Export turns the whole forecast into
-    a report for sharing or pitching.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/sumosum-charts.webp' | rel }}"
-      width="1400"
-      height="874"
-      alt="Project dashboard for Buns Hawaii - Sandwich Truck, Base Case. A collapsed purple Assumptions bar sits above a red Charts and Reports panel with six charts: Cash Balance, Income Breakdown, Income vs Expenses, Cash Flow, Use of Funds and Burn Rate. A banner reads Save your Project - FREE! No credit card required."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      The dashboard: assumptions above, the charts they drive below.
-    </figcaption>
-  </figure>
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision A</p>
+        <h3 class="st-bh">Start from the idea, not the spreadsheet</h3>
+        <p class="cs__p">
+          The home page opens with one question instead of a form full of financial fields: tell
+          SumoSum what you’ll sell, at what price and in what quantity, and the AI builds the
+          forecast. There is a microphone for people who would rather talk it through.
+        </p>
+        <p class="cs__p">
+          People who think in a more structured way can switch to <strong>BMC Mode</strong>, a
+          Business Model Canvas with its nine blocks, or upload an existing canvas.
+        </p>
+      </div>
+    </div>
+    <div class="st-figs rv">
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/sumosum-starter.webp' | rel }}"
+          width="1400"
+          height="1368"
+          alt="SumoSum home page with the headline AI-Powered Forecasting Built on Your Ideas, a prompt box with a microphone, and a tour tooltip marked Step 1 of 7. Below it, a Try Business Model Canvas section shows the nine canvas blocks and a Submit to Get Your Forecast button."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>The AI starter: describe the business in one box, or fill in a canvas</figcaption>
+      </figure>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/sumosum-canvas.webp' | rel }}"
+          width="1400"
+          height="874"
+          alt="Create Project modal titled Let SumoSum AI Build Your Financials, with a two-step progress indicator (Project Details, Prompt), the Business Model Canvas grid and a Single Input toggle."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Inside the app, a new project uses the same two ways in</figcaption>
+      </figure>
+    </div>
+  </div>
 
-  <h3 class="cs__h3">4. Explain the charts, not just draw them</h3>
-  <p class="cs__p">
-    A chart shows an outcome but doesn’t say why it looks that way. I designed a 20-step guided tour
-    that explains each chart, assumption category and tab in plain terms. Burn Rate, for example,
-    “shows how quickly you’re using up your available funds” and helps a startup work out its
-    runway. The tour can be skipped at any step, and every chart keeps an info icon for later.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/sumosum-assumptions.webp' | rel }}"
-      width="1400"
-      height="878"
-      alt="Dashboard with the Assumptions panel open on its category tabs and fields such as Bank Account Interest, Credit Terms, Opening Cash Balance and Income Tax. A tour tooltip marked Step 8 of 20 reads Welcome to your forecasting workspace! with Skip and Next buttons."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      The guided tour introduces the assumptions workspace, one step at a time.
-    </figcaption>
-  </figure>
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision B</p>
+        <h3 class="st-bh">Make the AI understandable</h3>
+        <p class="cs__p">
+          A forecast that appears from nowhere is hard to trust. The builder shows each stage with a
+          progress bar and a step count, and a <strong>Live Analysis</strong> panel restates the
+          business in plain language, so people can spot a misunderstanding before they reach the
+          charts.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/sumosum-builder.webp' | rel }}"
+        width="1400"
+        height="927"
+        alt="SumoSum AI forecast builder at Step 9 of 10 and 89 percent progress. On the left, a robot mascot announces Added 1 service: Bookkeeping Service. On the right, a Live Analysis panel summarises the business in a paragraph above a checklist of four stages."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>The forecast builder shows what the AI understood while it works</figcaption>
+    </figure>
+  </div>
 
-  <h3 class="cs__h3">5. Let people try before they commit</h3>
-  <p class="cs__p">
-    Anyone can build a forecast as a guest. The project header invites them to save it, “FREE! No
-    credit card required”, and the tour ends with a prompt to sign up so they don’t lose their
-    progress. Value comes first and the account comes second.
-  </p>
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision C</p>
+        <h3 class="st-bh">Keep assumptions next to their consequences</h3>
+        <p class="cs__p">
+          The dashboard stacks purple <strong>Assumptions</strong> above red
+          <strong>Charts &amp; Reports</strong>. Change an input and the charts underneath
+          recalculate. Assumptions come in eight categories, each field has an info tooltip, and
+          Footnotes and Comments support anyone reviewing the model.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/sumosum-charts.webp' | rel }}"
+        width="1400"
+        height="874"
+        alt="Project dashboard for Buns Hawaii - Sandwich Truck, Base Case. A collapsed purple Assumptions bar sits above a red Charts and Reports panel with six charts: Cash Balance, Income Breakdown, Income vs Expenses, Cash Flow, Use of Funds and Burn Rate. A banner reads Save your Project - FREE! No credit card required."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>The dashboard: assumptions above, the charts they drive below</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision D</p>
+        <h3 class="st-bh">Explain the charts, not just draw them</h3>
+        <p class="cs__p">
+          A 20-step guided tour explains each chart, assumption category and tab in plain terms. Burn
+          Rate, for example, “shows how quickly you’re using up your available funds”. The tour can
+          be skipped at any step, and every chart keeps an info icon for later.
+        </p>
+      </div>
+      <div class="st-decision">
+        <p class="st-k">Decision E</p>
+        <h3 class="st-bh">Let people try before they commit</h3>
+        <p class="cs__p">
+          Anyone can build a forecast as a guest. The project header invites them to save it, “FREE!
+          No credit card required”, and the tour ends with a prompt to sign up. Value comes first and
+          the account comes second.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/sumosum-assumptions.webp' | rel }}"
+        width="1400"
+        height="878"
+        alt="Dashboard with the Assumptions panel open on its category tabs and fields such as Bank Account Interest, Credit Terms, Opening Cash Balance and Income Tax. A tour tooltip marked Step 8 of 20 reads Welcome to your forecasting workspace! with Skip and Next buttons."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>The guided tour introduces the assumptions workspace, one step at a time</figcaption>
+    </figure>
+  </div>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">Projects, scenarios and sharing</h2>
-  <p class="cs__p">
-    A business model is a working document, not a one-off file. Each project holds one or more
-    scenarios, such as a base case and alternatives, so people can try a different price or cost
-    structure without overwriting their first plan. A project with no scenarios points straight to
-    Create Scenario.
+
+<section class="cs__sec" aria-labelledby="s5">
+  <p class="st-k rv">05 · Core screens</p>
+  <h2 class="cs__h rv" id="s5">Projects, plans and the admin side</h2>
+  <p class="cs__p rv">
+    Around the forecast sit the screens for organising work and managing access. Choose a screen to
+    see it.
   </p>
-  <p class="cs__p">
-    The project list shows each person’s role and the number of members, and the sidebar adds My
-    Groups, My Templates and a community Directory, which supports the shared way accountants and
-    advisors work with business owners.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/sumosum-projects.webp' | rel }}"
-      width="1400"
-      height="874"
-      alt="Project list with a Project Overview card showing the current plan, billing frequency and total projects available. Below it, projects expand to show their scenarios, with role, member count and Actions on each row."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      Projects expand into scenarios, with the current plan and project allowance on top.
-    </figcaption>
-  </figure>
+  <div class="st-wide rv">
+    <div class="st-tabs" role="tablist" aria-label="Core screens">
+      <button class="st-tab" type="button" role="tab" id="t-pro" aria-controls="p-pro">Projects and scenarios</button>
+      <button class="st-tab" type="button" role="tab" id="t-bil" aria-controls="p-bil">Billing</button>
+      <button class="st-tab" type="button" role="tab" id="t-adm" aria-controls="p-adm">Admin panel</button>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-pro" aria-labelledby="t-pro">
+      <p class="st-quote">A business model is a working document</p>
+      <p class="cs__p">
+        Each project holds one or more scenarios, such as a base case and alternatives, so people can
+        try a different price or cost structure without overwriting their first plan. The list shows
+        each person’s role and the number of members, which supports the shared way accountants and
+        advisors work with business owners.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/sumosum-projects.webp' | rel }}"
+          width="1400"
+          height="874"
+          alt="Project list with a Project Overview card showing the current plan, billing frequency and total projects available. Below it, projects expand to show their scenarios, with role, member count and Actions on each row."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Projects expand into scenarios, with the current plan and project allowance on top</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-bil" aria-labelledby="t-bil">
+      <p class="st-quote">What you have, what it costs, how to change it</p>
+      <p class="cs__p">
+        Plans are based on the number of projects. Billing Information shows the current plan,
+        renewal date and extra project slots beside a summary that adds them up, and changing plans
+        compares the project count now and after, with a clear warning before anything would be
+        lost.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/sumosum-billing.webp' | rel }}"
+          width="1400"
+          height="874"
+          alt="Billing Information page with Payment and Billing tabs selected. A Current Plan card lists plan, frequency, project limit, purchase and renewal dates and extra projects. A Billing Summary card itemises the plan and additional project slots and shows the next billing total. A Change Plan button sits below."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Billing: the current plan beside a summary of what it costs</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-adm" aria-labelledby="t-adm">
+      <p class="st-quote">Plans and add-ons in one place</p>
+      <p class="cs__p">
+        The team manages plans in one table with price, project allowance, subscriber count, status
+        and an on/off toggle, and creates and edits plans and add-ons, such as extra projects, from
+        the same panel.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/sumosum-admin.webp' | rel }}"
+          width="1400"
+          height="874"
+          alt="Admin panel Plan List with columns for plan name, price per month, projects, subscribers, status badges, an edit action and a mode toggle. An Add-On card for Extra Project sits below, with an Edit button."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>The admin panel. Figures are placeholder data.</figcaption>
+      </figure>
+    </div>
+  </div>
+  <h3 class="st-sub rv">Beyond the core flow</h3>
+  <ol class="st-list st-wide rv">
+    <li>Loading screens and a carousel previewing features</li>
+    <li>Alert screens</li>
+    <li>Mobile and tablet layouts</li>
+    <li>The marketing site</li>
+    <li>A WordPress plugin of the single-input starter</li>
+  </ol>
 </section>
-<section class="cs__sec">
-  <h2 class="cs__h">Pricing, subscription and product access</h2>
-  <p class="cs__p">
-    Plans in SumoSum are based on the number of projects, so I put the allowance where people use
-    it: the project list shows the current plan and how many project slots are left, with a link to
-    manage it.
+
+<section class="cs__sec" aria-labelledby="s6">
+  <p class="st-k rv">06 · Reflection</p>
+  <h2 class="cs__h rv" id="s6">More than arranging charts</h2>
+  <p class="cs__p rv">
+    Designing for business strategy and financial modelling means understanding how people think
+    about decisions, and showing complex relationships without oversimplifying them.
   </p>
-  <p class="cs__p">
-    Billing Information shows the current plan, renewal date and extra project slots beside a
-    billing summary that adds them up. Changing plans opens a confirmation that compares the project
-    count now and after the change, and warns clearly before anything would be lost. I also
-    designed flows for buying and removing extra project slots, and for upgrading or downgrading.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/sumosum-billing.webp' | rel }}"
-      width="1400"
-      height="874"
-      alt="Billing Information page with Payment and Billing tabs selected. A Current Plan card lists plan, frequency, project limit, purchase and renewal dates and extra projects. A Billing Summary card itemises the plan and additional project slots and shows the next billing total. A Change Plan button sits below."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>Billing: what you have, what it costs, and how to change it.</figcaption>
-  </figure>
-  <p class="cs__p">
-    On the admin side, the team manages plans in one table with price, project allowance,
-    subscriber count, status and an on/off toggle. Admins can create and edit plans and add-ons,
-    such as extra projects, from the same panel.
-  </p>
-  <figure class="cs__fig">
-    <img
-      src="{{ '/assets/images/projects/sumosum-admin.webp' | rel }}"
-      width="1400"
-      height="874"
-      alt="Admin panel Plan List with columns for plan name, price per month, projects, subscribers, status badges, an edit action and a mode toggle. An Add-On card for Extra Project sits below, with an Edit button."
-      loading="lazy"
-      decoding="async"
-    />
-    <figcaption>
-      The admin panel: plans and add-ons in one place. Figures are placeholder data.
-    </figcaption>
-  </figure>
-</section>
-<section class="cs__sec">
-  <h2 class="cs__h">Beyond the core flow</h2>
-  <p class="cs__p">
-    The Figma work also covers loading screens and a loading carousel that previews charts, reports
-    and features while the AI works, alert screens, mobile and tablet layouts, the marketing site,
-    and a WordPress plugin version of the single-input starter.
-  </p>
-</section>
-<section class="cs__sec">
-  <h2 class="cs__h">Design principles</h2>
-  <ul class="cs__p">
-    <li>
-      <strong>Make complexity approachable.</strong> Break financial concepts into steps people
-      already understand.
-    </li>
-    <li>
-      <strong>Connect inputs to outcomes.</strong> Keep every assumption near the result it changes.
-    </li>
-    <li>
-      <strong>Make AI understandable.</strong> Show what the AI is doing and what it understood.
-    </li>
-    <li>
-      <strong>Support exploration.</strong> Scenarios make it safe to ask “what if?”
-    </li>
-    <li>
-      <strong>Design for every level of expertise.</strong> Start simple without capping the depth
-      an expert needs.
-    </li>
-  </ul>
-</section>
-<section class="cs__sec">
-  <h2 class="cs__h">Reflection</h2>
-  <p class="cs__p">
-    Designing for business strategy and financial modelling takes more than arranging charts, forms
-    and dashboard components. It means understanding how people think about decisions and how to
-    show complex relationships without oversimplifying them.
-  </p>
-  <p class="cs__p">
-    The biggest lesson: a good strategy tool shouldn’t just produce an answer. It should help people
-    understand the assumptions behind that answer and explore what happens when they change.
-    Strategy is most useful when people can see it, question it and work with it.
-  </p>
+  <div class="st-callout rv">
+    <p class="st-bh">
+      A good strategy tool shouldn’t just produce an answer. It should help people understand the
+      assumptions behind it and explore what happens when they change.
+    </p>
+  </div>
 </section>

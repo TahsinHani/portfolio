@@ -1,8 +1,19 @@
-{#- Site footer: copyright and the "Press G for Design Mode" hint (see HIDDEN-FEATURES.md → Designer mode).
-    The hint is hidden on touch-only screens, which have no G key to press (.footer__hint in home.css and work.css). #}
+{#- Site footer: copyright, the "Press G for Design Mode" hint (see HIDDEN-FEATURES.md → Designer mode) and
+    a "Back to top" link. The hint is hidden on touch-only screens, which have no G key to press; "Back to top"
+    stays (.footer__hint / .footer__top in home.css and work.css). "#top" is the homepage hero; on other pages
+    the browser treats "#top" as the top of the page. #}
 <footer class="footer">
   <div class="container footer__row">
     <p>© 2026 {{ site.name }}. All rights reserved</p>
-    <p class="footer__hint">Press <kbd>G</kbd> for Design Mode</p>
+    <p class="footer__end">
+      <span class="footer__hint">Press <kbd>G</kbd> for Design Mode<span class="footer__dot" aria-hidden="true">•</span></span>
+      {#- The arrow sits in a key cap like the G above (.footer__key shares the kbd styles). #}
+      {#- #}<a class="footer__top" href="#top">Back to top<span class="footer__key" aria-hidden="true">
+        {#- #}<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false">
+          <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12Z" />
+          <path d="M12 15.5V9.5" />
+          <path d="M9 11.5L12 8.5L15 11.5" />
+        </svg></span></a>
+    </p>
   </div>
 </footer>

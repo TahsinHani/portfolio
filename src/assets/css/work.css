@@ -934,7 +934,8 @@ a {
   font-size: 16px;
   font-weight: 500;
 }
-.footer__hint kbd {
+.footer__hint kbd,
+.footer__key {
   font-family: var(--font-text);
   color: var(--color-ink);
   background: var(--color-surface);
@@ -945,6 +946,32 @@ a {
   padding: 1px 7px;
   font-size: 14px;
   font-weight: 600;
+}
+/* "Back to top" after the hint, with a dot between them (the dot goes with the hint on touch screens) */
+.footer__dot {
+  margin-inline: 10px;
+  color: var(--color-ink-secondary);
+}
+.footer__top {
+  color: inherit;
+  text-decoration: none;
+  text-underline-offset: 3px;
+}
+.footer__top:hover,
+.footer__top:focus-visible {
+  text-decoration: underline;
+}
+/* the up-arrow key cap after "Back to top": same cap as the G, sized to the line */
+.footer__key {
+  display: inline-grid;
+  place-items: center;
+  margin-left: 8px;
+  padding: 3px 5px;
+  vertical-align: -3px;
+  line-height: 0;
+}
+.footer__key svg {
+  display: block;
 }
 /* Touch-only screens have no G key to press. */
 @media (hover: none) {
@@ -1234,12 +1261,27 @@ a {
 .cpanel--still :is(.cwin > img, .cpanel__arrow, .cpanel__arrow-draw, .cpanel__arrow-flicks) {
   transition: none !important;
 }
-/* Once the arrow has finished pointing at "Coming Soon" (head drawn at 1.6s), one smooth sine wave runs
-   through the social icons, left to right, to carry the motion on: each icon rises, dips a little below
-   its line and settles, a beat after the one before (--i is its position, set in contact-card.njk).
-   It plays once each time the window opens; without JS or with reduced motion it never runs. */
+/* Once the arrow has finished pointing at "Coming Soon" (head drawn at 1.6s), the social icons come alive in
+   two beats, left to right (--i is each icon's position, set in contact-card.njk):
+   1. a soft pop: each icon slowly swells and eases back, 0.14s after the one before;
+   2. then one smooth sine wave runs through the row: each icon rises, dips a little below its line and settles.
+   Both play once each time the window opens; without JS or with reduced motion they never run.
+   The pop uses scale and the wave uses translate, so the two never fight. */
 .cpanel--animate.is-open .cpanel__social li {
-  animation: cpanel-wave 0.9s cubic-bezier(0.37, 0, 0.63, 1) calc(1.65s + var(--i, 0) * 0.09s) both;
+  animation:
+    cpanel-pop 0.8s cubic-bezier(0.37, 0, 0.63, 1) calc(1.65s + var(--i, 0) * 0.14s) both,
+    cpanel-wave 0.9s cubic-bezier(0.37, 0, 0.63, 1) calc(3.1s + var(--i, 0) * 0.09s) both;
+}
+@keyframes cpanel-pop {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.2;
+  }
+  100% {
+    scale: 1;
+  }
 }
 @keyframes cpanel-wave {
   0% {

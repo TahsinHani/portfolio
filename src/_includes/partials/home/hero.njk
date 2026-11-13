@@ -11,6 +11,8 @@
     <img class="hero__bg" src="{{ '/assets/images/hero.webp' | rel }}" srcset="{{ '/assets/images/hero-1000.webp' | rel }} 1000w, {{ '/assets/images/hero.webp' | rel }} 2000w" sizes="100vw" width="2000" height="1250" alt="" fetchpriority="high" decoding="async" />
     {#- #}<img class="hero__sun" src="{{ '/assets/images/hero-sun.webp' | rel }}" width="768" height="768" alt="" decoding="async" />
     {#- #}<img class="hero__ridge" src="{{ '/assets/images/hero-ridge.webp' | rel }}" width="380" height="370" alt="" decoding="async" />
+    {#- The boat on the lake is its own layer (painted out of hero.webp); hero-boat.js sails it right to left as the page scrolls. #}
+    {#- #}<img class="hero__boat" src="{{ '/assets/images/hero-boat.webp' | rel }}" width="145" height="82" alt="" decoding="async" />
     {#- #}<canvas class="hero__birdcv"></canvas>
   </div>
   <div class="hero__fade" aria-hidden="true"></div>
@@ -26,7 +28,7 @@
       </p>
       <div class="hero__actions">
         {{- button("Explore my work", "/work/index.html" | rel, trail="arrow-right") -}}
-        {{- button("Let's talk", "mailto:" + site.email, variant="secondary", trail="arrow-right") -}}
+        {{- button("Let's talk", site.booking, variant="secondary", trail="arrow-right", external=true) -}}
       </div>
     </div>
     <div class="hero__side">
@@ -48,3 +50,4 @@
   </div>
 </section>
 <script defer src="{{ '/assets/js/hero.js' | rel }}"></script>
+<script defer src="{{ '/assets/js/hero-boat.js' | rel }}"></script>

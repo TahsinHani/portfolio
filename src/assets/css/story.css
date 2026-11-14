@@ -264,6 +264,10 @@
 .cs--story .cs__sec > .st-wide {
   max-width: none;
 }
+/* Figure capped at 1120px (full width below that); the image keeps its ratio and 8px corners */
+.cs--story .cs__sec > .st-fig--1120 {
+  max-width: 1120px;
+}
 .cs--story .cs__h {
   max-width: 24ch;
   text-wrap: balance;

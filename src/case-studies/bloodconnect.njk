@@ -82,6 +82,49 @@ moreWork:
       <p class="pcard__text">A beta was released first.</p>
     </div>
   </div>
+  <h3 class="st-sub rv">Pain points we assumed in existing apps</h3>
+  <ol class="st-list st-wide rv">
+    <li>
+      <strong>Lack of real-time updates</strong>Many apps fail to give instant notifications for
+      blood requests and donor availability.
+    </li>
+    <li>
+      <strong>Limited communication</strong>Existing platforms often lack integrated chat, which
+      makes coordination between donors and seekers cumbersome.
+    </li>
+    <li>
+      <strong>Poor user experience</strong>Some apps have complex interfaces that are not
+      user-friendly for people in urgent need.
+    </li>
+    <li>
+      <strong>No location-based matching</strong>Some apps do not match donors and seekers by
+      proximity, which leads to delays in critical situations.
+    </li>
+    <li>
+      <strong>Unverified users</strong>Without proper verification, donor or seeker information can
+      be unreliable.
+    </li>
+    <li>
+      <strong>Inadequate post management</strong>Managing and tracking several posts or requests is
+      often confusing.
+    </li>
+    <li>
+      <strong>Low engagement</strong>Many apps lack community-building features, so fewer donors
+      stay active over time.
+    </li>
+    <li>
+      <strong>Data privacy concerns</strong>Existing platforms might not prioritize the secure
+      handling of sensitive user information.
+    </li>
+    <li>
+      <strong>Fragmented features</strong>Some apps focus on only one part, such as posting or
+      searching, without offering a complete solution.
+    </li>
+    <li>
+      <strong>Limited accessibility</strong>Some apps do not support multiple languages or offline
+      use, which reduces their usefulness in critical areas.
+    </li>
+  </ol>
   <div class="st-callout rv">
     <p class="st-bh">
       Phase 1 had one job: get people into the app safely and correctly, from the splash screen to
@@ -97,9 +140,48 @@ moreWork:
     We started from the stakeholder’s feature requests and added our own desk research and
     interviews. Together they fed the user stories.
   </p>
+  <div class="st-callout rv">
+    <p class="st-k">Constraint</p>
+    <p class="st-bh">
+      I had never used a blood donation app, so I could not spot pain points from firsthand
+      experience.
+    </p>
+    <p class="cs__p">
+      To make up for it, I relied on secondary research: app reviews, case studies and expert
+      opinions, along with surveys and interviews with actual users.
+    </p>
+  </div>
+  <h3 class="st-sub rv">Desk research</h3>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Source: WHO</p>
+      <h3 class="pcard__title">Global blood donation trends</h3>
+      <p class="pcard__text">
+        World Health Organization reports on donation patterns showed that fewer than 1% of people
+        in low-income countries donate blood each year, a clear need for simpler donation systems.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Source: National Health Services</p>
+      <h3 class="pcard__title">Health ministry reports</h3>
+      <p class="pcard__text">
+        Government statistics on donation and shortages showed that 20% of blood requests go unmet
+        each year, for lack of efficient platforms connecting donors and seekers.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Source: Academic journals</p>
+      <h3 class="pcard__title">Barriers to donation</h3>
+      <p class="pcard__text">
+        Research on the psychological and logistical barriers showed that fear of the donation
+        process and a lack of motivation are common deterrents.
+      </p>
+    </div>
+  </div>
   <h3 class="st-sub rv">What we drew on</h3>
   <ol class="st-list st-wide rv">
     <li>The stakeholder’s feature requests</li>
+    <li>Desk research: WHO, health ministry and academic sources</li>
     <li>A review of Blood Donor App (Save Life Co)</li>
     <li>A review of BloodLine (Blood Bank App BD)</li>
     <li>Interviews with real donors and seekers</li>
@@ -139,6 +221,28 @@ moreWork:
     We mapped the flows with sitemaps and phased wireframes (Phase 1, Phase 2 and first release),
     then refined the UI across several versions up to handoff.
   </p>
+  <figure class="cs__fig st-fig--1120 rv">
+    <img
+      src="{{ '/assets/images/projects/bloodconnect-sitemap.webp' | rel }}"
+      width="1400"
+      height="893"
+      alt="Sitemap boards: the overall app flow, the login and registration flow for individuals and organizations, the home flow for an individual, and account and settings, with sticky notes beside each branch"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Sitemaps for the app flow, login and registration, home, and account and settings</figcaption>
+  </figure>
+  <figure class="cs__fig st-fig--1120 rv">
+    <img
+      src="{{ '/assets/images/projects/bloodconnect-wireframes.webp' | rel }}"
+      width="1700"
+      height="862"
+      alt="Wireframes in three columns, Phase 1, Phase 2 and 1st Release; Phase 1 has rows of user stories and screens for the donor, searcher and organization"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Wireframes by phase, with user stories for each type of user in Phase 1</figcaption>
+  </figure>
   <div class="st-stats st-wide rv">
     <div>
       <p class="st-stat">6</p>
@@ -168,6 +272,17 @@ moreWork:
       <p class="pcard__text">Create account, OTP, set password, personal info and settings.</p>
     </div>
   </div>
+  <figure class="cs__fig st-fig--1120 rv">
+    <img
+      src="{{ '/assets/images/projects/bloodconnect-journeys.webp' | rel }}"
+      width="1700"
+      height="906"
+      alt="The login journey and the registration journey laid out screen by screen, each followed by its error cases"
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>The login and registration journeys, each with its error cases</figcaption>
+  </figure>
 </section>
 
 <section class="cs__sec" aria-labelledby="s4">

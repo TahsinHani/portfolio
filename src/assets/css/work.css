@@ -776,26 +776,6 @@ a {
     transform: none;
   }
 }
-.card__badges {
-  flex-wrap: wrap;
-  gap: 12px;
-  list-style: none;
-  display: flex;
-}
-.badge {
-  border: var(--border-hairline);
-  border-radius: var(--radius-pill);
-  height: 30px;
-  font-family: var(--font-text);
-  letter-spacing: 0.01em;
-  color: var(--color-ink);
-  background: var(--color-surface);
-  align-items: center;
-  padding-inline: 12px;
-  font-size: 14px;
-  font-weight: 600;
-  display: inline-flex;
-}
 .work__more {
   margin-top: var(--space-7);
   justify-content: center;
@@ -860,10 +840,6 @@ a {
   font-size: var(--text-body);
   max-width: 38rem;
   line-height: 1.5;
-}
-.pcard .card__badges {
-  margin-top: var(--space-2);
-  padding: 0;
 }
 @media (width>=1024px) {
   .pcard {

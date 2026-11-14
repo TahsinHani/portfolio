@@ -47,6 +47,7 @@
   --color-bg: #fff;
   --color-surface: #fff;
   --color-surface-sunken: #f0f0f0;
+  --color-surface-tint: #f4f5fa; /* cool tinted surface: image frames */
   --color-line: #e0e0e0;
   --color-on-ink: #fff;
   --color-ink-hover: color-mix(in srgb, var(--color-ink) 91%, #fff);

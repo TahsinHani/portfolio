@@ -34,7 +34,7 @@
   max-width: 20ch;
   text-wrap: balance;
 }
-/* Header spacing: breadcrumbs 48px eyebrow 24px title 16px intro 16px tags 48px facts */
+/* Header spacing: breadcrumbs 48px eyebrow 24px title 16px intro 24px button 48px facts */
 .cs--story .cs__top {
   gap: 0;
 }
@@ -44,9 +44,12 @@
 .cs--story .cs__title {
   margin-top: 24px;
 }
-.cs--story .cs__summary,
-.cs--story .cs__top .card__badges {
+.cs--story .cs__summary {
   margin-top: 16px;
+}
+/* "View Website" sits 24px under the intro */
+.cs--story .cs__actions {
+  margin-top: 24px;
 }
 /* Facts: one row of four (two by two on small screens), left aligned, small caps labels over semibold values */
 .cs--story .cs__meta {

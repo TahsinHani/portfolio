@@ -18,15 +18,20 @@
     title        project name
     order        position in project lists (1 = first)
     summary      one-sentence intro under the title (also the meta description)
-    badges       project type tags
     facts        [{ label, value }] shown under the summary (Role, Timeline, ...)
     demo         true shows the "Demo case study" note
     headline     optional statement used as the page title; the project name then sits above it
+    headlineHand optional word from the headline set in the handwriting font (Satisfy, #36416D):
+                 the word that carries the change the project makes, e.g. "easier"
+    website      optional link to the live product; adds a "View Website" button under the intro
+    websiteLabel optional label for that button instead of "View Website"
     lead         optional intro shown instead of summary (summary stays the meta description)
     cover        { alt, image?, caption? }  cover image; image defaults to the file name
     glance       optional [{ word, text }] the three "At a glance" cards
     credits      optional [{ label, value }] the "Project credits" list that closes the story
-    card         { desc, client, mark, alt, image? } the project card in lists
+    card         { desc, client, mark, alt, image?, logo? } the project card in lists; logo is a
+                 file in assets/images/projects/ (<slug>-logo.webp or .svg) shown in the 36px tile
+                 in place of the initials (mark)
     moreWork     slugs of the projects shown under "More work"
     extraStyles  optional extra page-only stylesheets from assets/css/ (added after story.css)
 */

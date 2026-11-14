@@ -23,13 +23,18 @@ layout: layouts/base.njk
       {%- if headline %}
       <p class="cs__eyebrow">{{ title }}</p>
       {%- endif %}
-      <h1 class="cs__title">{{ headline or title }}</h1>
+      {#- headlineHand: one word of the headline set in the handwriting font (first match only) #}
+      {%- set heading = (headline or title) | escape | string %}
+      {%- if headlineHand %}
+      {%- set heading = heading | replace(headlineHand, '<span class="cs__hand">' + headlineHand + '</span>', 1) %}
+      {%- endif %}
+      <h1 class="cs__title">{{ heading | safe }}</h1>
       <p class="cs__summary">{{ lead or summary }}</p>
-      <ul class="card__badges" aria-label="Project type">
-        {%- for badge in badges %}
-        <li class="badge">{{ badge }}</li>
-        {%- endfor %}
-      </ul>
+      {%- if website %}
+      <div class="cs__actions">
+        {{ button(websiteLabel or "View Website", website, trail="arrow-up-right", external=true) }}
+      </div>
+      {%- endif %}
       <dl class="cs__meta">
         {%- for fact in facts %}
         <div>

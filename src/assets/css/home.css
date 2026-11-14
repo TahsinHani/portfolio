@@ -687,7 +687,7 @@ a {
 .hero__hand {
   font-family: var(--font-hand);
   letter-spacing: 0;
-  color: #0f2f42;
+  color: #36416d;
   text-shadow: 0 0 22px #ffffffd9;
   margin-right: 0;
   font-size: 1.12em;
@@ -1104,20 +1104,26 @@ a {
     transition: none;
   }
 }
+/*
+  Project card (homepage, All work, "More work"), from the Figma card (Mockups, node 17:625).
+  Narrow cards: text above the image. Cards 600px wide or more (measured on the card's list item, so
+  two cards side by side on a laptop still stack when they are narrow): a 262px text column, a 336px
+  divider line and a 362px image, 16px either side of the line, inside 24px of padding. The line takes
+  no width of its own (as in the Figma card), so the content is 262 + 16 + 16 + 362 = 656px and the
+  card 704px: exactly half of the 1440px container less the 32px gap between cards. Narrower cards
+  keep the 262px text column and give up image width; wider ones never grow past 704px. The text column puts the header, title,
+  description and client at the top and "Read case study" at the bottom.
+*/
 .card {
-  --fg: var(--color-ink);
-  --fg2: var(--color-ink-secondary);
-  --title: var(--color-ink);
   gap: var(--space-5);
   height: 100%;
-  min-height: 21rem;
-  color: var(--fg);
+  color: var(--color-ink);
   background: var(--color-surface);
   box-shadow: var(--shadow);
   transition: transform var(--dur) var(--ease);
   border-radius: 8px;
-  grid-template-columns: 1fr;
-  padding: clamp(1.25rem, 2.2vw, 2rem);
+  grid-template-columns: minmax(0, 1fr);
+  padding: 24px;
   display: grid;
   position: relative;
 }
@@ -1126,13 +1132,19 @@ a {
   transform: translateY(-6px);
 }
 .card__text {
-  gap: var(--space-4);
+  gap: 24px;
   flex-direction: column;
   justify-content: space-between;
   min-width: 0;
   height: 100%;
   display: flex;
 }
+.card__lead {
+  gap: 24px;
+  flex-direction: column;
+  display: flex;
+}
+/* Header: "CASE STUDY 02" top left, the client mark (36px square) top right */
 .card__top {
   justify-content: space-between;
   align-items: flex-start;
@@ -1145,81 +1157,105 @@ a {
   text-transform: uppercase;
   color: var(--color-ink-secondary);
   margin: 0;
-  font-size: 0.75rem;
+  font-size: 12px;
   font-weight: 600;
+  line-height: 1.2;
 }
 .card__mark {
-  border: 1.5px solid var(--color-line);
-  width: 3rem;
-  height: 3rem;
+  border: 0.75px solid var(--color-line);
+  width: 36px;
+  height: 36px;
   font-family: var(--font-title);
   letter-spacing: 0.04em;
   color: var(--color-ink-secondary);
   background: var(--color-surface-sunken);
-  border-radius: 6px;
+  border-radius: 4.5px;
   flex: none;
   place-items: center;
-  margin-top: -0.25rem;
-  font-size: 0.875rem;
+  font-size: 10.5px;
   font-weight: 700;
+  line-height: 1.6;
   display: grid;
 }
+/* A logo in the tile: 24px, kept whole (contain), centred */
+.card__mark img {
+  object-fit: contain;
+  width: 24px;
+  height: 24px;
+  display: block;
+}
+/* Title, description and client: 12px under the title, 24px above the client */
 .card__body {
-  gap: var(--space-3);
+  gap: 12px;
   flex-direction: column;
   display: flex;
 }
 .card__title {
-  color: var(--title);
+  font-family: var(--font-display);
+  color: var(--color-ink);
   letter-spacing: -0.025em;
   text-wrap: balance;
   font-size: 24px;
-  line-height: 1.08;
+  font-weight: 600;
+  line-height: 1.2;
 }
 .card__desc {
-  color: var(--fg2);
-  max-width: 34ch;
-  font-size: 16px;
-  line-height: 1.45;
-}
-.card__client {
-  padding-bottom: var(--space-2);
   font-family: var(--font-text);
-  font-size: var(--text-meta);
-  color: var(--color-ink);
-  margin: 0;
+  color: var(--color-ink-secondary);
+  max-width: 238px;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.4;
 }
+/* 24px from the description to the client line (the body's 12px gap plus 12px) */
+.card__client {
+  font-family: var(--font-text);
+  color: var(--color-ink);
+  margin: 12px 0 0;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+/* "Read case study ↗": an underlined text link in the accent ink; the whole card is its click area */
 .card__cta {
-  padding-block: var(--space-2);
-  border-block: var(--border-hairline);
   justify-content: flex-start;
   display: flex;
 }
 .card__btn {
-  background: var(--color-ink);
-  height: 40px;
-  color: var(--color-on-ink);
+  gap: 4px;
+  color: #36416d;
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.07em;
   font-family: var(--font-title);
   white-space: nowrap;
-  transition: background-color var(--dur) var(--ease);
-  border-radius: 3px;
   align-items: center;
-  padding-inline: 18px;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: 700;
+  line-height: 1.37;
   text-decoration: none;
   display: inline-flex;
+}
+.card__btn-label {
+  text-decoration: underline;
+  text-decoration-thickness: from-font;
+  text-underline-position: from-font;
+}
+.card__btn svg {
+  fill: none;
+  stroke: currentColor;
+  width: 16px;
+  height: 16px;
+  transition: transform var(--dur) var(--ease);
+  flex: none;
+}
+.card:hover .card__btn svg {
+  transform: translate(2px, -2px);
 }
 .card__btn:after {
   content: "";
   border-radius: 8px;
   position: absolute;
   inset: 0;
-}
-.card__btn:hover {
-  background: var(--color-ink-hover);
 }
 .card__btn:focus-visible {
   outline: none;
@@ -1228,11 +1264,14 @@ a {
   outline: 3px solid var(--color-ink);
   outline-offset: -8px;
 }
+/* Divider between the text and the image: a 336px hairline, centred (wide cards only) */
+.card__rule {
+  display: none;
+}
 .card__media {
   background: var(--color-surface-sunken);
   aspect-ratio: 4/3;
   border-radius: 8px;
-  align-self: end;
   overflow: hidden;
 }
 .card__media img {
@@ -1241,28 +1280,37 @@ a {
   height: 100%;
   display: block;
 }
-@media (width>=640px) {
+:has(> .card) {
+  container: card / inline-size;
+}
+@container card (width >= 600px) {
   .card {
-    grid-template-columns: 2fr 3fr;
-    column-gap: 0;
-    padding: 24px;
+    grid-template-columns: 262px 0 minmax(0, 362px);
+    gap: 16px;
+    max-width: 704px;
+    min-height: 384px;
   }
-  .card__text {
-    padding-right: var(--space-5);
-    border-right: 1px dashed var(--color-line);
+  .card__rule {
+    width: 1px;
+    margin-left: -0.5px;
+    background: var(--color-line);
+    height: min(336px, 100%);
+    align-self: center;
+    display: block;
   }
   .card__media {
     aspect-ratio: auto;
-    margin-left: var(--space-5);
     align-self: stretch;
   }
 }
 @media (prefers-reduced-motion: reduce) {
-  .card {
+  .card,
+  .card__btn svg {
     transition: none;
   }
   .card:hover,
-  .card:focus-within {
+  .card:focus-within,
+  .card:hover .card__btn svg {
     transform: none;
   }
 }
@@ -1850,6 +1898,9 @@ a {
   font-size: var(--text-meta);
 }
 .about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
   margin-top: var(--space-4);
 }
 .about__who {

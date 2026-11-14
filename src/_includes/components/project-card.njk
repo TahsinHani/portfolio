@@ -13,21 +13,30 @@
 {%- set img = imageBase + (p.card.image or project.page.fileSlug) -%}
 <article class="card" id="p-{{ project.page.fileSlug }}">
   <div class="card__text">
-    <header class="card__top">
-      <p class="card__eyebrow">Case study {{ p.order | pad2 }}</p>
-      <span class="card__mark" aria-hidden="true">{{ p.card.mark }}</span>
-    </header>
-    <div class="card__body">
-      <{{ heading }} class="card__title">{{ p.title }}</{{ heading }}>
-      <p class="card__desc">{{ p.card.desc }}</p>
-    </div>
-    <footer class="card__foot">
-      <p class="card__client">Client: {{ p.card.client }}</p>
-      <div class="card__cta">
-        <a class="card__btn" href="{{ href }}">Read case study<span class="sr-only">: {{ p.title }}</span></a>
+    <div class="card__lead">
+      <header class="card__top">
+        <p class="card__eyebrow">Case study {{ p.order | pad2 }}</p>
+        {#- The client's logo (card.logo) in the 36px tile, or its initials (card.mark) without one #}
+        <span class="card__mark" aria-hidden="true">
+          {%- if p.card.logo -%}
+          <img src="{{ imageBase + p.card.logo }}" alt="" width="24" height="24" loading="lazy" decoding="async" />
+          {%- else -%}
+          {{ p.card.mark }}
+          {%- endif -%}
+        </span>
+      </header>
+      <div class="card__body">
+        <{{ heading }} class="card__title">{{ p.title }}</{{ heading }}>
+        <p class="card__desc">{{ p.card.desc }}</p>
+        <p class="card__client">Client: {{ p.card.client }}</p>
       </div>
+    </div>
+    <footer class="card__cta">
+      {#- The ↗ arrow from the design (16px, 1.4px stroke); it takes the link colour #}
+      <a class="card__btn" href="{{ href }}"><span class="card__btn-label">Read case study</span><span class="sr-only">: {{ p.title }}</span><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" focusable="false"><path d="M12 2.953L2.66667 12.2863" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/><path d="M12 9.79967V2.953H5.15333" stroke-width="1.4" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round" stroke="currentColor"/></svg></a>
     </footer>
   </div>
+  <span class="card__rule" aria-hidden="true"></span>
   <div class="card__media">
     <img
       src="{{ img }}-600.webp"

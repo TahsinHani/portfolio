@@ -253,27 +253,22 @@
   border: 0;
   border-radius: 0;
 }
-/* Doctor profile (1400 x 1124): the summary card and the two actions, x 50–470, y 440–760 */
-.st-crop--actions {
-  aspect-ratio: 420 / 320;
-}
-.cs__fig .st-crop--actions img {
-  width: 333.333%;
-  margin: -104.762% 0 0 -11.905%;
-}
 .cs--story .cs__sec > .st-wide {
   max-width: none;
 }
-/* Figure capped at 1120px (full width below that); the image keeps its ratio and 8px corners */
-.cs--story .cs__sec > .st-fig--1120,
-.cs--story .st-gal > .st-fig--1120 {
-  max-width: 1120px;
-}
-/* Add to centre a capped figure in its section (its caption still starts at the image's left edge) */
-.cs--story .cs__sec > .st-fig--center,
-.cs--story .st-gal > .st-fig--center {
+/* Every full-width figure (directly in a section or in a tab panel) on every case study: 1120px wide
+   (full width on narrower screens), height from the image's own ratio, centred; the caption starts at
+   the image's left edge. Images beside decision text (.st-split) keep their column width.
+   (.st-fig--1120 and .st-fig--center are older names for this and no longer needed.) */
+.cs--story :is(.cs__sec, .st-gal) > .cs__fig {
   width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
   align-self: center;
+}
+.cs--story :is(.cs__sec, .st-gal) > .cs__fig img {
+  width: 100%;
+  height: auto;
 }
 /* Add for a mockup with its own frame and transparent edges: no border or background behind it */
 .cs__fig.st-fig--bare img {

@@ -265,8 +265,20 @@
   max-width: none;
 }
 /* Figure capped at 1120px (full width below that); the image keeps its ratio and 8px corners */
-.cs--story .cs__sec > .st-fig--1120 {
+.cs--story .cs__sec > .st-fig--1120,
+.cs--story .st-gal > .st-fig--1120 {
   max-width: 1120px;
+}
+/* Add to centre a capped figure in its section (its caption still starts at the image's left edge) */
+.cs--story .cs__sec > .st-fig--center,
+.cs--story .st-gal > .st-fig--center {
+  width: 100%;
+  align-self: center;
+}
+/* Add for a mockup with its own frame and transparent edges: no border or background behind it */
+.cs__fig.st-fig--bare img {
+  border: 0;
+  background: none;
 }
 .cs--story .cs__h {
   max-width: 24ch;

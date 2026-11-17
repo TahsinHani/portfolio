@@ -26,7 +26,8 @@
     website      optional link to the live product; adds a "View Website" button under the intro
     websiteLabel optional label for that button instead of "View Website"
     lead         optional intro shown instead of summary (summary stays the meta description)
-    cover        { alt, image?, caption? }  cover image; image defaults to the file name
+    cover        { alt, image?, caption?, width?, height? }  cover image; image defaults to the file name,
+                 width/height to 1200 × 900 (set them when the image has another size or ratio)
     glance       optional [{ word, text }] the three "At a glance" cards
     credits      optional [{ label, value }] the "Project credits" list that closes the story
     card         { desc, client, mark, alt, image?, logo? } the project card in lists; logo is a

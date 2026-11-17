@@ -49,7 +49,7 @@ layout: layouts/base.njk
     </header>
 
     <figure class="cs__cover container">
-      <img src="{{ ('/assets/images/projects/' + (cover.image or page.fileSlug) + '.webp') | rel }}" width="1200" height="900" alt="{{ cover.alt }}" fetchpriority="high" />
+      <img src="{{ ('/assets/images/projects/' + (cover.image or page.fileSlug) + '.webp') | rel }}" width="{{ cover.width or 1200 }}" height="{{ cover.height or 900 }}" alt="{{ cover.alt }}" fetchpriority="high" />
       {%- if cover.caption %}
       <figcaption>{{ cover.caption }}</figcaption>
       {%- endif %}

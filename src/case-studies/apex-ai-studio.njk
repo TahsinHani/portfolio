@@ -1,0 +1,564 @@
+---
+title: Apex AI Studio
+order: 8
+headline: Bringing a personal stylist to an online shoe store
+headlineHand: personal
+summary: >-
+  An AI shopping assistant for the Apex online store that styles a complete outfit from one photo,
+  finds the colours that suit each customer, and turns both into products they can buy.
+lead: >-
+  Apex wanted to add AI to its existing online store without disrupting how people already shop.
+  I designed Apex AI Studio, a single assistant holding two tools, the AI Stylist and the AI Colour
+  Advisor, across desktop and mobile, from the first entry point to checkout.
+facts:
+  - label: My role
+    value: UI/UX design
+  - label: Inputs
+    value: Approved project scope
+  - label: Scope
+    value: 2 AI tools, desktop & mobile
+  - label: Platform
+    value: Existing e-commerce website
+demo: false
+cover:
+  image: apex-ai-studio-cover
+  alt: >-
+    The Apex AI Studio page on desktop beside the same screen on a phone: a customer photo restyled
+    in a navy embroidered dress, and a Build Your Outfit panel listing a suede Chelsea boot, a gown
+    and a bag, with Swap buttons and a Shop the Entire Outfit button
+  caption: The AI Stylist result, on desktop and mobile
+glance:
+  - word: Problem
+    text: >-
+      Customers shop one product at a time. Choosing what goes together, and what suits them, is
+      left to them.
+  - word: Approach
+    text: >-
+      One AI Studio with two tools, a short guided flow for each, and results made of real Apex
+      products that can be swapped and bought.
+  - word: Outcome
+    text: >-
+      A designed customer journey for both tools, from entry points across the site to checkout,
+      on desktop and mobile.
+card:
+  logo: apex-ai-studio-logo.webp
+  desc: An AI stylist and colour advisor built into an online footwear store.
+  client: Apex
+  mark: AX
+  alt: >-
+    The AI Colour Advisor on desktop and mobile: a customer photo labelled Warm Undertone, with
+    skin, hair and eye tone, colours that suit, colours to avoid and matched Apex products
+credits:
+  - label: Role
+    value: UI/UX design
+  - label: Inputs
+    value: Approved project scope
+  - label: Flows designed
+    value: >-
+      Entry points, AI Stylist (upload, occasion, generation, outfit, alternatives), AI Colour
+      Advisor (upload, analysis, colour profile, matched products)
+  - label: Prompt design
+    value: AI Product Description Generator, tested on two Apex products
+  - label: Platform
+    value: Desktop and mobile web, inside the existing Apex website
+  - label: Tools
+    value: Figma
+moreWork:
+  - skillcoach
+  - sumosum
+---
+
+<section class="cs__sec" aria-labelledby="s1">
+  <p class="st-k rv">01 · Challenge</p>
+  <h2 class="cs__h rv" id="s1">A store full of products, and no one to style them</h2>
+  <p class="cs__p rv">
+    Apex sells footwear and lifestyle products online, one product page at a time. A shop assistant
+    in a store would help a customer put a look together. Online, that help was missing.
+  </p>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Question 01</p>
+      <h3 class="pcard__title">What goes together?</h3>
+      <p class="pcard__text">Customers choose shoes, bags and clothing separately and match them on their own.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Question 02</p>
+      <h3 class="pcard__title">What suits me?</h3>
+      <p class="pcard__text">A product photo cannot show how a colour or style will look on the person buying it.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Question 03</p>
+      <h3 class="pcard__title">What fits the occasion?</h3>
+      <p class="pcard__text">An office day, a wedding or a trip each call for a different look.</p>
+    </div>
+  </div>
+  <div class="st-callout rv">
+    <p class="st-bh">
+      How might we give every customer a personal stylist, inside the store they already use, that
+      ends in products they can buy?
+    </p>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s2">
+  <p class="st-k rv">02 · Defining the experience</p>
+  <h2 class="cs__h rv" id="s2">One studio, two tools</h2>
+  <p class="cs__p rv">
+    The approved scope set what the assistant had to do. I shaped it into one place, Apex AI Studio,
+    holding two tools that share the same pattern: upload a photo, let the AI work, then shop the
+    result.
+  </p>
+  <div class="st-stats st-wide rv">
+    <div>
+      <p class="st-stat">2</p>
+      <p>AI tools in one assistant: AI Stylist and AI Colour Advisor</p>
+    </div>
+    <div>
+      <p class="st-stat">6</p>
+      <p>occasions to style for</p>
+    </div>
+    <div>
+      <p class="st-stat">4</p>
+      <p>steps from photo to purchase</p>
+    </div>
+  </div>
+  <div class="st-grid st-g2 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Tool 01</p>
+      <h3 class="pcard__title">AI Stylist</h3>
+      <p class="pcard__text">
+        Upload a photo, choose an occasion, see yourself in a complete Apex outfit, then shop the
+        whole look.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Tool 02</p>
+      <h3 class="pcard__title">AI Colour Advisor</h3>
+      <p class="pcard__text">
+        Upload a photo, get a personal colour profile, see which colours to wear and avoid, then
+        shop products in your palette.
+      </p>
+    </div>
+  </div>
+  <h3 class="st-sub rv">What the scope asked of the customer experience</h3>
+  <ol class="st-list st-wide rv">
+    <li><strong>Built into the existing site</strong>One entry point on every supported page, with no separate app to learn.</li>
+    <li><strong>Real products only</strong>Every recommendation comes from the Apex catalogue, with its price and details.</li>
+    <li><strong>Clear while it works</strong>Progress while the AI generates, and a way to retry when it fails.</li>
+    <li><strong>Straight to checkout</strong>A recommended outfit hands over to the existing Apex checkout.</li>
+    <li><strong>Safe with photos</strong>Uploaded photos are encrypted, never shared and kept only as long as the retention policy allows.</li>
+  </ol>
+  <p class="st-note rv">
+    The full scope also covers internal tools, such as product tagging, moderation and analytics.
+    This case study covers the customer-facing design, plus the prompt behind the product
+    description generator.
+  </p>
+</section>
+
+<section class="cs__sec" aria-labelledby="s3">
+  <p class="st-k rv">03 · Key UX decisions</p>
+  <h2 class="cs__h rv" id="s3">Five decisions that shape the studio</h2>
+  <p class="cs__p rv">
+    Follow the AI Stylist from start to finish first, then see each decision beside the screen it
+    shaped.
+  </p>
+
+  <h3 class="st-sub rv">AI Stylist: from photo to outfit</h3>
+  <div class="st-wide st-tabset--steady rv">
+    <div class="st-tabs" role="tablist" aria-label="AI Stylist steps">
+      <button class="st-tab" type="button" role="tab" id="t-j1" aria-controls="p-j1">1. Open AI Studio</button>
+      <button class="st-tab" type="button" role="tab" id="t-j2" aria-controls="p-j2">2. Upload a photo</button>
+      <button class="st-tab" type="button" role="tab" id="t-j3" aria-controls="p-j3">3. Choose an occasion</button>
+      <button class="st-tab" type="button" role="tab" id="t-j4" aria-controls="p-j4">4. Wait for the look</button>
+      <button class="st-tab" type="button" role="tab" id="t-j5" aria-controls="p-j5">5. Shop the outfit</button>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-j1" aria-labelledby="t-j1">
+      <p class="cs__p">From the Apex AI Studio button in the header, a product page, or the floating button on mobile.</p>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-j2" aria-labelledby="t-j2">
+      <p class="cs__p">Drop a photo, browse for one or take one. The formats and the 10 MB limit are stated up front.</p>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-j3" aria-labelledby="t-j3">
+      <p class="cs__p">Pick one of six occasions: Office, Wedding / Party, Field, Casual Outing, Travel or Campus.</p>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-j4" aria-labelledby="t-j4">
+      <p class="cs__p">A progress bar names the current step and says it usually takes 10 to 15 seconds.</p>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-j5" aria-labelledby="t-j5">
+      <p class="cs__p">The restyled photo sits beside the outfit. Swap any item, untick what you don’t want, then shop the rest.</p>
+    </div>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision A</p>
+        <h3 class="st-bh">Meet customers where they already shop</h3>
+        <p class="cs__p">
+          Customers should not have to look for the AI. An <strong>Apex AI Studio</strong> button
+          sits in the main header, every product page offers “Try this look with Apex AI Studio”,
+          and on mobile a floating button is always within reach.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/apex-ai-studio-entry.webp' | rel }}"
+        width="1400"
+        height="788"
+        alt="An Apex product page for a black women's pump: photos on the left, and on the right sizes, quantity, Select Size, Add to Wishlist and a pink Try this look with Apex AI Studio button. The header has an Apex AI Studio button beside search, wishlist, bag and account."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>Two ways in from a product page: the header button and “Try this look”</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision B</p>
+        <h3 class="st-bh">Two tools, one familiar layout</h3>
+        <p class="cs__p">
+          AI Stylist and AI Colour Advisor sit as two tabs in the same panel. Each opens with a short
+          promise and four numbered steps, so customers know what they will get before they share a
+          photo.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/apex-ai-studio-start.webp' | rel }}"
+        width="1400"
+        height="788"
+        alt="Apex AI Studio start screen. On the left, Upload Your Photo with a dashed drop zone for JPG, PNG or WEBP up to 10MB, a Take a Photo button and a Continue button. On the right, AI Stylist and AI Colour Adviser tabs above a red AI Stylist banner and four steps: upload your photo, choose an occasion, see yourself in the look, shop the entire outfit."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>The AI Stylist tab: what it does, in four steps</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision C</p>
+        <h3 class="st-bh">Ask one simple question</h3>
+        <p class="cs__p">
+          The only thing the stylist asks is where the customer is going. Six occasion cards with
+          icons replace a long form, and the photo stays in view while they choose.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/apex-ai-studio-occasion.webp' | rel }}"
+        width="1400"
+        height="788"
+        alt="The uploaded photo of a woman in a navy blazer on the left. On the right, Select Your Occasion with six cards (Office, Wedding / Party selected, Field, Casual Outing, Travel, Campus) and a Generate My Look button, with Change Photo above."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>Six occasions, one tap, then Generate My Look</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision D</p>
+        <h3 class="st-bh">Be honest about the wait</h3>
+        <p class="cs__p">
+          Generating a personal image takes time. Instead of a spinner, the screen names what the AI
+          is doing (“Selecting Apex products…”), shows a percentage, and sets the expectation of 10
+          to 15 seconds.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/apex-ai-studio-loading.webp' | rel }}"
+        width="1400"
+        height="788"
+        alt="The uploaded photo on the left. On the right, a sparkle icon above Creating Your Look and Selecting Apex products, an AI Processing bar at 42 percent and the note This usually takes 10–15 seconds, with a Back link."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>Progress that says what is happening and for how long</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision E</p>
+        <h3 class="st-bh">A suggestion the customer can edit</h3>
+        <p class="cs__p">
+          The AI’s outfit is a starting point, not a final answer. Each item has a checkbox and a
+          <strong>Swap</strong> menu with five alternatives, and the total on
+          <strong>Shop the Entire Outfit</strong> updates as the customer changes it.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/apex-ai-studio-swap.webp' | rel }}"
+        width="1400"
+        height="788"
+        alt="The restyled photo of the customer in a navy embroidered dress with a View Original Image button. On the right, Build Your Outfit: the Apex Suede Chelsea Boot is expanded to show 5 Other Options, including a premium boot, a patent pump and an evening sandal, with an Add to Wishlist button, followed by the gown and bag."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>Swap opens five alternatives for one item</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s4">
+  <p class="st-k rv">04 · Visual design direction</p>
+  <h2 class="cs__h rv" id="s4">Part of Apex, with a touch of AI</h2>
+  <p class="cs__p rv">
+    The studio had to feel like Apex, not a third-party widget. It reuses the store’s header, type
+    and black buttons. Apex red marks the AI features, from the header button to the sparkle icon
+    and the tool banners.
+  </p>
+  {#- Palette tiles: the brand colour large, the others beside it. --sw is the tile colour;
+      st-sw--dark gives light text on a dark tile. #}
+  <div class="st-pal st-wide rv">
+    <div class="st-sw st-sw--main st-sw--dark" style="--sw: #c41e3a">
+      <b>Apex red</b>
+      <span>HEX #C41E3A<br />R:196 G:30 B:58</span>
+    </div>
+    <div class="st-sw st-sw--dark" style="--sw: #000000">
+      <b>Black</b>
+      <span>HEX #000000<br />R:0 G:0 B:0</span>
+    </div>
+    <div class="st-sw" style="--sw: #ffe7e6">
+      <b>Blush tint</b>
+      <span>HEX #FFE7E6<br />R:255 G:231 B:230</span>
+    </div>
+    <div class="st-sw st-sw--wide" style="--sw: #ffffff">
+      <b>White</b>
+      <span>HEX #FFFFFF<br />R:255 G:255 B:255</span>
+    </div>
+  </div>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Layout</p>
+      <h3 class="pcard__title">Photo left, assistant right</h3>
+      <p class="pcard__text">The customer’s photo stays large while the panel beside it changes step by step.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Signal</p>
+      <h3 class="pcard__title">Red means AI</h3>
+      <p class="pcard__text">The sparkle icon and red accents mark everything the AI creates.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Actions</p>
+      <h3 class="pcard__title">Black means buy</h3>
+      <p class="pcard__text">Primary actions such as Generate My Look and Shop the Entire Outfit use the store’s black button.</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s5">
+  <p class="st-k rv">05 · Core screens</p>
+  <h2 class="cs__h rv" id="s5">The results, on every screen size</h2>
+  <p class="cs__p rv">
+    Both tools end in the same place: the customer’s own photo next to products they can buy.
+    Choose a screen to see it.
+  </p>
+  <div class="st-wide rv">
+    <div class="st-tabs" role="tablist" aria-label="Core screens">
+      <button class="st-tab" type="button" role="tab" id="t-out" aria-controls="p-out">AI Stylist outfit</button>
+      <button class="st-tab" type="button" role="tab" id="t-cst" aria-controls="p-cst">AI Colour Advisor</button>
+      <button class="st-tab" type="button" role="tab" id="t-col" aria-controls="p-col">Colour profile</button>
+      <button class="st-tab" type="button" role="tab" id="t-mob" aria-controls="p-mob">Mobile</button>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-out" aria-labelledby="t-out">
+      <p class="st-quote">See yourself in the look</p>
+      <p class="cs__p">
+        The photo is restyled in the recommended look, with View Original Image to compare. Beside
+        it, each product shows its price, discount and rating, and Try Another Image starts again.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/apex-ai-studio-outfit.webp' | rel }}"
+          width="1400"
+          height="788"
+          alt="AI Stylist result: the customer restyled in a navy velvet dress with gold embroidery. On the right, Build Your Outfit lists the Apex Suede Chelsea Boot, Apex Suede Gown and Apex Suede Bag with prices, ratings, checkboxes and Swap buttons, then Shop the Entire Outfit for 9400 taka and Try Another Image."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>The generated look beside the outfit that makes it</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-cst" aria-labelledby="t-cst">
+      <p class="st-quote">Discover the colours that make you glow</p>
+      <p class="cs__p">
+        The Colour Advisor tab follows the same start as the Stylist: a promise, four steps and the
+        same upload area.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/apex-ai-studio-colour-start.webp' | rel }}"
+          width="1400"
+          height="788"
+          alt="AI Colour Adviser start screen: the upload area on the left, and on the right the AI Colour Adviser tab selected, a red banner reading Discover the colours that make you glow, and four steps: upload your photo, AI analyses your features, get your colour palette, shop colour-matched products."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Same pattern, second tool</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-col" aria-labelledby="t-col">
+      <p class="st-quote">A colour profile you can shop</p>
+      <p class="cs__p">
+        The analysis names the skin undertone, hair colour and eye tone, shows six colours that suit
+        and four to avoid, and lists Apex products that match the palette.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/apex-ai-studio-colour.webp' | rel }}"
+          width="1400"
+          height="788"
+          alt="AI Colour Adviser result: the customer photo tagged AI Analyzed and Your Color Profile: Warm Undertone. On the right, Skin Undertone Warm Golden, Hair Colour Deep Brown, Eye Tone Dark Amber, six warm Colors That Suit You, four cool Colors to Avoid, and Your Matched Apex Products."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Colours to wear, colours to avoid, and products that match</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-mob" aria-labelledby="t-mob">
+      <p class="st-quote">The same studio in one hand</p>
+      <p class="cs__p">
+        On mobile the panel stacks under the photo. The occasion becomes a chip on the image, Save my
+        Look keeps the result, and a note explains that photos are encrypted and deleted after the
+        session.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/apex-ai-studio-mobile.webp' | rel }}"
+          width="1600"
+          height="900"
+          alt="Four phone screens: the Apex homepage with an AI Studio button and a floating chat button, the Creating Your Look progress screen at 42 percent, the AI Stylist result with a Styled for: Wedding / Party chip and Save my Look, and the AI Colour Adviser result with a warm colour profile."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Home, progress, outfit and colour profile on mobile</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s6">
+  <p class="st-k rv">06 · AI Product Description Generator</p>
+  <h2 class="cs__h rv" id="s6">Writing product copy in the Apex voice</h2>
+  <p class="cs__p rv">
+    The studio also includes an internal tool for the merchandising team. It turns a few product
+    attributes into a ready-to-use description, so every product page reads with the same tone. The
+    prompt behind it was tested on real Apex products.
+  </p>
+  <div class="st-callout rv">
+    <p class="st-bh">
+      “Write a product description in 100 words with 4 bullet point features of the following
+      products. Keep the brand tone intact.”
+    </p>
+  </div>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Input</p>
+      <h3 class="pcard__title">A short list of attributes</h3>
+      <p class="pcard__text">Product name, colour, type, materials and who it is for, written as plain keywords.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Output</p>
+      <h3 class="pcard__title">About 100 words, 4 features</h3>
+      <p class="pcard__text">A short description to read, then four features to scan, in the same shape every time.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Tone</p>
+      <h3 class="pcard__title">One brand voice</h3>
+      <p class="pcard__text">Warm and practical copy that works into every attribute and leads with comfort and everyday use.</p>
+    </div>
+  </div>
+
+  <h3 class="st-sub rv">Two test cases</h3>
+  <div class="st-wide rv">
+    <div class="st-tabs" role="tablist" aria-label="Prompt test cases">
+      <button class="st-tab" type="button" role="tab" id="t-p1" aria-controls="p-p1">Men’s loafer</button>
+      <button class="st-tab" type="button" role="tab" id="t-p2" aria-controls="p-p2">Kid’s school bag</button>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-p1" aria-labelledby="t-p1">
+      <p class="st-quote">
+        Apex Men’s Loafer, Black, Casual shoe, Leather upper, TPR Sole, Metal trim design, Moccasin
+        stitch, Slip on, Everyday men
+      </p>
+      <p class="cs__p">
+        “Designed for the everyday man, this Apex loafer combines timeless style with dependable
+        comfort. Crafted with a smooth leather upper and detailed with moccasin stitching, it delivers
+        a refined yet relaxed look perfect for casual routines. The sleek metal trim adds a subtle
+        edge, while the slip-on design ensures convenience for life on the go. Built on a sturdy TPR
+        sole, this pair keeps you comfortable and confident from morning to evening.”
+      </p>
+      <ol class="st-list">
+        <li>Premium leather upper with classic moccasin stitch detailing</li>
+        <li>Slip-on design for easy, everyday wear</li>
+        <li>Durable TPR sole for reliable grip and flexibility</li>
+        <li>Stylish metal trim accent for a modern touch</li>
+      </ol>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-p2" aria-labelledby="t-p2">
+      <p class="st-quote">
+        School Smart Kid’s School Bag, Navy blue, Fabric, Durable, Sufficient chambers, Chain,
+        School, Carry, All-day use
+      </p>
+      <p class="cs__p">
+        “Designed with care for growing kids, this School Smart backpack combines durability, comfort,
+        and smart organization for everyday school life. Crafted from sturdy fabric in a classic navy
+        blue, it ensures long-lasting use while keeping essentials neatly arranged. With multiple
+        spacious compartments and secure chain closures, it supports all-day carrying with ease.
+        Thoughtfully built for comfort and reliability, it’s a trusted companion for every school
+        day.”
+      </p>
+      <ol class="st-list">
+        <li>Durable fabric construction for everyday school use</li>
+        <li>Multiple spacious compartments for organized storage</li>
+        <li>Secure zip closures for safe carrying</li>
+        <li>Comfortable design for all-day use</li>
+      </ol>
+    </div>
+  </div>
+  <p class="st-note rv">
+    The full tool, as scoped, takes Product Name, Colour, Gender, Season Type, Materials, Product
+    Type and Product Category, checks required fields, and returns both a short and a detailed
+    SEO-friendly description.
+  </p>
+</section>
+
+<section class="cs__sec" aria-labelledby="s7">
+  <p class="st-k rv">07 · Reflection</p>
+  <h2 class="cs__h rv" id="s7">Designing around what the AI does</h2>
+  <p class="cs__p rv">
+    The hard part was not the AI itself but everything around it: asking for a photo, waiting for a
+    result, and turning that result into something a customer trusts and can act on.
+  </p>
+  <div class="st-grid st-g2 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Learning</p>
+      <h3 class="pcard__title">AI results should stay editable</h3>
+      <p class="pcard__text">
+        Letting customers swap and untick items keeps them in control, and keeps the outfit tied to
+        what they actually want to buy.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Growth</p>
+      <h3 class="pcard__title">Fitting new features into an existing store</h3>
+      <p class="pcard__text">
+        Designing inside Apex’s own header, buttons and checkout meant the new features had to feel
+        native, not bolted on.
+      </p>
+    </div>
+  </div>
+</section>

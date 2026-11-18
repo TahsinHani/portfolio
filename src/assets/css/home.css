@@ -616,9 +616,13 @@ a {
 .hero[data-sun="up"] .hero__sun {
   transform: none;
 }
+/* Two layers: a soft white wash on the left, behind the headline and text, so they read clearly over the
+   painting; and the fade to white at the bottom. */
 .hero__fade {
   z-index: -1;
-  background: linear-gradient(#fff0 0%, #ffffffbf 60%, #fff 100%);
+  background:
+    linear-gradient(90deg, #ffffff73 0%, #ffffff59 32%, #ffffff26 48%, #fff0 62%),
+    linear-gradient(#fff0 0%, #ffffffbf 60%, #fff 100%);
   position: absolute;
   inset: 0;
 }
@@ -650,6 +654,10 @@ a {
 }
 .hero__title span {
   display: block;
+}
+.hero__sub strong {
+  color: var(--color-ink);
+  font-weight: 800;
 }
 .hero__sub {
   color: #212121;

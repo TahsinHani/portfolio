@@ -1,0 +1,655 @@
+---
+title: Docomate.ai
+order: 3
+headline: Turning piles of business documents into data teams can use
+headlineHand: data
+summary: >-
+  An AI document processing platform that reads purchase orders, invoices and other business
+  documents, extracts the fields a team needs and exports them as clean, editable data.
+lead: >-
+  Docomate.ai uses OCR and AI to turn PDFs and images into structured data. I designed the web app
+  end to end: onboarding, template creation, document parsing and review, and the admin side that
+  runs it as a multi-tenant SaaS product.
+website: https://docomate.ai/
+websiteLabel: Visit docomate.ai
+facts:
+  - label: My role
+    value: End-to-end UI/UX
+  - label: Users
+    value: 3 roles
+  - label: Scope
+    value: 16 flows, 120+ screens
+  - label: Platform
+    value: Multi-tenant web app
+demo: false
+cover:
+  image: docomate-cover
+  width: 1920
+  height: 1440
+  alt: >-
+    Two Docomate screens layered on a pale blue background: the dashboard with a subscription donut
+    chart and four colour-coded totals (templates, parsed, successful, failed), and in front the
+    Parsed Documents page with the source purchase order on the left and a table of extracted style
+    references, PO numbers, countries and colours on the right
+  caption: The dashboard and the review screen, where extracted data sits beside its source
+glance:
+  - word: Problem
+    text: >-
+      Business documents arrive as PDFs and scans, but the work happens in spreadsheets and ERPs.
+      Someone has to retype the data in between.
+  - word: Approach
+    text: >-
+      Teach Docomate a document type once with a template, then upload in bulk and check every
+      result side by side with its source before exporting.
+  - word: Outcome
+    text: >-
+      A complete product design across 16 flows, from sign-up to billing, prepared in Figma for
+      development and QA.
+card:
+  logo: docomate-logo.webp
+  desc: An AI platform that turns business documents into structured, exportable data.
+  client: Docomate.ai
+  mark: DM
+  alt: >-
+    Two Docomate screens layered: the template preview with a purchase order beside its extracted
+    key information in nested groups, and the Document Parsing page with a template selected,
+    Single, Merge and Bulk parsing types, meta data fields and uploaded files
+credits:
+  - label: Role
+    value: End-to-end UI/UX design
+  - label: Flows designed
+    value: >-
+      Onboarding, trial, template creation, document parsing, post-processing templates, tenants,
+      users and invitations, profile, plan and billing, pricing configuration, OpenAI configuration,
+      notifications
+  - label: Users
+    value: Super admin, tenant admin, team members
+  - label: Tools
+    value: Figma
+moreWork:
+  - apex-ai-studio
+  - keystone-scheduler
+---
+
+<section class="cs__sec" aria-labelledby="s1">
+  <p class="st-k rv">01 · Challenge</p>
+  <h2 class="cs__h rv" id="s1">The data is in the document, the work is in the spreadsheet</h2>
+  <p class="cs__p rv">
+    Purchase orders, delivery challans, invoices and bills of lading arrive as PDFs and scans. Teams
+    copy the same fields into spreadsheets and ERP systems by hand, which is slow and easy to get
+    wrong. Docomate reads those documents with AI, and the product had to make that reliable enough
+    to trust.
+  </p>
+  <div class="st-grid st-g4 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Question 01</p>
+      <h3 class="pcard__title">What to extract</h3>
+      <p class="pcard__text">How does a team tell the AI which fields matter in its own documents?</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Question 02</p>
+      <h3 class="pcard__title">At what volume</h3>
+      <p class="pcard__text">How do they process one file, a set that belongs together, or hundreds?</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Question 03</p>
+      <h3 class="pcard__title">Can I trust it</h3>
+      <p class="pcard__text">How do they check what the AI extracted before it reaches other systems?</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Question 04</p>
+      <h3 class="pcard__title">Who runs it</h3>
+      <p class="pcard__text">How are companies, users, plans and AI settings managed behind the scenes?</p>
+    </div>
+  </div>
+  <div class="st-callout rv">
+    <p class="st-bh">
+      How might we let a non-technical team teach an AI their documents once, and then trust the data
+      it extracts every time after?
+    </p>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s2">
+  <p class="st-k rv">02 · Understanding the workflow</p>
+  <h2 class="cs__h rv" id="s2">Mapping how a document becomes data</h2>
+  <p class="cs__p rv">
+    Before designing screens, I mapped the journey a document takes from upload to export. Each stage
+    needed a clear place in the interface, and one of them, validation, needed a person.
+  </p>
+  <h3 class="st-sub rv">Six stages the product had to cover</h3>
+  <ol class="st-list st-wide rv">
+    <li><strong>Ingestion</strong>Getting documents in: PDF, JPG, PNG and Word files, one at a time or in bulk.</li>
+    <li><strong>Classification</strong>Knowing what kind of document it is and which template applies.</li>
+    <li><strong>Extraction</strong>Pulling out the fields that matter, including nested and repeated ones.</li>
+    <li><strong>Validation</strong>A person checks and corrects the result: the human in the loop.</li>
+    <li><strong>Integration</strong>Exporting to CSV, Word or PDF, or passing data on to other systems.</li>
+    <li><strong>Continuous learning</strong>Templates improve as teams correct and reuse them.</li>
+  </ol>
+  <h3 class="st-sub rv">Three design principles</h3>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Principle 01</p>
+      <h3 class="pcard__title">Validation builds trust</h3>
+      <p class="pcard__text">
+        Reviewing results had to be the easiest part of the product, not an afterthought.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Principle 02</p>
+      <h3 class="pcard__title">Self-serve from day one</h3>
+      <p class="pcard__text">
+        A team should be able to sign up, build a template and parse documents without help.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Principle 03</p>
+      <h3 class="pcard__title">Familiar patterns everywhere</h3>
+      <p class="pcard__text">
+        From parsing to tenants and billing, every screen shares the same structure, so new areas feel
+        known.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s3">
+  <p class="st-k rv">03 · Defining the experience</p>
+  <h2 class="cs__h rv" id="s3">One core loop, three kinds of users</h2>
+  <p class="cs__p rv">
+    Everything in the product serves one loop: create a template, parse documents with it, review the
+    result and export it. Around that loop sit the people who set it up and keep it running.
+  </p>
+  <div class="st-stats st-wide rv">
+    <div>
+      <p class="st-stat">4</p>
+      <p>steps in the core loop: template, parse, review, export</p>
+    </div>
+    <div>
+      <p class="st-stat">16</p>
+      <p>flows designed, from onboarding to pricing configuration</p>
+    </div>
+    <div>
+      <p class="st-stat">3</p>
+      <p>user roles, each with its own view of the same product</p>
+    </div>
+  </div>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Role 01</p>
+      <h3 class="pcard__title">Super admin</h3>
+      <p class="pcard__text">
+        Runs the platform: creates tenants, assigns plans, configures pricing and billing cycles, and
+        connects each tenant’s OpenAI key.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Role 02</p>
+      <h3 class="pcard__title">Tenant admin</h3>
+      <p class="pcard__text">
+        Runs a company’s workspace: invites and manages users, keeps the company profile and handles
+        the plan and invoices.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Role 03</p>
+      <h3 class="pcard__title">Team member</h3>
+      <p class="pcard__text">
+        Does the daily work: builds templates, uploads documents, reviews extracted data and exports
+        it.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s4">
+  <p class="st-k rv">04 · Key UX decisions</p>
+  <h2 class="cs__h rv" id="s4">Four decisions that shape the product</h2>
+  <p class="cs__p rv">
+    Each decision answers one of the questions teams arrive with. Follow the core loop first, then see
+    each decision beside the screen it shaped.
+  </p>
+
+  <h3 class="st-sub rv">The core loop: from a new document type to exported data</h3>
+  <div class="st-wide st-tabset--steady rv">
+    <div class="st-tabs" role="tablist" aria-label="Core loop steps">
+      <button class="st-tab" type="button" role="tab" id="t-j1" aria-controls="p-j1">1. Create a template</button>
+      <button class="st-tab" type="button" role="tab" id="t-j2" aria-controls="p-j2">2. Upload documents</button>
+      <button class="st-tab" type="button" role="tab" id="t-j3" aria-controls="p-j3">3. Review the result</button>
+      <button class="st-tab" type="button" role="tab" id="t-j4" aria-controls="p-j4">4. Export</button>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-j1" aria-labelledby="t-j1">
+      <p class="cs__p">
+        Upload one sample document. The AI proposes its key information in groups, and the team keeps,
+        renames or switches off each field.
+      </p>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-j2" aria-labelledby="t-j2">
+      <p class="cs__p">
+        Pick the template, choose Single, Merge or Bulk, fill in any meta data and drop in the files.
+      </p>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-j3" aria-labelledby="t-j3">
+      <p class="cs__p">
+        The source document sits on the left and the extracted table on the right, so every value can
+        be checked against where it came from.
+      </p>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-j4" aria-labelledby="t-j4">
+      <p class="cs__p">Export as CSV, PDF or Word, straight from the review screen.</p>
+    </div>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision A</p>
+        <h3 class="st-bh">Teach the AI once, with a template</h3>
+        <p class="cs__p">
+          Instead of setting up fields from a blank form, the team starts from a real document. The AI
+          suggests its key information as nested groups (company, address, plant, contacts), and each
+          group has a toggle to keep or drop it and a field to rename it to the team’s own terms.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/docomate-template.webp' | rel }}"
+        width="1400"
+        height="910"
+        alt="Template preview: a purchase order on the left and, on the right, Extracted Key Information in nested groups such as Company Details, Company Address and Plant Details. Each group has a toggle, and each field shows an Enter new name input beside the extracted value and a checkbox."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>Creating a template from a sample purchase order</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision B</p>
+        <h3 class="st-bh">Keep the source beside the data</h3>
+        <p class="cs__p">
+          Validation is where trust is won. Results open next to the original document, with zoom on
+          the source and an editable table on the right. Teams can add a missing row, reset their
+          changes or expand the table to full width when a document has many columns.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/docomate-review.webp' | rel }}"
+        width="1400"
+        height="934"
+        alt="Parsed Documents page for the template ZARA - Set: the source purchase order with zoom controls on the left, and a Key Information Preview table on the right with style references, style descriptions, PO numbers, delivery countries and colours. Add New Row, Reset and Export as buttons sit below."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>Review: every extracted value next to the page it came from</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision C</p>
+        <h3 class="st-bh">One upload screen for one file or hundreds</h3>
+        <p class="cs__p">
+          Single, Merge and Bulk sit side by side as parsing types, so the same screen handles one
+          invoice, a set of pages that belong together, or a batch. The most used templates are listed
+          beside the form, and meta data fields appear only when the chosen template needs them.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/docomate-upload.webp' | rel }}"
+        width="1400"
+        height="1039"
+        alt="Document Parsing page: a Template dropdown set to ZARA - Set, Parsing Type options Single, Merge and Bulk with Merge selected, six meta data fields, a drag and drop upload area and four uploaded files with progress bars. A Most Used Templates list sits on the right."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>Parsing type, meta data and upload on one screen</figcaption>
+    </figure>
+  </div>
+
+  <div class="st-split st-wide">
+    <div class="st-split__text rv">
+      <div class="st-decision">
+        <p class="st-k">Decision D</p>
+        <h3 class="st-bh">Show limits before they get in the way</h3>
+        <p class="cs__p">
+          Each plan has a document limit, and new teams start on a free trial. Usage is always visible: a
+          donut chart on the dashboard, a banner counting down the trial, and an inline warning on the
+          upload screen when only a few parses remain, each with a direct Upgrade Now link.
+        </p>
+      </div>
+    </div>
+    <figure class="cs__fig rv">
+      <img
+        src="{{ '/assets/images/projects/docomate-limit.webp' | rel }}"
+        width="1400"
+        height="1103"
+        alt="The Document Parsing page with files uploaded and, above the Cancel and Submit buttons, a red notice reading Only 2 parsing remaining in your free trial period, followed by an Upgrade Now link."
+        loading="lazy"
+        decoding="async"
+      />
+      <figcaption>A warning in context, before the trial runs out</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s5">
+  <p class="st-k rv">05 · Visual design direction</p>
+  <h2 class="cs__h rv" id="s5">A friendly face on serious data</h2>
+  <p class="cs__p rv">
+    Most screens are dense tables and forms, so the interface stays calm: white cards on a pale blue
+    header band, one blue for actions and deep navy for upgrades. The Docomate mascot, a document
+    with a face, appears at the moments that deserve a reaction: sign-up, onboarding and finishing a
+    first template.
+  </p>
+  {#- Palette tiles: the brand colour large, the others beside it. --sw is the tile colour;
+      st-sw--dark gives light text on a dark tile. #}
+  <div class="st-pal st-wide rv">
+    <div class="st-sw st-sw--main st-sw--dark" style="--sw: #3783bd">
+      <b>Mascot blue</b>
+      <span>HEX #3783BD<br />R:55 G:131 B:189</span>
+    </div>
+    <div class="st-sw st-sw--dark" style="--sw: #0284c7">
+      <b>Action blue</b>
+      <span>HEX #0284C7<br />R:2 G:132 B:199</span>
+    </div>
+    <div class="st-sw st-sw--dark" style="--sw: #11245a">
+      <b>Deep navy</b>
+      <span>HEX #11245A<br />R:17 G:36 B:90</span>
+    </div>
+    <div class="st-sw st-sw--wide" style="--sw: #e6f3fa">
+      <b>Header tint</b>
+      <span>HEX #E6F3FA<br />R:230 G:243 B:250</span>
+    </div>
+  </div>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Status</p>
+      <h3 class="pcard__title">Colour that means something</h3>
+      <p class="pcard__text">
+        Blue for templates, amber for parsed, green for successful and red for failed, with a link on
+        each card to act on it.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Consistency</p>
+      <h3 class="pcard__title">Same frame on every page</h3>
+      <p class="pcard__text">
+        Top navigation, a page title with breadcrumbs, then the content in one white card, across all
+        16 flows.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Personality</p>
+      <h3 class="pcard__title">A mascot for the good moments</h3>
+      <p class="pcard__text">
+        The mascot waves on sign-up and celebrates a first template, and stays out of the working
+        screens.
+      </p>
+    </div>
+  </div>
+  <figure class="cs__fig st-wide rv">
+    <img
+      src="{{ '/assets/images/projects/docomate-template-done.webp' | rel }}"
+      width="1400"
+      height="910"
+      alt="A Congratulations dialog over a blurred template preview: the waving Docomate mascot, the message You have created your first template. Do you want to continue uploading documents now?, and the buttons Go to Template list and Yes, Upload Documents."
+      loading="lazy"
+      decoding="async"
+    />
+    <figcaption>Finishing a first template leads straight to the next step: uploading documents</figcaption>
+  </figure>
+</section>
+
+<section class="cs__sec" aria-labelledby="s6">
+  <p class="st-k rv">06 · Core screens</p>
+  <h2 class="cs__h rv" id="s6">Designing the rest of the platform</h2>
+  <p class="cs__p rv">
+    Around the core loop sit the screens that make Docomate a product a company can sign up for, pay
+    for and run. Choose a screen to see it.
+  </p>
+  <div class="st-wide rv">
+    <div class="st-tabs" role="tablist" aria-label="Core screens">
+      <button class="st-tab" type="button" role="tab" id="t-onb" aria-controls="p-onb">Onboarding</button>
+      <button class="st-tab" type="button" role="tab" id="t-das" aria-controls="p-das">Dashboard</button>
+      <button class="st-tab" type="button" role="tab" id="t-exp" aria-controls="p-exp">Export</button>
+      <button class="st-tab" type="button" role="tab" id="t-ten" aria-controls="p-ten">Tenants</button>
+      <button class="st-tab" type="button" role="tab" id="t-bil" aria-controls="p-bil">Billing setup</button>
+      <button class="st-tab" type="button" role="tab" id="t-ai" aria-controls="p-ai">AI configuration</button>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-onb" aria-labelledby="t-onb">
+      <p class="st-quote">Getting to know a new team</p>
+      <p class="cs__p">
+        Sign-up works with Google, Outlook or email. A short onboarding asks which team the person is
+        on, with Skip For Now always available, so the dashboard can be shaped around their work.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/docomate-onboarding.webp' | rel }}"
+          width="1400"
+          height="910"
+          alt="Onboarding step titled What team are you on?, with twelve role options such as Developer, Product, Finance, Procurements and Customer Service, a Tell us about your role field, and Previous, Skip For Now and Proceed buttons. The waving mascot sits on a blue panel on the right."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Onboarding, one question per step</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-das" aria-labelledby="t-das">
+      <p class="st-quote">Everything at a glance, one click from action</p>
+      <p class="cs__p">
+        The dashboard shows the subscription and its document limit, four colour-coded totals and four
+        quick actions. Start Parsing stays in the top right on every visit.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/docomate-dashboard.webp' | rel }}"
+          width="1400"
+          height="910"
+          alt="Dashboard with a banner reading Your trial ends in 15 days. Upgrade Now, a Subscription Status donut showing document limit, remaining and parsed, four totals (Total Templates 120, Total Parsed 700, Parsing Successful 670, Parsing Failed 30) and Quick Actions: Create Templates, Template List, Extract Files and Parsed Document List."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Dashboard during the free trial</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-exp" aria-labelledby="t-exp">
+      <p class="st-quote">From review to file in one step</p>
+      <p class="cs__p">
+        Expanded to full width, the table shows every extracted column. Export as offers CSV, PDF and
+        Word.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/docomate-export.webp' | rel }}"
+          width="1400"
+          height="934"
+          alt="Key Information Preview table expanded to full width with columns for style reference, description, PO number, delivery country, colour, size, quantity and shipment dates. The Export as menu is open with CSV, PDF and Word."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Full-width review and export options</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-ten" aria-labelledby="t-ten">
+      <p class="st-quote">Running many companies on one platform</p>
+      <p class="cs__p">
+        Super admins see every tenant with its business type, plan, user count and status, and can open
+        details, plan details or assign a plan from each row.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/docomate-tenants.webp' | rel }}"
+          width="1400"
+          height="910"
+          alt="Tenants page with a Tenant List of 57, Filter and Download CSV buttons, and a table of companies with email, business type, current plan, number of users, address and an Active or Deactivate status. A row menu is open with Details, Plan Details and Assign Tenant Plan."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Tenant list for super admins</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-bil" aria-labelledby="t-bil">
+      <p class="st-quote">Pricing without a developer</p>
+      <p class="cs__p">
+        Billing cycles are configured in a side panel: monthly, quarterly or annual, each with optional
+        custom text and a promo message for the annual plan.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/docomate-billing-config.webp' | rel }}"
+          width="1400"
+          height="910"
+          alt="Billing Cycle Configuration side panel over the dashboard, with Monthly, Quarterly and Annually options, Custom Text checkboxes, a Promo Message for Annual Plan field, an Add Option button, and Cancel and Save."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Billing cycle setup in a side panel</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-ai" aria-labelledby="t-ai">
+      <p class="st-quote">Connecting the AI per tenant</p>
+      <p class="cs__p">
+        Each tenant can run on its own OpenAI API key and Google services file, set from one form with
+        recent tenants listed beside it.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/docomate-ai-config.webp' | rel }}"
+          width="1400"
+          height="910"
+          alt="Open AI Configuration page with a Select Tenant dropdown, an Open AI API Key field, a file uploader for Google services with one uploaded file, Cancel and Submit buttons, and a Recent Tenants list on the right."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>AI configuration for each tenant</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="cs__sec" aria-labelledby="s7">
+  <p class="st-k rv">07 · Handoff</p>
+  <h2 class="cs__h rv" id="s7">Ready for development and QA</h2>
+  <p class="cs__p rv">
+    I organised the Figma file for the people building and testing it: one section per flow, each
+    with its last update date, and the screens in the order a user meets them.
+  </p>
+  <div class="st-grid st-g3 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Step 1 · Mapped</p>
+      <h3 class="pcard__title">Workflow and roles</h3>
+      <p class="pcard__text">The document journey and three user roles set the structure of the product.</p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Step 2 · Designed</p>
+      <h3 class="pcard__title">16 flows, 120+ screens</h3>
+      <p class="pcard__text">
+        Including empty, success, warning and trial states, not only the happy path.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Step 3 · Handed off</p>
+      <h3 class="pcard__title">Organised by flow</h3>
+      <p class="pcard__text">A dedicated page for development and QA, one section per flow.</p>
+    </div>
+  </div>
+  <h3 class="st-sub rv">Inside the handoff file: one section per flow</h3>
+  <div class="st-wide rv">
+    <div class="st-tabs" role="tablist" aria-label="Handoff file sections">
+      <button class="st-tab" type="button" role="tab" id="t-fc" aria-controls="p-fc">Core workflow</button>
+      <button class="st-tab" type="button" role="tab" id="t-fa" aria-controls="p-fa">Admin and account</button>
+      <button class="st-tab" type="button" role="tab" id="t-fs" aria-controls="p-fs">Users and settings</button>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-fc" aria-labelledby="t-fc">
+      <p class="cs__p">
+        Onboarding, the trial banner, template creation and document parsing, with every step of each
+        flow laid out in order.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/docomate-flows-core.webp' | rel }}"
+          width="6400"
+          height="3560"
+          alt="Figma canvas with four labelled sections, each with a title card and its last update date above a row of numbered screens: Onboarding Flow, Trial Period Banner Flow, Parsing Template Creation Flow with about twenty screens, and Document Parsing Flow."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Core workflow flows, from sign-up to parsed documents</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-fa" aria-labelledby="t-fa">
+      <p class="cs__p">
+        Super admin and tenant admin flows are kept apart, so developers and QA can test each role on
+        its own.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/docomate-flows-admin.webp' | rel }}"
+          width="6000"
+          height="3236"
+          alt="Figma canvas with five labelled sections of numbered screens: Tenant Flow (Super Admin), User Flow (Super Admin), User Flow (Tenant Admin), Profile (My profile, Company Profile, Change Password) and Billing and Payment."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Tenants, users, profile and billing</figcaption>
+      </figure>
+    </div>
+    <div class="st-gal" role="tabpanel" id="p-fs" aria-labelledby="t-fs">
+      <p class="cs__p">
+        Invitations, onboarding for invited users, AI configuration, notifications and pricing complete
+        the platform.
+      </p>
+      <figure class="cs__fig">
+        <img
+          src="{{ '/assets/images/projects/docomate-flows-settings.webp' | rel }}"
+          width="5600"
+          height="3304"
+          alt="Figma canvas with five labelled sections of numbered screens: User Invitation Flow (Tenant Admin), User Onboarding and Profile Update Flow, Open AI Configuration, Notification, and Pricing Configuration (Super Admin)."
+          loading="lazy"
+          decoding="async"
+        />
+        <figcaption>Invitations, AI configuration, notifications and pricing</figcaption>
+      </figure>
+    </div>
+  </div>
+  <p class="st-note rv">
+    No accuracy, processing time or usage figures are included, because verified product metrics were
+    not available.
+  </p>
+</section>
+
+<section class="cs__sec" aria-labelledby="s8">
+  <p class="st-k rv">08 · Reflection</p>
+  <h2 class="cs__h rv" id="s8">Designing for trust in AI output</h2>
+  <p class="cs__p rv">
+    An AI that extracts data is only useful if people believe what it extracts. The most important
+    design work was not the parsing itself, but the moments around it: teaching it with a real
+    document, and checking its results against the source.
+  </p>
+  <div class="st-grid st-g2 st-wide">
+    <div class="pcard rv">
+      <p class="pcard__word">Learning</p>
+      <h3 class="pcard__title">Keep people in the loop</h3>
+      <p class="pcard__text">
+        Putting the source and the result side by side turned validation from a chore into a quick
+        check, and made correcting the AI feel natural.
+      </p>
+    </div>
+    <div class="pcard rv">
+      <p class="pcard__word">Growth</p>
+      <h3 class="pcard__title">Designing a whole SaaS product</h3>
+      <p class="pcard__text">
+        Carrying one design language from the core workflow through to tenants, plans and billing.
+      </p>
+    </div>
+  </div>
+</section>

@@ -242,17 +242,6 @@
   display: grid;
 }
 /* Close-up: a window onto one part of a larger screenshot, framed like the other figures */
-.st-crop {
-  overflow: hidden;
-  border: var(--border-hairline);
-  border-radius: 8px;
-  background: var(--color-surface-sunken);
-}
-.cs__fig .st-crop img {
-  max-width: none;
-  border: 0;
-  border-radius: 0;
-}
 .cs--story .cs__sec > .st-wide {
   max-width: none;
 }
@@ -271,10 +260,6 @@
   height: auto;
 }
 /* Add for a mockup with its own frame and transparent edges: no border or background behind it */
-.cs__fig.st-fig--bare img {
-  border: 0;
-  background: none;
-}
 .cs--story .cs__h {
   max-width: 24ch;
   text-wrap: balance;

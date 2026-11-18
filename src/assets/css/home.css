@@ -642,7 +642,7 @@ a {
   font-family: var(--font-display);
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: #212121;
+  color: #282828;
   font-size: 16px;
   font-weight: 600;
 }
@@ -660,7 +660,7 @@ a {
   font-weight: 800;
 }
 .hero__sub {
-  color: #212121;
+  color: #282828;
   text-wrap: pretty;
   max-width: 38rem;
   font-size: 18px;

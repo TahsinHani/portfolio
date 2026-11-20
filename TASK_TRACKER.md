@@ -74,3 +74,7 @@ Ground rules for every one: nothing essential hidden, a discoverable hint, reduc
 | Date | Entry |
 |---|---|
 | 2026-11-20 | Documentation audit. Added PROJECT_CONTEXT.md, TASK_TRACKER.md, DESIGN_SYSTEM.md; CLAUDE.md got a docs index and status pointer. No application files changed. |
+| 2026-11-20 | Docomate.ai project card image replaced with the designer's composite (template preview over dashboard, with mascot): `docomate.webp` (1200×1114) and `docomate-600.webp`; card alt text updated. |
+| 2026-11-20 | Docomate.ai cover replaced with the designer's composite (dashboard behind the template preview): `docomate-cover.webp` (1920×1440); cover alt text and caption updated. |
+| 2026-11-20 | IVISATS project card image replaced with the designer's composite (logo above the homepage hero on desktop and mobile): `ivisats.webp` (1448×1344, native size) and `ivisats-600.webp`; card alt text updated. Cover (`ivisats-cover.webp`) unchanged. |
+| 2026-11-20 | IVISATS Decision D image (`ivisats-form.webp`) replaced with the designer's two-part view of the whole enquiry form (3712×2784, native size); width/height, alt text and caption updated. |

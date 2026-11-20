@@ -1,0 +1,6 @@
+<svg class="sk sk--prin" viewBox="0 0 64 64" aria-hidden="true">
+  <rect x="8" y="8" width="48" height="48" rx="4"/>
+  <circle class="f-t sk-pulse" cx="32" cy="32" r="17"/>
+  <path class="f-a sk-spin" d="M32 14L50 32L32 50L14 32Z"/>
+  <circle class="f-b" cx="32" cy="32" r="3"/>
+</svg>

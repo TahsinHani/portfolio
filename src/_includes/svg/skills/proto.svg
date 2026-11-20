@@ -1,0 +1,8 @@
+<svg class="sk sk--proto" viewBox="0 0 64 64" aria-hidden="true">
+  <rect x="17" y="4" width="30" height="48" rx="6"/>
+  <rect class="f-t" x="23" y="11" width="18" height="10" rx="2"/>
+  <path d="M23 27h18M23 32h11"/>
+  <circle class="f-b sk-ripple" cx="32" cy="42" r="9"/>
+  <rect class="f-a sk-press" x="23" y="38" width="18" height="8" rx="4"/>
+  <path class="f-ink sk-cursor" d="M34 44v13l3.5-3 3 7 3-1.4-3-6.8h5z"/>
+</svg>

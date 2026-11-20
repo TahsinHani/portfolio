@@ -1,0 +1,7 @@
+<svg class="sk sk--ai" viewBox="0 0 64 64" aria-hidden="true">
+  <path class="f-t sk-bulb" d="M30 12a15 15 0 0 0-8 27c2 2 3 4 3 7h10c0-3 1-5 3-7A15 15 0 0 0 30 12z"/>
+  <path d="M25 52h10M27 58h6"/>
+  <path d="M26 32l4 4 4-4" stroke-width="2"/>
+  <path class="f-b sk-spark sk-s1" d="M52 6l2.2 5.8L60 14l-5.8 2.2L52 22l-2.2-5.8L44 14l5.8-2.2z"/>
+  <path class="f-a sk-spark sk-s2" d="M10 12l1.6 4.4L16 18l-4.4 1.6L10 24l-1.6-4.4L4 18l4.4-1.6z"/>
+</svg>

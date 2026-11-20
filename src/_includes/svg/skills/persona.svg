@@ -1,0 +1,7 @@
+<svg class="sk sk--persona" viewBox="0 0 64 64" aria-hidden="true">
+  <rect x="7" y="12" width="50" height="40" rx="6"/>
+  <g class="sk-bob"><circle class="f-a" cx="22" cy="27" r="6"/><path d="M12 43c1-6 5-9 10-9s9 3 10 9"/></g>
+  <path class="sk-line sk-l1" d="M38 24h13"/>
+  <path class="sk-line sk-l2" d="M38 31h10"/>
+  <path class="sk-line sk-l3" d="M38 38h13"/>
+</svg>

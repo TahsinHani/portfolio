@@ -1,0 +1,135 @@
+{
+  "intro": {
+    "lead": "From User Insight to Pixel-Perfect Prototypes",
+    "desc": "I turn research, flows, and information architecture into accessible, responsive experiences for web and mobile.",
+    "hand": "Pick a skill to see it in motion"
+  },
+  "items": [
+    {
+      "id": "research",
+      "title": "User Research",
+      "label": "User Research",
+      "desc": "Learning who a product is for and what they are trying to get done, before deciding what to design.",
+      "hand": "Listen first.",
+      "x": 18.73,
+      "y": 15.23,
+      "rotate": -8
+    },
+    {
+      "id": "flows",
+      "title": "User Flows",
+      "label": "User Flows",
+      "desc": "Mapping the steps someone takes to reach a goal, so gaps and detours show up early.",
+      "hand": "Every step, in order.",
+      "x": 40.51,
+      "y": 6.01,
+      "rotate": 6
+    },
+    {
+      "id": "persona",
+      "title": "User Personas",
+      "label": "User Personas",
+      "desc": "Turning research into a clear picture of the people I am designing for.",
+      "hand": "Design for someone real.",
+      "x": 62.12,
+      "y": 15.23,
+      "rotate": -5,
+      "tone": "dark"
+    },
+    {
+      "id": "ia",
+      "title": "Information Architecture",
+      "label": "Info Architecture",
+      "desc": "Organising content and navigation so people find things where they expect them.",
+      "hand": "A place for everything.",
+      "x": 84.93,
+      "y": 6.01,
+      "rotate": 8,
+      "pillGap": "tight"
+    },
+    {
+      "id": "wire",
+      "title": "Wireframing",
+      "label": "Wireframing",
+      "desc": "Sketching structure and layout early, before colour and polish get in the way.",
+      "hand": "Boxes first, beauty later.",
+      "x": 88.61,
+      "y": 39.76,
+      "rotate": -7,
+      "tone": "tape"
+    },
+    {
+      "id": "proto",
+      "title": "Prototyping",
+      "label": "Prototyping",
+      "desc": "Making ideas clickable so flows can be tried and discussed before anything is built.",
+      "hand": "Click it, don't imagine it.",
+      "x": 95.71,
+      "y": 69.22,
+      "rotate": 6
+    },
+    {
+      "id": "apps",
+      "title": "Web & Mobile App Design",
+      "label": "Web & mobile",
+      "desc": "Designing interfaces for browsers and phones with each platform's habits in mind.",
+      "hand": "One product, many screens.",
+      "x": 83.9,
+      "y": 87.67,
+      "rotate": -6
+    },
+    {
+      "id": "resp",
+      "title": "Responsive Design",
+      "label": "Responsive",
+      "desc": "Making layouts adapt gracefully from a small phone to a wide desktop.",
+      "hand": "Fits every screen.",
+      "x": 60.58,
+      "y": 78.32,
+      "rotate": 7,
+      "tone": "dark"
+    },
+    {
+      "id": "hier",
+      "title": "Visual Hierarchy",
+      "label": "Hierarchy",
+      "desc": "Using size, weight, spacing and contrast so the eye lands on what matters first.",
+      "hand": "Look here first.",
+      "x": 39.35,
+      "y": 87.67,
+      "rotate": -8
+    },
+    {
+      "id": "prin",
+      "title": "Design Principles",
+      "label": "Principles",
+      "desc": "Balance, consistency, proximity and contrast: the basics behind choices I can explain.",
+      "hand": "Rules worth knowing.",
+      "x": 17.17,
+      "y": 78.32,
+      "rotate": 6,
+      "tone": "tape"
+    },
+    {
+      "id": "a11y",
+      "title": "Accessibility (WCAG basics)",
+      "label": "Accessibility",
+      "desc": "Colour contrast, readable text, touch targets and keyboard-friendly patterns, so more people can use a product.",
+      "hand": "Made for everyone.",
+      "x": 11.82,
+      "y": 54.05,
+      "rotate": -6,
+      "tone": "dark"
+    },
+    {
+      "id": "ai",
+      "title": "AI-Assisted Ideation",
+      "label": "AI ideation",
+      "desc": "Using AI tools to explore directions and questions faster, then judging the results myself.",
+      "hand": "A spark, not a shortcut.",
+      "x": 4.47,
+      "y": 24.59,
+      "rotate": 7
+    }
+  ]
+}

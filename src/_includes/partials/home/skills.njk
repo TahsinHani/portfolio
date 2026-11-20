@@ -1,0 +1,52 @@
+{#-
+  Homepage "Skills" (data: src/_data/skills.json, icons: src/_includes/svg/skills/, styles: skills.css + skill-icons.css,
+  behaviour: assets/js/skills.js).
+
+  A centred headline with 12 tilted tiles floating around it, inside two dashed frames. Each tile holds an animated
+  icon and a label pill. Hover, focus or tap a tile and the text under the headline switches to that skill.
+
+  Item fields (skills.json):
+    id, title, label   key, full name (shown in the centre text), short name (shown on the pill)
+    desc, hand         one-line description and the handwritten note
+    x, y, rotate       tile centre as a percent of the 1440 x 791 stage, and its tilt in degrees
+    tone               optional tile colour: "dark" or "tape"
+    pillGap            "tight" for tiles at the very top, so the pill sits closer
+-#}
+{%- set skills = skills -%}
+<section class="skills" id="skills" aria-labelledby="skills-h" data-skills>
+  <div class="fl">
+    <svg class="fl__rings" viewBox="0 0 1440 791" aria-hidden="true">
+      <rect x="48" y="41" width="1344" height="677" rx="8" />
+      <rect x="152" y="145" width="1136" height="469" rx="8" />
+    </svg>
+
+    <div class="fl__center">
+      <div class="section-head"><h2 id="skills-h">Skills</h2></div>
+      <div class="fl__now" data-fl-now>
+        <p class="fl__lead" data-fl-lead>{{ skills.intro.lead }}</p>
+        <p class="fl__desc" data-fl-desc>{{ skills.intro.desc }}</p>
+        <p class="fl__hand" data-fl-hand>{{ skills.intro.hand }}</p>
+      </div>
+    </div>
+
+    <ul class="fl__tiles" role="list">
+      {%- for skill in skills.items %}
+      <li
+        class="fl__tile{% if skill.tone %} fl__tile--{{ skill.tone }}{% endif %}{% if skill.pillGap %} fl__tile--{{ skill.pillGap }}{% endif %}"
+        style="--x: {{ skill.x }}; --y: {{ skill.y }}; --r: {{ skill.rotate }}deg; --d: {{ (loop.index0 * -0.55) | round(2) }}s"
+        tabindex="0"
+        data-title="{{ skill.title }}"
+        data-desc="{{ skill.desc }}"
+        data-hand="{{ skill.hand }}"
+      >
+        <span class="fl__float">
+          <span class="fl__card"><span class="fl__art">{% include "svg/skills/" + skill.id + ".svg" %}</span></span>
+          <span class="fl__pill" aria-hidden="true">{{ skill.label }}</span>
+        </span>
+        <span class="sr-only">{{ skill.title }}. {{ skill.desc }}</span>
+      </li>
+      {%- endfor %}
+    </ul>
+  </div>
+  <script defer src="{{ '/assets/js/skills.js' | rel }}"></script>
+</section>

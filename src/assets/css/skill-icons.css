@@ -1,0 +1,413 @@
+/* ===== Skill icons (src/_includes/svg/skills/*.svg) =====
+   Each icon is an inline SVG drawn with the ink / blue / tape palette and animated with CSS keyframes.
+   .sk--<id> sets one icon's parts; the shared rules come first. Icons sit still at rest and only play for the tile
+   that is hovered, focused or marked .is-active (see skills.css and skills.js). Layout lives in skills.css. */
+/* Shared icon rules */
+.sk {
+  --sk-a: #7180b9;
+  --sk-b: #36416d;
+  --sk-t: #efe3b8;
+  display: block;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  fill: none;
+  stroke: var(--sk-ink, var(--color-ink));
+  stroke-width: 2.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.sk .f-a {
+  fill: var(--sk-a);
+}
+.sk .f-b {
+  fill: var(--sk-b);
+}
+.sk .f-t {
+  fill: var(--sk-t);
+}
+.sk .f-w {
+  fill: #fff;
+  fill-opacity: 0.8;
+}
+.sk .f-ink {
+  fill: var(--sk-ink, var(--color-ink));
+}
+.sk * {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation-play-state: paused;
+  animation-duration: 2.6s;
+  animation-timing-function: var(--ease);
+  animation-iteration-count: infinite;
+}
+.fl__tile:hover .sk *,
+.fl__tile:focus-visible .sk *,
+.fl__tile.is-active .sk * {
+  animation-play-state: running;
+}
+/* At rest the icons show their finished drawing: no animation at all until the polaroid is picked */
+.fl__tile:not(:hover):not(:focus-visible):not(.is-active) .sk * {
+  animation: none !important;
+}
+
+/* 1 research: the lens scans around the person */
+.sk-scan {
+  animation-name: sk-scan;
+}
+@keyframes sk-scan {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  35% {
+    transform: translate(-12px, -8px);
+  }
+  70% {
+    transform: translate(-4px, 5px);
+  }
+}
+/* 2 flows: dashes travel along the path, steps pop one after another */
+.sk-dash {
+  stroke-dasharray: 3 5;
+  animation-name: sk-march;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+}
+@keyframes sk-march {
+  to {
+    stroke-dashoffset: -16;
+  }
+}
+.sk-n {
+  animation-name: sk-nodepop;
+}
+.sk-n2 {
+  animation-delay: 0.35s;
+}
+.sk-n3 {
+  animation-delay: 0.7s;
+}
+@keyframes sk-nodepop {
+  0%,
+  30%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.3);
+  }
+}
+/* 3 persona: avatar bobs, details type in */
+.sk-bob {
+  animation-name: sk-bob;
+  animation-duration: 1.8s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes sk-bob {
+  50% {
+    transform: translateY(-2.5px);
+  }
+}
+.sk-line {
+  transform-origin: left center;
+  animation-name: sk-type;
+}
+.sk-l2 {
+  animation-delay: 0.25s;
+}
+.sk-l3 {
+  animation-delay: 0.5s;
+}
+@keyframes sk-type {
+  0% {
+    transform: scaleX(0);
+  }
+  35%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+/* 4 information architecture: branches draw, boxes pop in */
+.sk-draw {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation-name: sk-draw;
+}
+@keyframes sk-draw {
+  0%,
+  8% {
+    stroke-dashoffset: 1;
+  }
+  45%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.sk-pop {
+  animation-name: sk-popin;
+}
+.sk-p2 {
+  animation-delay: 0.1s;
+}
+.sk-p3 {
+  animation-delay: 0.2s;
+}
+.sk-p4 {
+  animation-delay: 0.3s;
+}
+@keyframes sk-popin {
+  0%,
+  8% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(1.15);
+  }
+  40%,
+  100% {
+    transform: scale(1);
+  }
+}
+/* 5 wireframe: frame dashes march, the sketch fades up */
+.sk-march {
+  stroke-dasharray: 4 4;
+  animation-name: sk-march;
+  animation-duration: 1.2s;
+  animation-timing-function: linear;
+}
+.sk-draw-g {
+  animation-name: sk-sketch;
+}
+@keyframes sk-sketch {
+  0% {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  30%,
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* 6 prototype: cursor taps the button, ripple spreads */
+.sk-cursor {
+  animation-name: sk-cursor;
+}
+@keyframes sk-cursor {
+  0%,
+  100% {
+    transform: translate(14px, 14px);
+  }
+  35%,
+  65% {
+    transform: translate(0, 0);
+  }
+}
+.sk-press {
+  animation-name: sk-press;
+}
+@keyframes sk-press {
+  0%,
+  38%,
+  100% {
+    transform: scale(1);
+  }
+  48% {
+    transform: scale(0.88);
+  }
+}
+.sk-ripple {
+  opacity: 0;
+  stroke: none;
+  animation-name: sk-ripple;
+}
+@keyframes sk-ripple {
+  0%,
+  38% {
+    opacity: 0.45;
+    transform: scale(0.2);
+  }
+  75%,
+  100% {
+    opacity: 0;
+    transform: scale(1.3);
+  }
+}
+/* 7 web and mobile: the phone floats, the page block breathes */
+.sk-float {
+  animation-name: sk-float;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes sk-float {
+  50% {
+    transform: translateY(-4px);
+  }
+}
+.sk-block {
+  animation-name: sk-breathe;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes sk-breathe {
+  50% {
+    transform: scale(1.14);
+  }
+}
+/* 8 responsive: the layout squeezes down and back */
+.sk-frame {
+  animation-name: sk-frame;
+}
+.sk-r1,
+.sk-r2,
+.sk-r3 {
+  animation-name: sk-inner;
+}
+@keyframes sk-frame {
+  0%,
+  100% {
+    width: 52px;
+  }
+  45%,
+  62% {
+    width: 30px;
+  }
+}
+@keyframes sk-inner {
+  0%,
+  100% {
+    width: 40px;
+  }
+  45%,
+  62% {
+    width: 18px;
+  }
+}
+.sk-dim {
+  transform-origin: left center;
+  animation-name: sk-dim;
+}
+@keyframes sk-dim {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  45%,
+  62% {
+    transform: scaleX(0.58);
+  }
+}
+/* 9 hierarchy: biggest element lands first, the rest follow */
+.sk-h {
+  transform-origin: left center;
+  animation-name: sk-reveal;
+}
+.sk-h2 {
+  animation-delay: 0.2s;
+}
+.sk-h3 {
+  animation-delay: 0.35s;
+}
+.sk-h4 {
+  animation-delay: 0.45s;
+}
+.sk-h5 {
+  animation-delay: 0.55s;
+}
+@keyframes sk-reveal {
+  0% {
+    transform: scaleX(0);
+  }
+  25%,
+  100% {
+    transform: scaleX(1);
+  }
+}
+/* 10 principles: a diamond turns inside the square, the circle breathes */
+.sk-spin {
+  animation-name: sk-spin;
+  animation-duration: 3.2s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes sk-spin {
+  to {
+    transform: rotate(90deg);
+  }
+}
+.sk-pulse {
+  animation-name: sk-pulse;
+  animation-duration: 3.2s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes sk-pulse {
+  50% {
+    transform: scale(0.8);
+  }
+}
+/* 11 accessibility: ring draws around the figure */
+.sk-ring {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 0;
+  animation-name: sk-ring;
+}
+@keyframes sk-ring {
+  0%,
+  5% {
+    stroke-dashoffset: 1;
+  }
+  55%,
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+.sk-figure {
+  animation-name: sk-figure;
+}
+@keyframes sk-figure {
+  0%,
+  45%,
+  100% {
+    transform: scale(1);
+  }
+  60% {
+    transform: scale(1.12);
+  }
+}
+/* 12 AI ideation: the bulb glows, sparks twinkle */
+.sk-bulb {
+  animation-name: sk-glow;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+}
+@keyframes sk-glow {
+  50% {
+    transform: scale(1.06);
+    filter: drop-shadow(0 0 5px #f2d66b);
+  }
+}
+.sk-spark {
+  animation-name: sk-spark;
+  animation-duration: 1.6s;
+  animation-timing-function: ease-in-out;
+}
+.sk-s2 {
+  animation-delay: 0.6s;
+}
+@keyframes sk-spark {
+  0%,
+  100% {
+    transform: scale(0.6) rotate(0deg);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.15) rotate(20deg);
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk * {
+    animation: none !important;
+  }
+}

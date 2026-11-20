@@ -1,0 +1,5 @@
+<svg class="sk sk--research" viewBox="0 0 64 64" aria-hidden="true">
+  <circle class="f-a" cx="25" cy="22" r="8"/>
+  <path d="M9 52c0-10 7-16 16-16s16 6 16 16"/>
+  <g class="sk-scan"><circle class="f-w" cx="43" cy="37" r="9"/><path d="M50 44l9 9"/></g>
+</svg>

@@ -1,0 +1,7 @@
+<svg class="sk sk--hier" viewBox="0 0 64 64" aria-hidden="true">
+  <rect class="f-b sk-h sk-h1" x="8" y="8" width="48" height="14" rx="3"/>
+  <rect class="f-a sk-h sk-h2" x="8" y="29" width="32" height="7" rx="3.5"/>
+  <path class="sk-h sk-h3" d="M8 45H56"/>
+  <path class="sk-h sk-h4" d="M8 52H46"/>
+  <path class="sk-h sk-h5" d="M8 59H30"/>
+</svg>

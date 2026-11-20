@@ -1,0 +1,7 @@
+<svg class="sk sk--ia" viewBox="0 0 64 64" aria-hidden="true">
+  <path class="sk-draw" pathLength="1" d="M32 18V31M12 44V31H52V44"/>
+  <rect class="f-b sk-pop sk-p1" x="22" y="6" width="20" height="12" rx="3"/>
+  <rect class="f-t sk-pop sk-p2" x="4" y="44" width="16" height="12" rx="3"/>
+  <rect class="f-a sk-pop sk-p3" x="24" y="44" width="16" height="12" rx="3"/>
+  <rect class="f-t sk-pop sk-p4" x="44" y="44" width="16" height="12" rx="3"/>
+</svg>

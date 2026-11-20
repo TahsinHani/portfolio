@@ -1,0 +1,7 @@
+<svg class="sk sk--a11y" viewBox="0 0 64 64" aria-hidden="true">
+  <circle class="sk-ring" pathLength="1" cx="32" cy="32" r="25"/>
+  <g class="sk-figure">
+    <circle class="f-b" cx="32" cy="18" r="3.5"/>
+    <path d="M18 26.5L32 28.5L46 26.5M32 28.5V40M32 40L26 51M32 40L38 51"/>
+  </g>
+</svg>

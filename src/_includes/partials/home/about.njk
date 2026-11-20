@@ -45,6 +45,8 @@
       </div>
     </div>
   </div>
+  {#- Skills sits between the intro and the Basic Information / Prior work lists. #}
+  {% include "partials/home/skills.njk" %}
   {#- Both lists share one set of grid rows on wide screens so their dividers line up (CSS subgrid).
       --rows is the longer list's length. #}
   {%- set rows = facts | length -%}

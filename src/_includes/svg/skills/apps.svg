@@ -1,0 +1,12 @@
+<svg class="sk sk--apps" viewBox="0 0 64 64" aria-hidden="true">
+  <rect x="3" y="8" width="42" height="34" rx="4"/>
+  <path d="M3 17H45"/>
+  <circle class="f-ink" cx="9" cy="12.5" r="1.2"/><circle class="f-ink" cx="14" cy="12.5" r="1.2"/><circle class="f-ink" cx="19" cy="12.5" r="1.2"/>
+  <rect class="f-t sk-block" x="9" y="23" width="16" height="13" rx="2"/>
+  <path d="M30 25h10M30 31h10"/>
+  <g class="sk-float">
+    <rect class="f-w" x="37" y="24" width="22" height="36" rx="5"/>
+    <rect class="f-a" x="42" y="30" width="12" height="8" rx="2"/>
+    <path d="M42 44h12M42 49h7"/>
+  </g>
+</svg>

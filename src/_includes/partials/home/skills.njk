@@ -12,8 +12,9 @@
     tone               optional tile colour: "dark" or "tape"
     pillGap            "tight" for tiles at the very top, so the pill sits closer
 -#}
-{%- set skills = skills -%}
 <section class="skills" id="skills" aria-labelledby="skills-h" data-skills>
+  {#- misty mountains behind the section, same faded overlay as the At a glance band (.skills__bg in skills.css) #}
+  <div class="skills__bg" aria-hidden="true" style="background-image: url({{ '/assets/images/skills-bg.webp' | rel }})"></div>
   <div class="fl">
     <svg class="fl__rings" viewBox="0 0 1440 791" aria-hidden="true">
       <rect x="48" y="41" width="1344" height="677" rx="8" />

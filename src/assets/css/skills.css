@@ -7,6 +7,34 @@
 .skills {
   margin-top: var(--space-8);
   overflow-x: clip;
+  isolation: isolate;
+  position: relative;
+}
+/* Background: the misty mountains photo (skills-bg.webp), fitted to the 1920px container and centred, at the
+   same strength and mask as the At a glance band (.glance__bg in home.css): top and bottom dissolve into the
+   white page, the left side is held to about 40%. */
+.skills__bg {
+  z-index: -1;
+  pointer-events: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  max-width: 1920px;
+  translate: -50% 0;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.3;
+  -webkit-mask-image:
+    linear-gradient(transparent, #000 30%, #000 45%, transparent),
+    linear-gradient(90deg, #0006 0, #0006 30%, #000 65%);
+  -webkit-mask-composite: source-in;
+  mask-image:
+    linear-gradient(transparent, #000 30%, #000 45%, transparent),
+    linear-gradient(90deg, #0006 0, #0006 30%, #000 65%);
+  mask-composite: intersect;
 }
 @media (width>=1024px) {
   .skills {

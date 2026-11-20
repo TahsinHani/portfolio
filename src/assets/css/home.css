@@ -2811,9 +2811,10 @@ a {
 }
 .glance__item {
   flex: none;
-  width: calc(var(--glance-u) * var(--w));
+  /* every card is 350px wide (capped on narrow phones); only the image height varies by shape */
+  width: min(350px, 85vw);
 }
-/* the four shapes: width and image height, in base units */
+/* the four shapes: image height, in base units (--w is no longer used) */
 .glance__item--a {
   --w: 0.8;
   --h: 0.9;

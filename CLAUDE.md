@@ -2,6 +2,22 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Project documentation
+
+Keep this file short. Detail lives here:
+
+| File | Contents |
+|---|---|
+| `PROJECT_CONTEXT.md` | Stack, pages, case-study inventory, JS features, technical decisions, known mismatches, unverified items |
+| `TASK_TRACKER.md` | Completed, unfinished and pending work, bugs. **Update it at the end of every session.** |
+| `DESIGN_SYSTEM.md` | Fonts, colour, spacing, radii, breakpoints, components, motion |
+| `HIDDEN-FEATURES.md` | Plan for the easter eggs (none built yet) |
+| `README.md` | How to edit content |
+
+Standing rules: preserve existing work, make no redesign or restructure unless asked, document what the code does and do not invent project facts, and ask when a fact is not in the repo.
+
+Current status (2026-11-20): build passes; 9 full case studies plus 6 demo placeholders; no hidden features built, although the footer already says "Press G for Design Mode". See TASK_TRACKER.md.
+
 ## Commands
 
 ```sh

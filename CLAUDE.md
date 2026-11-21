@@ -11,12 +11,12 @@ Keep this file short. Detail lives here:
 | `PROJECT_CONTEXT.md` | Stack, pages, case-study inventory, JS features, technical decisions, known mismatches, unverified items |
 | `TASK_TRACKER.md` | Completed, unfinished and pending work, bugs. **Update it at the end of every session.** |
 | `DESIGN_SYSTEM.md` | Fonts, colour, spacing, radii, breakpoints, components, motion |
-| `HIDDEN-FEATURES.md` | Plan for the easter eggs (none built yet) |
+| `HIDDEN-FEATURES.md` | Plan for the easter eggs (only Design Mode's tokens panel built) |
 | `README.md` | How to edit content |
 
 Standing rules: preserve existing work, make no redesign or restructure unless asked, document what the code does and do not invent project facts, and ask when a fact is not in the repo.
 
-Current status (2026-11-20): build passes; 9 full case studies plus 6 demo placeholders; no hidden features built, although the footer already says "Press G for Design Mode". See TASK_TRACKER.md.
+Current status (2026-11-20): build passes; 9 full case studies plus 6 demo placeholders; the footer's "Press G for Design Mode" opens a design tokens panel (`design-mode.js`, the only hidden feature built so far). See TASK_TRACKER.md.
 
 ## Commands
 
@@ -49,6 +49,7 @@ Every internal link and asset path is written from the site root and piped throu
 - Each project is one file in `src/case-studies/<slug>.njk`. The file name is the slug: it sets the URL (`/work/<slug>/`), the image names and the IDs used to reference the project.
 - `case-studies.11tydata.js` applies the layout (`layouts/case-study.njk`), the permalink and the default page settings to the whole folder. Its header comment is the reference for every front-matter field (`order`, `summary`, `facts`, `cover`, `glance`, `card`, `moreWork`, `format`, `headline`, `lead`, ...).
 - The front matter holds the page header **and** the project card shown in lists (`card:`). The page body is plain HTML story sections inserted into the layout at `{{ content }}`.
+- A case study with `hidden: true` in its front matter is kept off the site: `eleventy.config.js` makes Eleventy ignore the file (no page, not in lists, not under "More work"). Delete the line to show it again; restart `npm start` after changing it. Ledgerly, Fieldnote, Harbor, Kiosk Kitchen, Tidewater and Atlas Notes (the demo placeholders, orders 10 to 15) are hidden this way.
 - `collections.caseStudies` (in `eleventy.config.js`) sorts by `order`. The card eyebrow "Case study 01" is taken from `order`, so `order` values should stay unique.
 - Projects are selected by slug with the `bySlug` filter: `featuredWork` in `src/index.njk` (homepage) and `moreWork` in each case study.
 - Images go in `src/assets/images/projects/`: `<slug>.webp` (1200w cover/card) and `<slug>-600.webp`. `cover.image` / `card.image` override the base name. Extra screenshots for the story follow `<slug>-<name>.webp`.

@@ -1,4 +1,4 @@
-{#- Site footer: copyright, the "Press G for Design Mode" hint (see HIDDEN-FEATURES.md → Designer mode) and
+{#- Site footer: copyright, the "Press G for Design Mode" hint (design-mode.js; HIDDEN-FEATURES.md #1) and
     a "Back to top" link. The hint is hidden on touch-only screens, which have no G key to press; "Back to top"
     stays (.footer__hint / .footer__top in home.css and work.css). "#top" is the homepage hero; on other pages
     the browser treats "#top" as the top of the page. #}
@@ -17,3 +17,5 @@
     </p>
   </div>
 </footer>
+{#- Design Mode: G opens the design tokens panel. The script loads design-mode.css itself on first use. #}
+<script defer src="{{ '/assets/js/design-mode.js' | rel }}" data-css="{{ '/assets/css/design-mode.css' | rel }}"></script>

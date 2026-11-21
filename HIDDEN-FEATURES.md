@@ -9,7 +9,7 @@ Easter eggs and small surprises for the portfolio. They reward curious visitors 
 
 | # | Feature | Description | Implemented | Plan |
 |---|---|---|---|---|
-| 1 | Designer mode (press `G`) | Shows the page's grid, spacing and type scale on top of it. Hovering an element shows a Figma-style inspect tag. | ⬜ | Phase 1 · new `designer-mode.js` + overlay CSS |
+| 1 | Designer mode (press `G`) | Shows the page's grid, spacing and type scale on top of it. Hovering an element shows a Figma-style inspect tag. | 🟡 | Phase 1 · tokens layer built (`design-mode.js` + `design-mode.css`): G opens a design tokens panel. Grid, inspect and measure not built |
 | 2 | X-ray lens on case-study covers | Hovering a cover turns the cursor into a lens. It shows the wireframe beneath the final UI. | ⬜ | Phase 2 · one wireframe image per project |
 | 3 | "The ones that didn't make it" | A crumpled paper ball at the end of each case study. It unfolds rejected directions and why you dropped them. | ⬜ | Phase 2 · add to `case-study.njk`, content per project |
 

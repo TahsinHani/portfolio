@@ -1,11 +1,21 @@
 // Eleventy builds the plain-HTML site from the templates in src/ into _site/.
 // Docs: https://www.11ty.dev/docs/
 
+import { readdirSync, readFileSync } from "node:fs";
+
 export default function (eleventyConfig) {
   // Copy CSS, JS, fonts and images to the output as-is.
   eleventyConfig.addPassthroughCopy("src/assets");
   // Put the resume PDF in src/resume/ (linked from site.json → "resume").
   eleventyConfig.addPassthroughCopy("src/resume");
+
+  // A case study with `hidden: true` in its front matter is kept off the site: Eleventy ignores the file, so it
+  // is not built, not listed and not linked. Remove the line (or set false) to show it again. The config is read
+  // once at start-up, so restart `npm start` after changing it.
+  for (const file of readdirSync("src/case-studies").filter((f) => f.endsWith(".njk"))) {
+    const frontMatter = readFileSync(`src/case-studies/${file}`, "utf8").split(/^---\r?$/m)[1] ?? "";
+    if (/^hidden:\s*true\s*$/m.test(frontMatter)) eleventyConfig.ignores.add(`src/case-studies/${file}`);
+  }
 
   // Case studies, in the order set by `order:` in each file's front matter.
   eleventyConfig.addCollection("caseStudies", (collectionApi) =>

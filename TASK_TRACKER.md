@@ -32,13 +32,13 @@ Only items found in the repo are listed. Items marked **(needs confirmation)** a
 
 ## Known bugs / mismatches
 
-1. **Footer promises Design Mode, which does not exist.** `footer.njk` shows "Press G for Design Mode". No code handles `G`. Either build the feature (HIDDEN-FEATURES #1) or remove the hint. **(needs decision)**
+1. ~~Footer promises Design Mode, which does not exist.~~ Resolved 2026-11-22: `design-mode.js` handles `G` (tokens panel only).
 2. No other functional bugs were found by reading the code and building. Nothing was tested in a browser during this audit, so absence of bugs is **not** confirmed.
 
-## Pending: planned hidden features (HIDDEN-FEATURES.md, all marked ⬜ not started)
+## Pending: planned hidden features (HIDDEN-FEATURES.md)
 
 Phase 1:
-- [ ] 1. Designer mode (press `G`): new `designer-mode.js` + overlay CSS
+- [~] 1. Designer mode (press `G`): tokens panel built (`design-mode.js` + `design-mode.css`). Grid, inspect and measure layers not built; the owner asked for the tokens layer only
 - [ ] 4. Visitor's pin on the map: extend `map-clients.js`
 - [ ] 9. Console greeting: small script in `base.njk`
 - [ ] 10. Custom 404 page: new `src/404.njk`
@@ -67,7 +67,7 @@ Ground rules for every one: nothing essential hidden, a discoverable hint, reduc
 
 ## Next-step candidates (suggestions, not decisions)
 
-1. Resolve the Design Mode mismatch (build or remove the footer hint)
+1. Decide whether Design Mode should later get the grid / inspect / measure layers
 2. Decide the fate of the 6 demo case studies (finish, hide from lists, or remove)
 3. Decide whether SkillCoach, Apex and IVISATS should be featured on the homepage
 4. Start HIDDEN-FEATURES Phase 1 if wanted
@@ -85,3 +85,7 @@ Ground rules for every one: nothing essential hidden, a discoverable hint, reduc
 | 2026-11-21 | Map, Bangladesh: PMG and FFL Studio now use the designer's SVGs (`pmg.svg`, `ffl-studio.svg`) instead of lettered tiles. Saved `apex.svg` and `docomate.svg` in `src/assets/images/clients/` (not yet on the map). |
 | 2026-11-22 | BloodConnect, 06 · From design to launch: removed the "5 reviews behind that rating" stat; the section now shows 500+ downloads and the 4.8 rating. |
 | 2026-11-22 | Akij Insaf page cover (`akij-insaf-cover.webp`, 1920×1440) replaced with "Feature Image - Akij Insaf Diagnostic" (desktop homepage beside two mobile screens); cover alt text updated, caption unchanged. Project card (`akij-insaf-card.webp`) unchanged. |
+| 2026-11-22 | Design Mode, tokens layer (HIDDEN-FEATURES #1, partial): pressing G opens a panel of the page's design tokens (colour, typefaces, type scale with fluid ranges, spacing, radius, shadow), read live from `:root`; clicking a token copies `var(--name)` (changed the same day: it now copies the plain value, e.g. `#212121`, `24px`, `Outfit`). New `assets/js/design-mode.js` (loaded from `footer.njk`) and `assets/css/design-mode.css` (fetched on first use). Tested in headless Edge on the homepage, a case study and from disk, at 1440px and 390px: G / Esc / Close, focus return, G ignored in form fields, no console errors. |
+| 2026-11-22 | Design Mode panel restyled: 8px corner radius, header gaps 16px kicker→title, 8px title→intro, 16px intro→divider. A Figma dark theme was tried and reverted; colours stay the light site tokens. Only `design-mode.css` changed. |
+| 2026-11-22 | Cleanup: removed the unused `us-bangla-600.webp` (the At a glance card uses the full-size image; `-600` is only for project cards) and four unused `--w` values in `home.css`. Checked every other image, font, icon, script, stylesheet, colour and front-matter field: all in use. `apex.svg` and `docomate.svg` were kept on purpose (parked until the client countries are confirmed). Computed styles on all 17 pages identical before and after. |
+| 2026-11-22 | Hid the six demo case studies (orders 10 to 15: Ledgerly, Fieldnote, Harbor, Kiosk Kitchen, Tidewater, Atlas Notes) with a new `hidden: true` front-matter flag, read in `eleventy.config.js` (hidden files are ignored: no page, not listed, not under More work). Files and images stay in the repo; delete the flag to show one again. A new case study shows as normal. Site now has 9 case study pages. Their 12 images are now unreferenced but kept. |

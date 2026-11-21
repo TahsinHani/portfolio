@@ -17,6 +17,9 @@
   Front matter fields:
     title        project name
     order        position in project lists (1 = first)
+    hidden       true keeps the project off the site: no page, not in any list, not under "More work".
+                 The file and its images stay in the repo; delete the line to show it again (read by
+                 eleventy.config.js, so restart `npm start` after changing it)
     summary      one-sentence intro under the title (also the meta description)
     facts        [{ label, value }] shown under the summary (Role, Timeline, ...)
     demo         true shows the "Demo case study" note

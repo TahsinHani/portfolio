@@ -103,6 +103,7 @@ Each file is a self-contained IIFE, loaded with `<script defer>` from the partia
 | `contact-window.js` | Shutters on the watercolour window open on scroll into view, the arrow draws itself |
 | `float-cta.js` | Shows the floating button between the hero and the contact section |
 | `story.js` | Case-study tabs (arrow-key navigation), counting stats, reading progress bar, reveal-on-scroll |
+| `design-mode.js` | G opens the Design Mode panel: the page's design tokens read live from `:root` (colour, typefaces, type scale, spacing, radius, shadow); click copies the plain value (hex, px, font name, shadow); Esc / G closes. Loaded from `footer.njk`; loads `design-mode.css` on first use |
 
 Conventions seen in the code: IIFEs, no dependencies, `prefers-reduced-motion` checks in animated scripts, and a no-JS fallback (for example, story tab panels all show without JS; the About and contact animations show their final state).
 
@@ -115,13 +116,13 @@ Conventions seen in the code: IIFEs, no dependencies, `prefers-reduced-motion` c
 - **One case-study template** with `akij-insaf.njk` as the reference. Sections that have no real content are left out rather than invented.
 - **Content lives in front matter** (page header and project card), so lists and cards stay in sync with the page.
 - **Onest font removed** (commit `2c7d5e7`); the site uses Outfit, Urbanist and Satisfy.
-- **Hidden features are planned, not built** (see HIDDEN-FEATURES.md and TASK_TRACKER.md).
+- **Hidden features are mostly planned, not built**: only Design Mode's tokens panel exists (see HIDDEN-FEATURES.md and TASK_TRACKER.md).
 
 ## 8. Known discrepancies found in the audit
 
 These are facts from the repo, not fixes. No file was changed.
 
-1. The footer (`partials/footer.njk`) shows "Press **G** for Design Mode", but no Designer mode exists. No script handles the `G` key. HIDDEN-FEATURES.md marks Designer mode as not started.
+1. The footer's "Press **G** for Design Mode" opens the design tokens panel (`design-mode.js`). The rest of the planned Designer mode (grid, inspect, measure) is not built; HIDDEN-FEATURES.md marks it 🟡.
 2. `writing-feed.js` has `STATS` with `views: 0, reads: 0` for both articles, so no stats are displayed.
 3. `writing.json` holds 2 articles that match the `TOP` ids in `writing-feed.js`.
 4. Case studies 10 to 15 are demo placeholders but appear in "All work" and "More work".

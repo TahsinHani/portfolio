@@ -128,7 +128,8 @@ body {
 a,
 button,
 summary,
-.pola__card {
+.pola__card,
+.glance__card--static {
   cursor:
     url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAFL0lEQVR4nK1W309URxT+7p2bZXddlA2xBhOIKT42sS8lUB5An+iLSdP4oI1Jo2mT+g/0iZiYQpo+m1ZJRekDoS0/drnKUoKuYqi4qwmUUBIibijK0rosK8veuXfunZk+7N11XUGh+iWTm8ydM9/5zjlzZpT29vabtm03T01N3ZucnOywbXscL6ABEO54J1Adx2ngnJNAINBSWVmpV1RURAkhZwAEATgumQqAAFDemvHYsWN3jx8/Lqanp51wOOycPXtW1tfXy0AgsEQI+R7AB2Umb0fs9Xrb9u/fb0UiEWdlZUUsLy+LBw8eOJ2dnbypqUnu27fP8Hg8uqIonwKoKCMm/4dT83q9986dOyeWl5f52tqaSKfTIplMisXFRd7b22ufPHlSHjx4UPh8vj8JId8AqC2xV3ajWgEAQsjXhw8f/mFgYIDX1NSomqZBiHydWJYF0zRlIpEQIyMjyujoKFlaWvrXNM0bjLGrAO6WqZZ4TZEVvHovEAjMdnZ2Vp84cUL1er1QVRVSyiIx5xyMMWQyGXn79m2h67oWi8WcXC435ThOD+e8H0DG3U919xauA6+Eg2uadrm1tfXLrq4uGQwGFU3TXvKsQC6lBGMMhmHIubk5EQ6Hya1bt5TV1dWEaZq/cc5/BjBXYqoB4AXiIiGAxurq6rs9PT1KY2Oj6vF4oCjKK3mRUkrOeVG1aZpIJpNibGxM0XVdnZ+fp5TSm7Ztd0spRwBYJeEWhQ0VAEpFRcXE6dOnPz5//jz8fj/KVW4Hzjksy4JhGPL+/ftS13Vy584drK+vzzLGejnnvQD+Ls2hBsBRVfXMoUOHfhocHBS1tbXqTgld5QAA0zSLRRaJRJTR0VGSSCRShmH8wjlvL1UoAQT37Nkzc+HChZpTp04Rv9+/Y8JStYWvaZoylUrJUCjELl265KOUnlcLDiIf43XTNIfC4bBmWVY+yYqy4wEAhOR7geM4SKfTcnx8HLqu+9bW1jY2NjamSouiUDwfBoPBqe7ubq2lpUUlhIAQ8tpDzTmXAMAYg2ma8tGjRyIUCqljY2PqkydPVgzD6OecXwbwV2mSOPLnZzqXy/0xNDTU2tDQgEAgsC2RzAOMMeRyORmLxUQoFNKi0aiayWRmGWNX3YL5xzV5xXHNDePndXV18uHDh876+rrIZrNic3NTlo5sNisymYxYWFjgFy9edI4ePSqrqqpMj8czqijKZwA8ZdFTy8lKPaj0+/2Jjo4OJ5lMikwmI8rJnj9/LmZmZnhzczPbu3fvmqZpXQA+2kLAS6rKWaW7KGtZ1q/Xr18nlFJZtgZCCFBK0d/fL2ZmZlY3NjaaHMf5CkAcL9+dDspa21YyBQBwznvm5+eteDwuHceBG+piNW5ubspwOKxRSq8AWED+6lJd+2IrK8d2hCqAvwzDiIZCIZVSWmzijuOAMYZoNCqXlpY2OedX3fU2dvAU2TKRhXnbtq9MTEwoT58+FZxz6Za/NAxDDgwMEErpMPItq3AzvBHbEXIAipTyRjqdXohEIqCUgnMOzjlmZ2dFLBZjjLEfscvnxnaEhc5DGWN9uq4Xi4dSisHBQTWXy8UBTJY4+NYoOPN+VVVV9tq1a/bKyoqIx+NOXV2dVBTlC/f/zjs8tlcIvCiex4Zh/D48PEyePXsmRkZGRCqVeiylHHDXvRN1BRReZZ8cOHDA7uvrM44cOSIIIR3u/K7U7QSKOzwejyfW1tZm+3y+FIB6d/51EdoSbzKQ7sYMwLeU0mXO+XcAFrGLo1CK/wD3GgVFjMsUbwAAAABJRU5ErkJggg==)
       2 1,
@@ -2684,8 +2685,9 @@ a {
   flex: none;
 }
 
-/* Writing section: article count, styled as a .badge pill */
-.writing__count {
+/* Writing and At a glance headings: item count, styled as a .badge pill */
+.writing__count,
+.glance__count {
   font-size: 16px;
   line-height: 1;
   margin-left: 12px;

@@ -2854,6 +2854,11 @@ a {
   overflow: hidden;
   background: var(--color-surface-tint);
 }
+.glance__frame[style*="--ratio"] {
+  /* a card with a ratio in the front matter shows its whole image: the frame takes the image's shape */
+  height: auto;
+  aspect-ratio: var(--ratio);
+}
 .glance__img {
   display: block;
   width: 100%;

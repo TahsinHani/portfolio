@@ -118,7 +118,7 @@ experience:
 #             name: the client (the logo's alt text).
 #             logo: an image in src/assets/images/clients/, shown in a 50×50 tile with 8px corners.
 #                   SVG, or PNG/WebP at 100×100, stays sharp. Without a logo the tile shows the
-#                   client's initials.
+#                   client's initials, or `mark` if set (e.g. mark: PMG).
 #             Wide logos are cropped to their symbol, since a full wordmark is unreadable at this size.
 mapPins:
   - name: Hawaii
@@ -168,6 +168,11 @@ mapPins:
       - { name: "Akij Bakers", logo: /assets/images/clients/akij-bakers.webp }
       - { name: "Akij Insaf Diagnostic Center", logo: /assets/images/clients/akij-insaf.webp }
       - { name: "US Bangla", logo: /assets/images/clients/us-bangla.webp }
+      - { name: "BAT Bangladesh", logo: /assets/images/clients/bat.png }
+      - { name: "PMG", logo: /assets/images/clients/pmg.svg }
+      - { name: "Vivo", logo: /assets/images/clients/vivo.svg }
+      - { name: "Shanta Holdings", logo: /assets/images/clients/shanta-holdings.png }
+      - { name: "FFL Studio", logo: /assets/images/clients/ffl-studio.svg }
 ---
 <main class="home">
   {% include "partials/home/hero.njk" %}

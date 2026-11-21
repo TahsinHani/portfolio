@@ -16,6 +16,8 @@ Only items found in the repo are listed. Items marked **(needs confirmation)** a
 - Reduced-motion handling and no-JS fallbacks in the animated scripts (per header comments)
 - Case-study logos on project cards (commit `a5a1154`)
 - Onest font removed (commit `2c7d5e7`)
+- SumoSum page cover (`sumosum-cover.webp`, 2240×1680) replaced with "Feature Image - SumoSum" (marketing hero above the dashboard); alt text and caption updated (2026-11-22). The project card still uses "Cover Image - SumoSum" (`sumosum.webp` / `-600`)
+- Akij Bakers "08 · Responsive design" figure replaced with the staggered four-phone mockup supplied by the owner: `akij-bakers-phones.webp` (1400×905) replaces `akij-bakers-mobile.webp` (deleted); alt text updated (2026-11-22)
 
 ## In progress / unfinished
 
@@ -24,6 +26,7 @@ Only items found in the repo are listed. Items marked **(needs confirmation)** a
 | 6 demo case studies (Ledgerly, Fieldnote, Harbor, Kiosk Kitchen, Tidewater, Atlas Notes) | `demo: true`, ~90 lines each, 2 images each, page says text and images are placeholders. No record of which, if any, will become real studies. **(needs confirmation)** |
 | Keystone Scheduler screen data | The page states names, emails and figures in the screens are placeholder data |
 | Homepage features only 6 of 9 real studies | SkillCoach AI, Apex AI Studio and IVISATS are not in `featuredWork`. Intentional or not is not recorded. **(needs confirmation)** |
+| Map: BAT logo and Apex/Docomate pins | The designer supplied a BAT SVG (an embedded PNG); it could not be copied intact from chat, so the map still uses the Wikimedia `bat.png` until the file is placed in `src/assets/images/clients/`. `apex.svg` and `docomate.svg` are saved but not on the map: the repo does not say which country each client is in. FFL Studio ("FFL Studio Barcelona" in the gallery) sits under Bangladesh as asked. **(needs confirmation)** |
 | Medium article stats | `STATS` in `writing-feed.js` is 0/0 for both articles, so none are displayed |
 | "Artistic Creations: Coming Soon" | Shown in the contact window. The feature behind it is not in the repo |
 
@@ -78,3 +81,7 @@ Ground rules for every one: nothing essential hidden, a discoverable hint, reduc
 | 2026-11-20 | Docomate.ai cover replaced with the designer's composite (dashboard behind the template preview): `docomate-cover.webp` (1920×1440); cover alt text and caption updated. |
 | 2026-11-20 | IVISATS project card image replaced with the designer's composite (logo above the homepage hero on desktop and mobile): `ivisats.webp` (1448×1344, native size) and `ivisats-600.webp`; card alt text updated. Cover (`ivisats-cover.webp`) unchanged. |
 | 2026-11-20 | IVISATS Decision D image (`ivisats-form.webp`) replaced with the designer's two-part view of the whole enquiry form (3712×2784, native size); width/height, alt text and caption updated. |
+| 2026-11-21 | Map, Bangladesh: added BAT Bangladesh (`bat.png`, from Wikimedia Commons, resized to 256px wide), Vivo (`vivo.svg`, Wikimedia Commons) and Shanta Holdings (`shanta-holdings.png`, Wikipedia), plus PMG and FFL Studio as lettered tiles. Map tiles accept an optional `mark` for the letters shown when there is no logo. Bangladesh now has 8 logos. |
+| 2026-11-21 | Map, Bangladesh: PMG and FFL Studio now use the designer's SVGs (`pmg.svg`, `ffl-studio.svg`) instead of lettered tiles. Saved `apex.svg` and `docomate.svg` in `src/assets/images/clients/` (not yet on the map). |
+| 2026-11-22 | BloodConnect, 06 · From design to launch: removed the "5 reviews behind that rating" stat; the section now shows 500+ downloads and the 4.8 rating. |
+| 2026-11-22 | Akij Insaf page cover (`akij-insaf-cover.webp`, 1920×1440) replaced with "Feature Image - Akij Insaf Diagnostic" (desktop homepage beside two mobile screens); cover alt text updated, caption unchanged. Project card (`akij-insaf-card.webp`) unchanged. |

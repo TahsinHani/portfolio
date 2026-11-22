@@ -38,7 +38,7 @@ src/
     components/             Reusable pieces: button, icons, project card, writing card
     svg/                    Large decorative SVGs
   assets/                   CSS, JS, fonts and images, copied to the output as-is
-  resume/                   Put Tahsin-Resume.pdf here
+  resume/                   The resume PDF (path set by "resume" in site.json)
 ```
 
 ## Common edits

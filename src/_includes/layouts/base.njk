@@ -33,7 +33,19 @@
     {% include "partials/header.njk" %}
     {{ content | safe }}
     {%- if footer %}
-    {% include "partials/footer.njk" %}
+    {#- same background as the homepage footer (.finale in home.css / work.css) #}
+    <div class="finale finale--page">
+      <div class="finale__bg" aria-hidden="true" style="background-image: url({{ '/assets/images/footer-bg.webp' | rel }})"></div>
+      <div class="finale__fade" aria-hidden="true"></div>
+      {#- the contact card and footer, over one background, as at the end of the homepage #}
+      <section class="section connect" id="connect" aria-labelledby="contact-h">
+        <div class="container">
+          {% set contactHeading = "h2" %}
+          {% include "partials/contact-card.njk" %}
+        </div>
+      </section>
+      {% include "partials/footer.njk" %}
+    </div>
     {%- endif %}
     {%- if floatCta %}
     {% include "partials/float-cta.njk" %}

@@ -90,13 +90,6 @@ layout: layouts/base.njk
         {{ button("See my all work", "/work/index.html" | rel, variant="secondary", trail="arrow-right") }}
       </div>
     </section>
-
-    <section class="section connect" id="connect" aria-labelledby="contact-h">
-      <div class="container">
-        {% set contactHeading = "h2" %}
-        {% include "partials/contact-card.njk" %}
-      </div>
-    </section>
   </article>
   <script defer src="{{ '/assets/js/story.js' | rel }}"></script>
 </main>

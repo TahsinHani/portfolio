@@ -946,6 +946,41 @@ a {
   color: var(--color-ink-secondary);
   font-size: var(--text-meta);
 }
+/* Footer block: the contact card and the footer over the misty photo and white fade, the same on every page
+   as at the end of the homepage (.finale in home.css). */
+.finale {
+  isolation: isolate;
+  margin-top: clamp(120px, 10vw + 40px, 200px);
+  position: relative;
+  overflow: hidden;
+}
+@media (width>=1024px) {
+  .finale {
+    margin-top: 200px;
+  }
+}
+.finale > .section {
+  margin-top: 0;
+}
+@media (width>=768px) {
+  .finale__bg {
+    background-size: 100%;
+  }
+}
+.finale__bg {
+  z-index: -2;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  inset: 0;
+}
+.finale__fade {
+  z-index: -1;
+  background: linear-gradient(#fff 0%, #ffffffb3 100%);
+  position: absolute;
+  inset: 0;
+}
 .footer__row {
   justify-content: space-between;
   align-items: center;

@@ -950,15 +950,10 @@ a {
    as at the end of the homepage (.finale in home.css). */
 .finale {
   isolation: isolate;
-  margin-top: clamp(120px, 10vw + 40px, 200px);
   position: relative;
   overflow: hidden;
 }
-@media (width>=1024px) {
-  .finale {
-    margin-top: 200px;
-  }
-}
+/* No extra margin here: the gap above the card is the normal section spacing (the card's section padding). */
 .finale > .section {
   margin-top: 0;
 }
